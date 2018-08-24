@@ -1,1 +1,2 @@
-# The Bug Free Potato
+# Cows Open Source HackNSlash Game
+
