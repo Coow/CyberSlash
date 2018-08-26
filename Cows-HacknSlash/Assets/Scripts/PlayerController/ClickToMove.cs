@@ -11,7 +11,7 @@ public class ClickToMove : MonoBehaviour {
 	void Start () {
 		mNavMeshAgent = GetComponent<NavMeshAgent>();
 
-		
+
 	}
 	
 	// Update is called once per frame
@@ -21,7 +21,7 @@ public class ClickToMove : MonoBehaviour {
 
 		RaycastHit hit;
 
-		if(Input.GetMouseButtonDown(0))
+		if(Input.GetMouseButton(0))
 		{
 			if(Physics.Raycast(ray, out hit, 100))
 			{
