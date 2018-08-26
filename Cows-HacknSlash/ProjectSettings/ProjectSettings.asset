@@ -645,12 +645,13 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
+    Collab: 1
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 6007fa54-8dec-4219-8463-9141128aa4d9
-  projectName: Cows-HacknSlash
-  organizationId: eirik-skarding
+  cloudProjectId: 8686bd31-c467-43f7-bf19-75121667c7b3
+  projectName: Cows-HacknSlash (1)
+  organizationId: puddl3s
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
