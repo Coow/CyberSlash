@@ -38,8 +38,8 @@ GameObject:
   - component: {fileID: 4760261254649616}
   - component: {fileID: 54541078992174914}
   - component: {fileID: 136760250775174542}
-  - component: {fileID: 114016724045003416}
   - component: {fileID: 195570484653539168}
+  - component: {fileID: 114903283851787184}
   m_Layer: 10
   m_Name: char
   m_TagString: Player
@@ -87,13 +87,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1638138513263084}
-  m_LocalRotation: {x: 0.26299313, y: -0.0010859306, z: 0.0004982332, w: 0.964797}
-  m_LocalPosition: {x: -6.5999985, y: 47.000004, z: -37.300003}
+  m_LocalRotation: {x: 0.35778987, y: -0.0010309, z: 0.00060392625, w: 0.9338014}
+  m_LocalPosition: {x: -6.62, y: 56.45, z: -28.81}
   m_LocalScale: {x: 13.711062, y: 7.0029283, z: 6.096592}
   m_Children: []
   m_Father: {fileID: 4992103162542776}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 30.496002, y: -0.12200001, z: 0.026}
+  m_LocalEulerAnglesHint: {x: 41.929, y: -0.115, z: 0.030000001}
 --- !u!4 &4760261254649616
 Transform:
   m_ObjectHideFlags: 1
@@ -240,17 +240,6 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1638138513263084}
   m_Enabled: 1
---- !u!114 &114016724045003416
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1481924574175844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae215548e682e6949baf8b3bdb9636b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114532459605914202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -289,6 +278,19 @@ MonoBehaviour:
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 512
+--- !u!114 &114903283851787184
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1481924574175844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae215548e682e6949baf8b3bdb9636b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorClick: {fileID: 1210913089688338, guid: 62b4f4381e8c24547a12b8fb2734731a,
+    type: 2}
 --- !u!136 &136760250775174542
 CapsuleCollider:
   m_ObjectHideFlags: 1

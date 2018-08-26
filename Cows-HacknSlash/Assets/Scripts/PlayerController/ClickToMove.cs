@@ -9,6 +9,8 @@ public class ClickToMove : MonoBehaviour {
 	private bool mRunning;
 	private int layerMask = ~(1 << 10);
 	
+	[Header("Misc")]
+	public GameObject cursorClick;
 	void Start () {
 		mNavMeshAgent = GetComponent<NavMeshAgent>();
 	}
@@ -25,6 +27,17 @@ public class ClickToMove : MonoBehaviour {
 			if(Physics.Raycast(ray, out hit, 100, layerMask))
 			{
 				mNavMeshAgent.destination = hit.point;
+				
+			}
+		}
+
+		if(Input.GetMouseButtonDown(0))
+		{	
+			if(Physics.Raycast(ray, out hit, 100, layerMask))
+			{
+				Vector3 spawnPoint = hit.point + new Vector3(0,0.1f,0);
+
+				Instantiate(cursorClick, spawnPoint ,Quaternion.identity);
 			}
 		}
 
