@@ -35,6 +35,5 @@ public class ClickToMove : MonoBehaviour {
 		} else {
 			mRunning = true;
 		}
-
 	}
 }
