@@ -33,11 +33,13 @@
 
     private void LateUpdate () {
         transform.position = target.position + currentOffset;
-
-        float movement = Input.GetAxis ("Horizontal") * angularSpeed * Time.deltaTime;
-        if(!Mathf.Approximately (movement, 0f)) {
-            transform.RotateAround (target.position, Vector3.up, movement);
-            currentOffset = transform.position - target.position;
+        if(Input.GetMouseButton(2))
+        {
+            float movement = Input.GetAxis ("Mouse X") * angularSpeed * Time.deltaTime;
+            if(!Mathf.Approximately (movement, 0f)) {
+                transform.RotateAround (target.position, Vector3.up, movement);
+                currentOffset = transform.position - target.position;
+            }
         }
     }
 

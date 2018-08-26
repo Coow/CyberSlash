@@ -263,9 +263,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 4760261254649616}
-  angularSpeed: -120
+  angularSpeed: 480
   initialOffset: {x: 0, y: 0, z: 0}
-  ZoomRange: 60
   Sensitivity: 10
 --- !u!114 &114721060437775784
 MonoBehaviour:
