@@ -7,11 +7,10 @@ public class ClickToMove : MonoBehaviour {
 
 	private NavMeshAgent mNavMeshAgent;
 	private bool mRunning;
-	// Use this for initialization
+	private int layerMask = ~(1 << 10);
+	
 	void Start () {
 		mNavMeshAgent = GetComponent<NavMeshAgent>();
-
-
 	}
 	
 	// Update is called once per frame
@@ -23,7 +22,7 @@ public class ClickToMove : MonoBehaviour {
 
 		if(Input.GetMouseButton(0))
 		{
-			if(Physics.Raycast(ray, out hit, 100))
+			if(Physics.Raycast(ray, out hit, 100, layerMask))
 			{
 				mNavMeshAgent.destination = hit.point;
 			}

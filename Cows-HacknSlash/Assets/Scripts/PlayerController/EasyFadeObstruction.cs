@@ -6,11 +6,15 @@ public class EasyFadeObstruction : MonoBehaviour {
 	public GameObject playerObject;
 	public float fadeRadius = 0.5f;
 	public float fadeDistanceOffset = 0;
-	public LayerMask fadeMaskLayer;
+	
 	public float fadeInSpeed = 10f;
 	public float fadeOutSpeed = 10f;
 	[Range(0.0f, 1.0f)]
 	public float fadeTransparency;
+
+	[Space(10f)]
+	public LayerMask tempLayerMask;
+	public LayerMask groundLayerMask;
 
 	HashSet<GameObject> fadeSet;
 	List<GameObject> toRemove;
@@ -24,15 +28,6 @@ public class EasyFadeObstruction : MonoBehaviour {
 		removeFadingBack = new List<Renderer>();
 
 	}
-
-	void Awake(){
-		fadeSet = new HashSet<GameObject>();
-		toRemove = new List<GameObject>();
-		fadingBack = new HashSet<Renderer>();
-		removeFadingBack = new List<Renderer>();
-	}
-	
-	
 	
 	Color tempColor;
 	void makeTransparent(Renderer r){
@@ -52,7 +47,8 @@ public class EasyFadeObstruction : MonoBehaviour {
 	void fadeBackObjects(){
 		Color c;
 		if(fadingBack != null){
-			foreach(Renderer r in fadingBack){	
+			foreach(Renderer r in fadingBack){
+				r.gameObject.layer = 0;
 				try{
 					if(!fadeSet.Contains(r.gameObject)){
 						c = r.material.color;
@@ -62,6 +58,7 @@ public class EasyFadeObstruction : MonoBehaviour {
 							c.a = 1.0f;
 							r.material.color = c;
 							removeFadingBack.Add(r);
+							
 						}
 					}
 				}catch(MissingReferenceException mre){
@@ -93,7 +90,8 @@ public class EasyFadeObstruction : MonoBehaviour {
 		}
 		distance = direction.magnitude - fadeRadius + fadeDistanceOffset;
 		
-		RaycastHit[] hits = Physics.SphereCastAll( new Ray(transform.position, direction), fadeRadius, distance, fadeMaskLayer);
+		//RaycastHit[] hits = Physics.SphereCastAll( new Ray(transform.position, direction), fadeRadius, distance, fadeMaskLayer);
+		RaycastHit[] hits = Physics.SphereCastAll( new Ray(transform.position, direction), fadeRadius, distance);
 			//RaycastAll(transform.position, direction , distance, fadeMaskLayer);
 		try{
 		//if there is nothing being hit, clear fade set
@@ -103,12 +101,18 @@ public class EasyFadeObstruction : MonoBehaviour {
 					fadeSet.Add(h.collider.gameObject);
 					//h.collider.gameObject.GetComponent<Renderer>().enabled = false;
 					makeTransparent(h.collider.gameObject.GetComponent<Renderer>());
+					
+					//Set layermask back to Ground
+					h.collider.gameObject.layer = 9;
 				}
 			}
 			if(fadeSet != null){
 				//for every object that exists, add it to the fade set
 				foreach(GameObject g in fadeSet){
+
 					foreach(RaycastHit h in hits){
+						//Set layermask to ignoreRaycastclicks
+						h.collider.gameObject.layer = 10;
 						if(g.Equals(h.collider.gameObject)){
 							//	Debug.Log(g.name+"found in racasts");
 							exists = true;
@@ -123,6 +127,9 @@ public class EasyFadeObstruction : MonoBehaviour {
 						//g.GetComponent<Renderer>().enabled = true;
 						if(g != null){
 							makeSolid(g.GetComponent<Renderer>());
+
+							//Set layermask back to Ground
+							g.gameObject.layer = 9;
 						}
 						toRemove.Add(g);
 					}
@@ -130,6 +137,9 @@ public class EasyFadeObstruction : MonoBehaviour {
 				//remove then clear the list of items to be removed
 				foreach(GameObject g in toRemove){
 					fadeSet.Remove(g);
+
+					//Set layermask back to Ground
+					g.gameObject.layer = 9;
 				}
 				toRemove.Clear();
 			}
