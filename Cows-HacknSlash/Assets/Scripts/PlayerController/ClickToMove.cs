@@ -5,14 +5,18 @@ using UnityEngine.AI;
 
 public class ClickToMove : MonoBehaviour {
 
-	private NavMeshAgent mNavMeshAgent;
-	private bool mRunning;
-	private int layerMask = ~(1 << 10);
+	private NavMeshAgent navMeshAgent;
+	private bool running;
+	[SerializeField]
+	private LayerMask layerMask;
+	
 	
 	[Header("Misc")]
 	public GameObject cursorClick;
+
+	public Vector3 cursorOffset;
 	void Start () {
-		mNavMeshAgent = GetComponent<NavMeshAgent>();
+		navMeshAgent = GetComponent<NavMeshAgent>();
 	}
 	
 	// Update is called once per frame
@@ -26,7 +30,7 @@ public class ClickToMove : MonoBehaviour {
 		{
 			if(Physics.Raycast(ray, out hit, 100, layerMask))
 			{
-				mNavMeshAgent.destination = hit.point;
+				navMeshAgent.destination = hit.point;
 				
 			}
 		}
@@ -35,18 +39,18 @@ public class ClickToMove : MonoBehaviour {
 		{	
 			if(Physics.Raycast(ray, out hit, 100, layerMask))
 			{
-				Vector3 spawnPoint = hit.point + new Vector3(0,0.1f,0);
+				Vector3 spawnPoint = hit.point + cursorOffset;
 
 				Instantiate(cursorClick, spawnPoint ,Quaternion.identity);
 			}
 		}
 
 		//When animations get added
-		if(mNavMeshAgent.remainingDistance <= mNavMeshAgent.stoppingDistance)
+		if(navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
 		{
-			mRunning = false;
+			running = false;
 		} else {
-			mRunning = true;
+			running = true;
 		}
 	}
 }

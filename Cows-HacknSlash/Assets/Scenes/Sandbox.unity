@@ -473,6 +473,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114903283851787184, guid: 54ae127340cc41d4ca369dea44ec0125,
+        type: 2}
+      propertyPath: layerMask.m_Bits
+      value: 823
+      objectReference: {fileID: 0}
+    - target: {fileID: 114903283851787184, guid: 54ae127340cc41d4ca369dea44ec0125,
+        type: 2}
+      propertyPath: cursorOffset.y
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54ae127340cc41d4ca369dea44ec0125, type: 2}
   m_IsPrefabAsset: 0
