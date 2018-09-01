@@ -15,6 +15,7 @@ public class EasyFadeObstruction : MonoBehaviour {
 	[Space(10f)]
 	public LayerMask tempLayerMask;
 	public LayerMask groundLayerMask;
+	public LayerMask canBeTransparent;
 
 	HashSet<GameObject> fadeSet;
 	List<GameObject> toRemove;
@@ -91,7 +92,7 @@ public class EasyFadeObstruction : MonoBehaviour {
 		distance = direction.magnitude - fadeRadius + fadeDistanceOffset;
 		
 		//RaycastHit[] hits = Physics.SphereCastAll( new Ray(transform.position, direction), fadeRadius, distance, fadeMaskLayer);
-		RaycastHit[] hits = Physics.SphereCastAll( new Ray(transform.position, direction), fadeRadius, distance);
+		RaycastHit[] hits = Physics.SphereCastAll( new Ray(transform.position, direction), fadeRadius, distance, canBeTransparent);
 			//RaycastAll(transform.position, direction , distance, fadeMaskLayer);
 		try{
 		//if there is nothing being hit, clear fade set

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<varlist name="ProjectData">
+	<int name="FileVersion">1</int>
+	<varlist name="MapInfo">
+		<varlist name="Terrain">
+			<int name="nx">1024</int>
+			<int name="ny">1024</int>
+			<float name="MinAlt">-239.294</float>
+			<float name="MaxAlt">508.533</float>
+			<float name="HorizScale">10</float>
+		</varlist>
+		<varlist name="Texture">
+			<int name="nx">1024</int>
+			<int name="ny">1024</int>
+		</varlist>
+		<bool name="WrapFlag">false</bool>
+	</varlist>
+	<varlist name="Maps">
+		<varlist name="HF">
+			<string name="Filename">terrainTest_HF.hfz</string>
+			<string name="MapType">HF</string>
+		</varlist>
+		<varlist name="WM">
+			<string name="Filename">terrainTest_WM.wmf</string>
+			<string name="MapType">WM</string>
+		</varlist>
+		<varlist name="WS">
+			<string name="Filename">terrainTest_WS.hfz</string>
+			<string name="MapType">HF</string>
+		</varlist>
+		<varlist name="AM">
+			<string name="Filename">terrainTest_AM.amf.gz</string>
+			<string name="MapType">AM</string>
+		</varlist>
+		<varlist name="TN">
+			<string name="Filename">terrainTest_TN.png</string>
+			<string name="MapType">TN</string>
+		</varlist>
+		<varlist name="TX">
+			<string name="Filename">TX\terrainTest_TX.mmf</string>
+			<string name="MapType">RGB</string>
+		</varlist>
+	</varlist>
+	<varlist name="Climates">
+		<varlist name="Temperate">
+			<string name="Filename">C:\Users\Cow\L3DT\Resources\Std 16.05.3.1\Climates\temperate26\Temperate26.cli.xml</string>
+		</varlist>
+	</varlist>
+</varlist>
