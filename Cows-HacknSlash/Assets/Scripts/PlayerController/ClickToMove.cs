@@ -26,6 +26,10 @@ public class ClickToMove : MonoBehaviour {
 
 		RaycastHit hit;
 
+
+		Vector3 pointToLook = ray.GetPoint(50f);
+		Debug.DrawLine(ray.origin, pointToLook, Color.blue);
+		
 		if(Input.GetMouseButton(0))
 		{
 			if(Physics.Raycast(ray, out hit, 100, layerMask))

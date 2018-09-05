@@ -11,16 +11,20 @@ public class SpellController : MonoBehaviour {
 	public float fireBallSpeed;
 
 	void Update () {
-
+		
 		if(Input.GetKeyDown(KeyCode.E)){	
 			Vector3 aimPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			aimPos.z = 0;
 
 			var projectile = Instantiate(fireball,spawnPos.transform.position,Quaternion.identity);
 			projectile.transform.LookAt(aimPos);
-			Debug.Log(aimPos);
+			Debug.Log("Aimpos = " + aimPos);
 
-			projectile.GetComponent<Rigidbody>().AddForce(projectile.transform.forward * (fireBallSpeed * Time.deltaTime));		
+			projectile.GetComponent<Rigidbody>().AddForce(projectile.transform.forward * (fireBallSpeed + 2));
+			Debug.Log("Speed =" + projectile.transform.forward * (fireBallSpeed + 2));		
 		}
+		/*if(Input.GetKeyDown(KeyCode.E)){
+
+		}*/
 	}
 }
