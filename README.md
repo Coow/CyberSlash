@@ -44,3 +44,4 @@ Point 1, does not apply to rewrites of code, or redoings of models or other asse
         - Attacking
         - Death
         - Idle
+- Make documentation
