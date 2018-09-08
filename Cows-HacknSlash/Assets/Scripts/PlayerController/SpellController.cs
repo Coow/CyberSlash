@@ -8,7 +8,7 @@ public class SpellController : MonoBehaviour {
 
 	[Header("FireBall")]
 	public GameObject fireball;
-	public float fireBallSpeed;
+    public float FireBallSpeed;
 
 	void Update () {
 		
@@ -16,12 +16,12 @@ public class SpellController : MonoBehaviour {
 			Vector3 aimPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			aimPos.z = 0;
 
-			var projectile = Instantiate(fireball,spawnPos.transform.position,Quaternion.identity);
+			var projectile = Instantiate(fireball, transform.position,Quaternion.identity);
 			projectile.transform.LookAt(aimPos);
 			Debug.Log("Aimpos = " + aimPos);
 
-			projectile.GetComponent<Rigidbody>().AddForce(projectile.transform.forward * (fireBallSpeed + 2));
-			Debug.Log("Speed =" + projectile.transform.forward * (fireBallSpeed + 2));		
+			//projectile.GetComponent<Rigidbody>().AddForce(projectile.transform.forward * (FireBallSpeed + 2));
+			//Debug.Log("Speed =" + projectile.transform.forward * (fireBallSpeed + 2));		
 		}
 		/*if(Input.GetKeyDown(KeyCode.E)){
 
