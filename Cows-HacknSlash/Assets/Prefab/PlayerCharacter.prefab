@@ -76,6 +76,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4556544625833090}
+  - component: {fileID: 114844142972467960}
   m_Layer: 0
   m_Name: spellSpawnPoint
   m_TagString: Untagged
@@ -104,8 +105,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1638138513263084}
-  m_LocalRotation: {x: 0.09912632, y: -0.8397151, z: 0.50815374, w: 0.16380545}
-  m_LocalPosition: {x: -534.3936, y: 547.78455, z: 174.73969}
+  m_LocalRotation: {x: -0.099133514, y: 0.83970696, z: -0.50816405, w: -0.1638115}
+  m_LocalPosition: {x: -476.74005, y: 547.4682, z: 148.60083}
   m_LocalScale: {x: 13.711062, y: 7.0029283, z: 6.096592}
   m_Children: []
   m_Father: {fileID: 4992103162542776}
@@ -143,8 +144,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1481924574175844}
-  m_LocalRotation: {x: -0, y: -0.029632125, z: -0, w: 0.99956095}
-  m_LocalPosition: {x: -545.50366, y: 491.33456, z: 147.34802}
+  m_LocalRotation: {x: -0, y: 0.90709895, z: -0, w: 0.4209176}
+  m_LocalPosition: {x: -487.85007, y: 491.01825, z: 121.209175}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4556544625833090}
@@ -159,7 +160,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1964879969324646}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 111.7, y: -95.4, z: -16.3}
+  m_LocalPosition: {x: 111.7, y: -95.35, z: -17.81}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 4012722761698424}
@@ -282,9 +283,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0e8d53c4109f7645adc02d2453177de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPos: {fileID: 1704014934598326}
-  fireball: {fileID: 1256920332960248, guid: 8960109136f5f7e4e8961928acc61e51, type: 2}
-  FireBallSpeed: 2
+  SpawnPos: {fileID: 1704014934598326}
+  FireBall: {fileID: 1256920332960248, guid: 8960109136f5f7e4e8961928acc61e51, type: 2}
 --- !u!114 &114532459605914202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -298,7 +298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 4760261254649616}
   angularSpeed: 480
-  initialOffset: {x: -1.3240051, y: 11.290001, z: -5.762024}
+  initialOffset: {x: 2.2220078, y: 11.289993, z: 5.4783325}
   Sensitivity: 10
 --- !u!114 &114721060437775784
 MonoBehaviour:
@@ -343,6 +343,20 @@ MonoBehaviour:
   cursorClick: {fileID: 1210913089688338, guid: 62b4f4381e8c24547a12b8fb2734731a,
     type: 2}
   cursorOffset: {x: 0, y: 0.1, z: 0}
+--- !u!114 &114844142972467960
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1704014934598326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6e10563bc8b7441ab3a64036b095ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FiringAngle: 13.4
+  Gravity: 5
+  WaitTime: 0
 --- !u!136 &136543919011971358
 CapsuleCollider:
   m_ObjectHideFlags: 1
