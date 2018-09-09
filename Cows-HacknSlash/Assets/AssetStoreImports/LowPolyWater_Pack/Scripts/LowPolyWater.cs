@@ -97,7 +97,5 @@ namespace LowPolyWater
             mesh.MarkDynamic();
             meshFilter.mesh = mesh;
         }
-
-        
     }
 }
