@@ -16,7 +16,7 @@ public class SpellController : MonoBehaviour {
 			Vector3 aimPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			aimPos.z = 0;
 
-			var projectile = Instantiate(fireball, transform.position,Quaternion.identity);
+			var projectile = Instantiate(fireball, spawnPos.transform.position, Quaternion.identity);
 			projectile.transform.LookAt(aimPos);
 			Debug.Log("Aimpos = " + aimPos);
 

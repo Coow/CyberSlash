@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FireBallBehaviour : MonoBehaviour {
-
-    public float FiringAngle = 45.0f;
-    public float Gravity = 9.8f;
     public float Speed;
 
     private Rigidbody _rigidbody;
