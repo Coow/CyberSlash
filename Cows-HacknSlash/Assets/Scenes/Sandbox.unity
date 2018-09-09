@@ -634,6 +634,11 @@ Prefab:
       propertyPath: cursorOffset.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 95187848858970018, guid: 54ae127340cc41d4ca369dea44ec0125,
+        type: 2}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 96a55b582190977489696dd1ecd63aeb, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54ae127340cc41d4ca369dea44ec0125, type: 2}
   m_IsPrefabAsset: 0
