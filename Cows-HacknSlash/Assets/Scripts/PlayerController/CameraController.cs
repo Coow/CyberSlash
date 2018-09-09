@@ -14,7 +14,7 @@
     public float Sensitivity = 10f;
 
     private void SetCurrentOffset () {
-        if(target == null) {
+        if (target == null) {
             return;
         }
 
@@ -24,7 +24,7 @@
     private void Start () {
 		transform.LookAt(target);
 		SetCurrentOffset(); 
-        if(target == null) {
+        if (target == null) {
             Debug.LogError ("Assign a target for the camera in Unity's inspector");
         }
 
@@ -33,10 +33,9 @@
 
     private void LateUpdate () {
         transform.position = target.position + currentOffset;
-        if(Input.GetMouseButton(2))
-        {
+        if (Input.GetMouseButton(2)) {
             float movement = Input.GetAxis ("Mouse X") * angularSpeed * Time.deltaTime;
-            if(!Mathf.Approximately (movement, 0f)) {
+            if (!Mathf.Approximately (movement, 0f)) {
                 transform.RotateAround (target.position, Vector3.up, movement);
                 currentOffset = transform.position - target.position;
             }

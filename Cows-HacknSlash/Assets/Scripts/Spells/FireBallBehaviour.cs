@@ -14,13 +14,11 @@ public class FireBallBehaviour : MonoBehaviour {
         Destroy(this.gameObject, 5f);
 	}
 
-    private void Fire()
-    {
+    private void Fire() {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Plane plane = new Plane(Vector3.up, Vector3.zero);
         float dist;
-        if (plane.Raycast(ray, out dist))
-        {
+        if (plane.Raycast(ray, out dist)) {
             var target = ray.GetPoint(dist);
             direction = transform.position - target;
             _rigidbody.AddForce(-direction * Speed);

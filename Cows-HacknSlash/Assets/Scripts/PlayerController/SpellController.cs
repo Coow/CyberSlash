@@ -11,7 +11,6 @@ public class SpellController : MonoBehaviour {
 	private GameObject FireBall;
     
 	void Update () {
-
         
         if (Input.GetKeyDown(KeyCode.E)){	
 			var projectile = Instantiate(FireBall, SpawnPos.transform.position, Quaternion.identity);
@@ -19,6 +18,5 @@ public class SpellController : MonoBehaviour {
             SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform);
             Destroy(projectile.gameObject, 5f);	
 		}
-		
 	}
 }
