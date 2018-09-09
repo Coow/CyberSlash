@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4463774, g: 0.49619204, b: 0.5747004, a: 1}
+  m_IndirectSpecularColor: {r: 0.44637758, g: 0.49619246, b: 0.5747009, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 483571995}
   m_Layer: 9
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 805659648}
   m_Layer: 9
   m_Name: Cube (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 948638175}
   m_Layer: 9
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -498,7 +498,7 @@ GameObject:
   - component: {fileID: 1065991332}
   m_Layer: 11
   m_Name: LowPolyTestPlane
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -629,6 +629,11 @@ Prefab:
       propertyPath: FireBallSpeed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114409564997352692, guid: 54ae127340cc41d4ca369dea44ec0125,
+        type: 2}
+      propertyPath: cursorOffset.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54ae127340cc41d4ca369dea44ec0125, type: 2}
   m_IsPrefabAsset: 0
@@ -671,20 +676,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114029760368958514, guid: 8960109136f5f7e4e8961928acc61e51,
+    - target: {fileID: 136491277824001136, guid: 8960109136f5f7e4e8961928acc61e51,
         type: 2}
-      propertyPath: speed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114029760368958514, guid: 8960109136f5f7e4e8961928acc61e51,
-        type: 2}
-      propertyPath: Speed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 54571631396839896, guid: 8960109136f5f7e4e8961928acc61e51,
-        type: 2}
-      propertyPath: m_IsKinematic
-      value: 0
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1796085778609936, guid: 8960109136f5f7e4e8961928acc61e51, type: 2}
       propertyPath: m_IsActive
@@ -778,7 +773,7 @@ GameObject:
   - component: {fileID: 1774282879}
   m_Layer: 9
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
