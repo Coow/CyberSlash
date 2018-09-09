@@ -10,7 +10,7 @@ public class FireBallBehaviour : MonoBehaviour {
 
     void Start() {
 		_rigidbody = gameObject.GetComponent<Rigidbody>();
-        Fire();
+       // Fire();
         Destroy(this.gameObject, 5f);
 	}
 
@@ -25,5 +25,9 @@ public class FireBallBehaviour : MonoBehaviour {
             direction = transform.position - target;
             _rigidbody.AddForce(-direction * Speed);
         }
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        print("name: " + other.name);
     }
 }

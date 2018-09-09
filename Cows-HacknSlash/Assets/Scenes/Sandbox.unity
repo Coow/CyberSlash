@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44637758, g: 0.49619246, b: 0.5747009, a: 1}
+  m_IndirectSpecularColor: {r: 0.4463774, g: 0.49619204, b: 0.5747004, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -160,6 +160,20 @@ Prefab:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1209542441024798, guid: 978d88be2d62c3946ab64e335cab0837, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 64199486319019290, guid: 978d88be2d62c3946ab64e335cab0837,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 64712019694598070, guid: 978d88be2d62c3946ab64e335cab0837,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 978d88be2d62c3946ab64e335cab0837, type: 2}
   m_IsPrefabAsset: 0
@@ -248,6 +262,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &503764000 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1970372031717710, guid: ce1aa4a9e7e21744895a164bf25e63b3,
+    type: 2}
+  m_PrefabInternal: {fileID: 2147280806}
+--- !u!136 &503764001
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 503764000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.1431351
+  m_Height: 1.4428328
+  m_Direction: 1
+  m_Center: {x: 0.000200265, y: -0.40429482, z: 0.13972095}
 --- !u!1 &805659647
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,9 +581,39 @@ Prefab:
       propertyPath: m_Constraints
       value: 126
       objectReference: {fileID: 0}
+    - target: {fileID: 114409564997352692, guid: 54ae127340cc41d4ca369dea44ec0125,
+        type: 2}
+      propertyPath: SpawnPos
+      value: 
+      objectReference: {fileID: 1545565019}
+    - target: {fileID: 114409564997352692, guid: 54ae127340cc41d4ca369dea44ec0125,
+        type: 2}
+      propertyPath: FireBall
+      value: 
+      objectReference: {fileID: 1256920332960248, guid: 8960109136f5f7e4e8961928acc61e51,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54ae127340cc41d4ca369dea44ec0125, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1545565019 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1704014934598326, guid: 54ae127340cc41d4ca369dea44ec0125,
+    type: 2}
+  m_PrefabInternal: {fileID: 1343477625}
+--- !u!114 &1545565021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1545565019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6e10563bc8b7441ab3a64036b095ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FiringAngle: 10
+  Gravity: 9.8
+  WaitTime: 0
 --- !u!1001 &1641048801
 Prefab:
   m_ObjectHideFlags: 0
