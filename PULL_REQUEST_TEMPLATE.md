@@ -22,10 +22,11 @@ _You can also fill these out after creating the PR. If you're unsure about any o
 - [ ] I have added necessary documentation (if appropriate) to all added code.
 - [ ] Any dependent changes have been merged and published in downstream modules
 - [ ] I have pulled the latest master into this branch to avoid merge conflicts.
+- [ ] I have created new issues for any new bugs that were caused by this pull request.
 
 ## New bugs in this PR
 
-Please describe new bugs that have occured in this pull request.
+Please describe new bugs that have occured in this pull request, also link the issues of said bugs.
 
 ## Fixed bugs by this PR
 
