@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FireBallBehaviour : MonoBehaviour {
-
-    public float FiringAngle = 45.0f;
-    public float Gravity = 9.8f;
     public float Speed;
 
     private Rigidbody _rigidbody;
@@ -13,7 +10,7 @@ public class FireBallBehaviour : MonoBehaviour {
 
     void Start() {
 		_rigidbody = gameObject.GetComponent<Rigidbody>();
-        Fire();
+       // Fire();
         Destroy(this.gameObject, 5f);
 	}
 
@@ -28,5 +25,9 @@ public class FireBallBehaviour : MonoBehaviour {
             direction = transform.position - target;
             _rigidbody.AddForce(-direction * Speed);
         }
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        print("name: " + other.name);
     }
 }

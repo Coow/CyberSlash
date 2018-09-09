@@ -4,27 +4,21 @@ using UnityEngine;
 
 public class SpellController : MonoBehaviour {
 	[SerializeField]
-	private GameObject spawnPos;
+	private GameObject SpawnPos;
 
 	[Header("FireBall")]
-	public GameObject fireball;
-    public float FireBallSpeed;
-
+    [SerializeField]
+	private GameObject FireBall;
+    
 	void Update () {
-		
-		if(Input.GetKeyDown(KeyCode.E)){	
-			Vector3 aimPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			aimPos.z = 0;
 
-			var projectile = Instantiate(fireball, transform.position,Quaternion.identity);
-			projectile.transform.LookAt(aimPos);
-			Debug.Log("Aimpos = " + aimPos);
+        
+        if (Input.GetKeyDown(KeyCode.E)){	
+			var projectile = Instantiate(FireBall, SpawnPos.transform.position, Quaternion.identity);
 
-			//projectile.GetComponent<Rigidbody>().AddForce(projectile.transform.forward * (FireBallSpeed + 2));
-			//Debug.Log("Speed =" + projectile.transform.forward * (fireBallSpeed + 2));		
+            SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform);
+            Destroy(projectile.gameObject, 5f);	
 		}
-		/*if(Input.GetKeyDown(KeyCode.E)){
-
-		}*/
+		
 	}
 }
