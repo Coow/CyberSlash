@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Enemy_Skeleton
+  - Fire_Ball
+  - Enemy_Sword
   layers:
   - Default
   - TransparentFX
@@ -19,7 +22,7 @@ TagManager:
   - IgnoreMoveClick
   - GroundPlane
   - FireBall
-  - 
+  - Slope
   - 
   - 
   - 

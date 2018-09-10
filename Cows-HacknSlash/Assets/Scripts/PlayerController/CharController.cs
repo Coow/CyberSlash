@@ -48,4 +48,15 @@ public class CharController : MonoBehaviour {
 			running = true;
 		}
 	}
+
+    private void OnTriggerEnter(Collider other) {
+        if (other.tag == "Enemy_Sword") {
+            this.gameObject.SetActive(false);
+            //DestroyPlayer();
+        }
+    }
+
+    private void DestroyPlayer() {
+        Destroy(this.gameObject);
+    }
 }
