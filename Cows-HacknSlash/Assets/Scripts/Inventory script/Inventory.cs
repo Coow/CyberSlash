@@ -12,6 +12,12 @@ public class Inventory : MonoBehaviour {
 
     public GameObject[] Slots;
 
+    public GameObject Backpack;
+
+    private void Awake()
+    {
+        Backpack.SetActive(false);
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
@@ -22,6 +28,18 @@ public class Inventory : MonoBehaviour {
         {
             Additem(1, 1);
         }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if(Backpack.activeInHierarchy)
+            {
+                Backpack.SetActive(false);
+            } else
+            {
+                Backpack.SetActive(true);
+            }
+        }
+
     }
     // being able too call this function and just typing in what item id too add
     public void Additem(int id , int amount)
@@ -34,6 +52,7 @@ public class Inventory : MonoBehaviour {
                 //spawn the object in that slot+
                 Instantiate(itemdisplayerprefab, slot.transform.localPosition, Quaternion.identity, slot.gameObject.transform);
 
+                //making sure the slot is displayed as something in it
                 slot.GetComponent<Slot>().somethingin = true;
                 slot.GetComponentInChildren<a_Item>().itemdisplaying = Alltheitems[id];
                 slot.GetComponentInChildren<a_Item>().itemsinit += amount;
