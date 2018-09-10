@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Enemy_Skeleton
+  - Fire_Ball
+  - Enemy_Sword
   layers:
   - Default
   - TransparentFX

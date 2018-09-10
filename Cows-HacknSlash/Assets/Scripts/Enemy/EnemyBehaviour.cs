@@ -3,23 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyBehaviour : MonoBehaviour {
+public class EnemyBehaviour : MonoBehaviour, IEnemyController {
+
+    [SerializeField]
+    private NavMeshAgent Agent;
 
     [SerializeField]
     private Transform Target;
 
     [SerializeField]
-    private Transform SwordArmPivot;
-
-    [SerializeField]
     private float ActivateRange;
 
-    private NavMeshAgent _agent;
-    private bool _startMoving = false;
+    [SerializeField]
+    private float RotationSpeed = 10f;
 
-    private void Start() {
-        _agent = GetComponent<NavMeshAgent>();
-    }
+    private bool _startMoving = false;
 
     void Update () {
         var distance = Vector3.Distance(transform.position, Target.position);
@@ -30,21 +28,20 @@ public class EnemyBehaviour : MonoBehaviour {
         }
 
         if (_startMoving) {
-            _agent.SetDestination(Target.position);
+            Agent.SetDestination(Target.position);
         }
 
-        // If enemy reached to stopping distance. Let the enemy start swing the sword.
+        // If enemy reached to stopping distance. Let the enemy Face the player and start Attacking.
         if (ReachedToPlayer()) {
-            RotateTowardsPlayer();
-            SwordArmPivot.rotation = Quaternion.Lerp(Quaternion.Euler(0, 0, 20), Quaternion.Euler(0, 0, -20), Mathf.PingPong(2 * Time.time, 1f));
+            EnemyAttack();
         }
 
 	}
 
     private bool ReachedToPlayer() {
-        if (!_agent.pathPending) {
-            if (_agent.remainingDistance != 0 && _agent.remainingDistance <= _agent.stoppingDistance) {
-                if (!_agent.hasPath || _agent.velocity.sqrMagnitude == 0f) {
+        if (!Agent.pathPending) {
+            if (Agent.remainingDistance != 0 && Agent.remainingDistance <= Agent.stoppingDistance) {
+                if (!Agent.hasPath || Agent.velocity.sqrMagnitude == 0f) {
                     return true;
                 }
             }
@@ -53,11 +50,21 @@ public class EnemyBehaviour : MonoBehaviour {
         return false;
     }
 
-    private void RotateTowardsPlayer() {
+    protected void RotateTowardsPlayer() {
         Vector3 directon = (Target.position - transform.position).normalized;
         directon.y = 0;
         Quaternion lookRotation = Quaternion.LookRotation(directon);
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
-        SwordArmPivot.rotation = Quaternion.LookRotation(directon);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, RotationSpeed * Time.deltaTime);
+    }
+
+    public virtual void EnemyAttack() {
+        RotateTowardsPlayer();
+    }
+
+    public virtual void EnemyHealth() {
+        
+    }
+
+    public virtual void KillEnemy() {
     }
 }
