@@ -61,11 +61,11 @@ public class CharController : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         if (other.tag == "Enemy_Sword") {
             this.gameObject.SetActive(false);
-            //DestoryPlayer();
+            //DestroyPlayer();
         }
     }
 
-    private void DestoryPlayer() {
+    private void DestroyPlayer() {
         Destroy(this.gameObject);
     }
 }

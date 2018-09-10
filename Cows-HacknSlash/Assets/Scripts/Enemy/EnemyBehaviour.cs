@@ -38,6 +38,7 @@ public class EnemyBehaviour : MonoBehaviour, IEnemyController {
 
 	}
 
+    // Method to check the remaining distace between player and enenmy and would return true/false on those bases
     private bool ReachedToPlayer() {
         if (!Agent.pathPending) {
             if (Agent.remainingDistance != 0 && Agent.remainingDistance <= Agent.stoppingDistance) {
@@ -50,6 +51,7 @@ public class EnemyBehaviour : MonoBehaviour, IEnemyController {
         return false;
     }
 
+    // Let the Enemy face towards the Player
     protected void RotateTowardsPlayer() {
         Vector3 directon = (Target.position - transform.position).normalized;
         directon.y = 0;
