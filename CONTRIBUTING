@@ -1,34 +1,34 @@
 # __CONTRIBUTING__
 👍🎉 First off, thanks for taking the time to contribute! 🎉👍
 
-The following is a set of guidelines for contributing to this project. These are mostly guidelines, not rules. However, they will be enforced as rules, by Coow and collaboratos handeling pull request. Use your best judgment, and feel free to propose changes to this document with a pull request.
+The following is a set of guidelines for contributing to this project. These are mostly guidelines, not rules. However, they will be enforced as rules by Coow and other collaborators handling pull requests. Use your best judgment and feel free to propose changes to this document with a pull request.
 
 ---
 
 #### Table Of Contents
 [Code of Conduct](#code-of-conduct)
 [Quick question](#i-just-have-a-quick-question!)
-[What should I know before I get starded?](#what-should-i-know-before-i-get-started)
+[What should I know before I get started?](#what-should-i-know-before-i-get-started)
 [Submitting bugs](#submitting-bugs)
 []()
 []()
 
 ---
 ## Code of Conduct
-This project and everyone participating in it is governed by the [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to @Cow#8079 on Discord in Private Messages. 
+This project and everyone participating in it is governed by the [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to @Cow#8079 on Discord in a Private Message. 
 
 ---
 ### I JUST HAVE A QUICK QUESTION!
-Alright, come join us on [Discord](https://discord.gg/ca7bAHM )! and look for @Cow#8079 or anyone with Super Contributor role, or Farm Animal role!!
+Alright, come join us on [Discord](https://discord.gg/ca7bAHM )! and look for @Cow#8079 or anyone else with a Super Contributor or Farm Animal role!!
 
 ---
 ## What should I know before I get started?
-A lot of stuff is already said in the [README](README.md). Here is Art Style, Gameplay, a little bit about our guidelines, etc. Guides, and other resources, can be found on the [WIKI](https://github.com/Coow/cows-hacknslash/wiki). And I highly suggest reading through the [How to contribute](https://github.com/Coow/cows-hacknslash/wiki/How-to-contribute!). Its a detailed walkthrough on how to setup and contribute to the project.
+A lot of stuff is already said in the [README](README.md). Here is Art Style, Gameplay, a little bit about our guidelines, etc. Guides and other resources can be found on the [WIKI](https://github.com/Coow/cows-hacknslash/wiki). I highly suggest reading through the [How to contribute](https://github.com/Coow/cows-hacknslash/wiki/How-to-contribute!). It's a detailed walkthrough on how to setup and contribute to the project.
 
 ---
 ## Submitting bugs
-Did you find a bug? Lets find out who to blame! Jk, plz dont. Heres a simple list of what to do!
-- Ensure the bug was not already reported by searching on GitHub under [Issues](https://github.com/Coow/cows-hacknslash/issues).
+Did you find a bug? Lets find out who to blame! Jk, plz dont. Here's a simple list of what to do!
+- Ensure that the bug was not already reported by searching on GitHub under [Issues](https://github.com/Coow/cows-hacknslash/issues).
 - If you're unable to find an open issue addressing the problem, open a new one. Be sure to include a title and clear description, and as much relevant information as possible. (If in Unity Editor, which version, PC Specs, OS Version)
 
 Wait?! Did you also fix the bug?!
