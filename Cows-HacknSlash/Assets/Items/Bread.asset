@@ -14,5 +14,5 @@ MonoBehaviour:
   Name: Bread
   sprite: {fileID: 21300000, guid: 7940bd8709effad48a09e16830f5fd7b, type: 3}
   description: Best food ever
-  HowManyCanStack: 2
+  HowManyCanStack: 1
   current: 0
