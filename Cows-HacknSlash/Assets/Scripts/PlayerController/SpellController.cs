@@ -6,14 +6,22 @@ public class SpellController : MonoBehaviour {
 	[SerializeField]
 	private GameObject SpawnPos;
 
-	[Header("FireBall")]
+	[Header("Spells")]
     [SerializeField]
-	private GameObject FireBall;
+	private GameObject fireball;
+	[SerializeField]
+	private GameObject ice;
     
 	void Update () {
         
         if (Input.GetKeyDown(KeyCode.E)){	
-			var projectile = Instantiate(FireBall, SpawnPos.transform.position, Quaternion.identity);
+			var projectile = Instantiate(fireball, SpawnPos.transform.position, Quaternion.identity);
+
+            SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform);
+            Destroy(projectile.gameObject, 5f);	
+		}
+		else if (Input.GetKeyDown(KeyCode.R)){	
+			var projectile = Instantiate(ice, SpawnPos.transform.position, Quaternion.identity);
 
             SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform);
             Destroy(projectile.gameObject, 5f);	
