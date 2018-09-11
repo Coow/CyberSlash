@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 195570484653539168}
   - component: {fileID: 114726114675348132}
   - component: {fileID: 114409564997352692}
+  - component: {fileID: 114450270507257872}
   m_Layer: 10
   m_Name: char
   m_TagString: Player
@@ -160,7 +161,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1964879969324646}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 422.4153, y: 0, z: 572.2907}
+  m_LocalPosition: {x: 111.7, y: -95.4, z: -16.3}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 4012722761698424}
@@ -303,7 +304,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPos: {fileID: 1704014934598326}
   fireball: {fileID: 1796085778609936, guid: 8960109136f5f7e4e8961928acc61e51, type: 2}
-  fireBallSpeed: 0
+  FireBallSpeed: 2
+--- !u!114 &114450270507257872
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1481924574175844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31fc443ef59cf2049b8275cef36b492b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
+  startingMana: 100
+  startingArmor: 5
+  startingMovementSpeed: 8
+  currentLevel: 1
+  currentHealth: 0
+  currentMAXHealth: 0
+  currentMana: 0
+  currentMAXMana: 0
+  currentArmor: 0
+  currentMovementSpeed: 0
+  growthHealth: 10
+  growthMana: 12
+  growthArmor: 1
+  growthMovementSpeed: 0.5
+  invincibilityDuration: 0
+  experience: 0
+  gold: 0
 --- !u!114 &114532459605914202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -370,7 +400,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1454038532723644}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 4.003115
   m_Height: 21.66962
   m_Direction: 1
@@ -406,6 +436,6 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 20
-  m_BaseOffset: 7
+  m_BaseOffset: 8
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
