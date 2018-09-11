@@ -14,14 +14,12 @@ public class SpellController : MonoBehaviour {
 	private int StaffSelected;
     
 	void Update () {
-
-        if (Input.GetKeyDown(KeyCode.E)) {	
+      if (Input.GetKeyDown(KeyCode.E)) {	
 			
 			if (StaffSelected == 1) {
-			
-				var projectile = Instantiate(FireBall, SpawnPos.transform.position, Quaternion.identity);
-            	SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform);
-           		Destroy(projectile.gameObject, 5f);
+			  var projectile = Instantiate(FireBall, SpawnPos.transform.position, Quaternion.identity);
+        SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform);
+        Destroy(projectile.gameObject, 5f);
 			}
 		}
 	}
