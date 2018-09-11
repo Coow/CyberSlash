@@ -14,14 +14,13 @@ public class a_Item : MonoBehaviour {
     {
         transform.position = transform.parent.position;
     }
+
     private void FixedUpdate()
     {
-        //show how many items u have
+        // Show how many items you have.
         GetComponentInChildren<TextMeshProUGUI>().text = itemsinit.ToString();
 
-        //set position too the parent
-        
-
+        // Set position to the parent.
         if (itemdisplaying != null)
         {
             gameObject.GetComponent<Image>().sprite = itemdisplaying.sprite;         

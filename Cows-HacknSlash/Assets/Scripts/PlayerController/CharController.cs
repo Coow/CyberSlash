@@ -50,7 +50,7 @@ public class CharController : MonoBehaviour {
 	}
 
     private void OnTriggerEnter(Collider other) {
-        if (other.tag == "Enemy_Sword") {
+        if (other.tag.Equals("Enemy_Sword")) {
             this.gameObject.SetActive(false);
             //DestroyPlayer();
         }
