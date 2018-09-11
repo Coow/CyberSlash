@@ -10,13 +10,17 @@ public class a_Item : MonoBehaviour {
 
     public int itemsinit;
 
+    private void Awake()
+    {
+        transform.position = transform.parent.position;
+    }
     private void FixedUpdate()
     {
         //show how many items u have
         GetComponentInChildren<TextMeshProUGUI>().text = itemsinit.ToString();
 
         //set position too the parent
-        transform.position = transform.parent.position;
+        
 
         if (itemdisplaying != null)
         {
