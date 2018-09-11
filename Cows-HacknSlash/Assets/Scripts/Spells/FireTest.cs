@@ -24,21 +24,21 @@ public class FireTest : MonoBehaviour {
         yield return new WaitForSeconds(WaitTime);
         FirePrefab.position = transform.position;
 
-        // getting the mouse input position
+        // Getting the mouse input position.
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Plane plane = new Plane(Vector3.up, Vector3.zero); // using a simple plane cause our camera is on top
+        Plane plane = new Plane(Vector3.up, Vector3.zero); // Using a simple plane cause our camera is on top.
         float dist;
         if (plane.Raycast(ray, out dist)) {
             target = ray.GetPoint(dist);
         }
 
-        // Calculate distance to target
+        // Calculate distance to target.
         float target_Distance = Vector3.Distance(FirePrefab.position, target);
 
         // Calculate the velocity needed to throw the object to the target at specified angle.
         float velocity = target_Distance / (Mathf.Sin(2 * FiringAngle * Mathf.Deg2Rad) / Gravity);
 
-        // Extract the X  Y componenent of the velocity
+        // Extract the X  Y componenent of the velocity.
         float x = Mathf.Sqrt(velocity) * Mathf.Cos(FiringAngle * Mathf.Deg2Rad);
         float y = Mathf.Sqrt(velocity) * Mathf.Sin(FiringAngle * Mathf.Deg2Rad);
 
@@ -51,8 +51,9 @@ public class FireTest : MonoBehaviour {
         float elapsed_time = 0;
 
         while (elapsed_time < flightDutation) {
-            if (FirePrefab != null)
+            if (FirePrefab != null) {
                 FirePrefab.Translate(0f, (y - (Gravity * elapsed_time)) * Time.deltaTime, x * Time.deltaTime);
+            }
             elapsed_time += Time.deltaTime;
             yield return null;
         }
