@@ -9,7 +9,7 @@ public class SkeletonBehaviour : EnemyBehaviour {
     
     public override void EnemyAttack() {
         base.EnemyAttack();
-        // Move the sword (cube) up and down 
+        // Move the sword (cube) up and down.
         SwordArmPivot.rotation = Quaternion.Lerp(Quaternion.Euler(0, 0, 20), Quaternion.Euler(0, 0, -20), Mathf.PingPong(2 * Time.time, 1f));
     }
 

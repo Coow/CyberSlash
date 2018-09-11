@@ -77,6 +77,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4556544625833090}
   - component: {fileID: 114844142972467960}
+  - component: {fileID: 114732502256682990}
   m_Layer: 0
   m_Name: spellSpawnPoint
   m_TagString: Untagged
@@ -285,6 +286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnPos: {fileID: 1704014934598326}
   FireBall: {fileID: 1256920332960248, guid: 8960109136f5f7e4e8961928acc61e51, type: 2}
+  StaffSelected: 1
 --- !u!114 &114532459605914202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -343,6 +345,20 @@ MonoBehaviour:
   cursorClick: {fileID: 1210913089688338, guid: 62b4f4381e8c24547a12b8fb2734731a,
     type: 2}
   cursorOffset: {x: 0, y: 0.1, z: 0}
+--- !u!114 &114732502256682990
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1704014934598326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6e10563bc8b7441ab3a64036b095ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FiringAngle: 45
+  Gravity: 9.8
+  WaitTime: 0
 --- !u!114 &114844142972467960
 MonoBehaviour:
   m_ObjectHideFlags: 1
