@@ -8,6 +8,7 @@ TagManager:
   - Enemy_Skeleton
   - Fire_Ball
   - Enemy_Sword
+  - Item_Slot
   layers:
   - Default
   - TransparentFX

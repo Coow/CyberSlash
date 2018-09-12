@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 195570484653539168}
   - component: {fileID: 114726114675348132}
   - component: {fileID: 114409564997352692}
+  - component: {fileID: 114712657788921902}
   m_Layer: 10
   m_Name: char
   m_TagString: Player
@@ -161,7 +162,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1964879969324646}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 111.7, y: -95.35, z: -17.81}
+  m_LocalPosition: {x: 111.7, y: -95.35, z: -11.81}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 4012722761698424}
@@ -302,6 +303,59 @@ MonoBehaviour:
   angularSpeed: 480
   initialOffset: {x: 2.2220078, y: 11.289993, z: 5.4783325}
   Sensitivity: 10
+--- !u!114 &114712657788921902
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1481924574175844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148365ab043014c4e8ce6439e1851441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Alltheitems:
+  - {fileID: 11400000, guid: ee970281e7f176948abaa9c22f9254c7, type: 2}
+  - {fileID: 11400000, guid: 64f2b868e9dc758479ec3e827f7f048a, type: 2}
+  itemdisplayerprefab: {fileID: 1957871190063972, guid: 166567b0d480d234e99c0c97f5fc5439,
+    type: 2}
+  Slots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Backpack: {fileID: 0}
 --- !u!114 &114721060437775784
 MonoBehaviour:
   m_ObjectHideFlags: 1

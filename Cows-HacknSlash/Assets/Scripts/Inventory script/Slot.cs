@@ -12,4 +12,16 @@ public class Slot : MonoBehaviour {
 
     //what item the slot is holding
     public string iteminit;
+    private void FixedUpdate()
+    {
+        if (transform.childCount != 0)
+        {
+            somethingin = true;
+        }
+        if (transform.childCount == 0)
+        {
+            somethingin = false;
+        }
+    }
+     
 }
