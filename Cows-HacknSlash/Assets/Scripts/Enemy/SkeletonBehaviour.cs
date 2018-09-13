@@ -14,7 +14,7 @@ public class SkeletonBehaviour : EnemyBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.tag == "Fire_Ball") {
+        if (other.tag.Equals("Fire_Ball")) {
             KillEnemy();
         }
     }
