@@ -12,7 +12,6 @@ public class SpellController : MonoBehaviour {
 	[Tooltip("0 == null; 1 == FireStaff")]
 	[SerializeField]
 	private int StaffSelected;
-<<<<<<< HEAD
 
     void Update()
     {
@@ -27,16 +26,4 @@ public class SpellController : MonoBehaviour {
             }
         }
     }
-=======
-    
-	void Update () {
-        if (Input.GetKeyDown(KeyCode.E)) {	
-		    if (StaffSelected == 1) {
-			    var projectile = Instantiate(FireBall, SpawnPos.transform.position, Quaternion.identity);
-                SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform);
-                Destroy(projectile.gameObject, 5f);
-		    }
-		}
-	}
->>>>>>> upstream/master
 }
