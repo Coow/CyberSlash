@@ -12,27 +12,20 @@ public class DialogueManager : MonoBehaviour {
 	public int CurrentCharacter;
 	private Text dialogueText;
 
-	// Use this for initialization
+	// Use this for initialization.
 	void Start () {
-		
 		DialogueCharacterTimer = MaxDialogueCharacterTimer;
 		dialogueText = GameObject.Find("DialogueText").GetComponent<Text>();
 	}
 	
-	// Update is called once per frame
+	// Update is called once per frame.
 	void Update () {
-		
-		if (DialogueCharacterTimer > 0f){
-
+		if (DialogueCharacterTimer > 0f) {
 			DialogueCharacterTimer -= Time.deltaTime;
-		}else{
-
-			if (DialogueSelected > -1 && Dialogues[DialogueSelected].dialogue.Length > CurrentCharacter){
-
-				dialogueText.text += Dialogues[DialogueSelected].dialogue[CurrentCharacter];
-				CurrentCharacter++;
-				DialogueCharacterTimer = MaxDialogueCharacterTimer;
-			}
+		} else if (DialogueSelected > -1 && Dialogues[DialogueSelected].dialogue.Length > CurrentCharacter) {
+			dialogueText.text += Dialogues[DialogueSelected].dialogue[CurrentCharacter];
+			CurrentCharacter++;
+			DialogueCharacterTimer = MaxDialogueCharacterTimer;
 		}
 	}
 }
