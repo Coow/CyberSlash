@@ -25,6 +25,11 @@ public class DungeonGenerator : MonoBehaviour {
         bool[,] roomLayout = new bool[(int)DungeonSize.x, (int)DungeonSize.y];
         Vector2 currentPos = new Vector2(DungeonSize.x / 2, DungeonSize.y / 2);
 
+        //Spawn the ground
+        GameObject ground = Instantiate(Ground, new Vector3(currentPos.x * RoomSize.x, 0, currentPos.y * RoomSize.x), Quaternion.identity, this.transform);
+        ground.transform.localScale = new Vector3((RoomCount * RoomSize.x), 1, (RoomCount * RoomSize.y));
+
+        //Start spawning the dungeon
         for (int i = 0; i < RoomCount; i++)
         {
             int rn = Random.Range(0, 100);
@@ -67,7 +72,6 @@ public class DungeonGenerator : MonoBehaviour {
     void SpawnRoom(int x, int y, bool[,] roomLayout)
     {
         //Just a little somthing I made to make the room that spawn the correct room.
-        //Not somthing that I spent hours slaving over and yelling about before finding this simple awnser.  Why would you think that?
         foreach (Room room in Rooms)
         {
             if (room.OpenBottom == roomLayout[x, y - 1] &&

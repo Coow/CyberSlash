@@ -219,7 +219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc4debad792abef49b3a3d0c89b60853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Test: {fileID: 1085565044771202, guid: cccbfa9197bdf204081cd18ba3fa85d1, type: 2}
   Rooms:
   - OpenBottom: 1
     OpenLeft: 0
@@ -311,7 +310,7 @@ MonoBehaviour:
     OpenTop: 1
     Rooms:
     - {fileID: 1954552516955852, guid: fe30bfe07c293a0479cca85fccfbbed1, type: 2}
-  Ground: {fileID: 0}
+  Ground: {fileID: 1430163534829968, guid: 21cbfa7a81d459144a5645d82b7cc17b, type: 2}
   DungeonSize: {x: 1000, y: 1000}
   RoomSize: {x: 17, y: 17}
   RoomCount: 500
