@@ -1,0 +1,83 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class DungeonGenerator : MonoBehaviour {
+
+    [Header("Prefabs, Room lists are set up to work with more than 1 room per orientation")]
+    public List<Room> Rooms;
+    public GameObject Ground;
+    [Header("Dimensions of the dungeon")]
+    public Vector2 DungeonSize;
+    public Vector2 RoomSize;
+    public int RoomCount;
+    [Header("Other generation factors")]
+    public int ChanceToGoBack;
+
+    void Start()
+    {
+        StartCoroutine("GenerateDungeon");
+    }
+
+    IEnumerator GenerateDungeon ()
+    {
+        //Loads the dungeon
+        bool[,] roomLayout = new bool[(int)DungeonSize.x, (int)DungeonSize.y];
+        Vector2 currentPos = new Vector2(DungeonSize.x / 2, DungeonSize.y / 2);
+
+        for (int i = 0; i < RoomCount; i++)
+        {
+            int rn = Random.Range(0, 100);
+
+            //Choose the new direction
+            if (rn < 26) { currentPos.y -= 1; }
+            else if (rn < 51) { currentPos.x -= 1; }
+            else if (rn < 76) { currentPos.x += 1; }
+            else if (rn < 101) { currentPos.y += 1; }
+
+            //If the room overlaps, large chance to go back
+            if (roomLayout[(int)currentPos.x, (int)currentPos.y] == true && Random.Range(1, 100) < ChanceToGoBack) {
+                if (rn < 26) { currentPos.y += 1; }
+                if (rn < 51) { currentPos.x += 1; }
+                if (rn < 76) { currentPos.x -= 1; }
+                if (rn < 101) { currentPos.y -= 1; }
+
+                i ++;
+            }
+            //Add the room to the list of true rooms
+            roomLayout[(int)currentPos.x, (int)currentPos.y] = true;
+        }
+
+        //Loop throu each room pos and spawn one in
+        for (int x = 0; x < DungeonSize.x; x++)
+        {
+            for (int y = 0; y < DungeonSize.y; y++)
+            {
+                if (roomLayout[x, y] == true)
+                {
+                    SpawnRoom(x, y, roomLayout);
+
+                    //So unity dosn't crash because spawning 1k + prefabs with lots of calculations in a single frame isn't good for unity :(
+                    yield return new WaitForSeconds(0.001f);
+                }
+            }
+        }
+    }
+
+    void SpawnRoom(int x, int y, bool[,] roomLayout)
+    {
+        //Just a little somthing I made to make the room that spawn the correct room.
+        //Not somthing that I spent hours slaving over and yelling about before finding this simple awnser.  Why would you think that?
+        foreach (Room room in Rooms)
+        {
+            if (room.OpenBottom == roomLayout[x, y - 1] &&
+                room.OpenLeft == roomLayout[x - 1, y] &&
+                room.OpenRight == roomLayout[x + 1, y] &&
+                room.OpenTop == roomLayout[x, y + 1])
+            {
+                if (room.Rooms[0] == null) { return; }
+                Instantiate(room.Rooms[(int)Random.Range(0, room.Rooms.Count)], new Vector3(x * RoomSize.x, 0, y * RoomSize.y), Quaternion.identity, this.transform);
+            }
+        }
+    }
+}
