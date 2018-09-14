@@ -8,6 +8,8 @@ TagManager:
   - Enemy_Skeleton
   - Fire_Ball
   - Enemy_Sword
+  - Enemy
+  - Fire_Ball_Enemy
   layers:
   - Default
   - TransparentFX

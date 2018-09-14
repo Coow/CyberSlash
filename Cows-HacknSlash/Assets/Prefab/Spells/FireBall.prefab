@@ -24,7 +24,6 @@ GameObject:
   - component: {fileID: 122994158647833808}
   - component: {fileID: 136369214350698304}
   - component: {fileID: 54827373829222804}
-  - component: {fileID: 114642430411529840}
   m_Layer: 0
   m_Name: FireBall
   m_TagString: Fire_Ball
@@ -170,18 +169,6 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114642430411529840
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1256920332960248}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6f855e45848a6947affa9288658fcb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 50
 --- !u!114 &114942274541930678
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -220,4 +207,4 @@ CapsuleCollider:
   m_Radius: 0.49999997
   m_Height: 0.72
   m_Direction: 1
-  m_Center: {x: 0, y: -0.81, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
