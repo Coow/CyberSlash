@@ -50,7 +50,7 @@ public class CharController : MonoBehaviour {
 	}
 
     private void OnTriggerEnter(Collider other) {
-        if (other.tag == "Fire_Ball_Enemy") {
+        if (other.tag.Equals("Fire_Ball_Enemy")) {
             this.gameObject.SetActive(false);
         }
 

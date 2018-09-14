@@ -29,7 +29,7 @@ namespace Enemy {
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.tag == "Fire_Ball")
+            if (other.tag.Equals("Fire_Ball"))
             {
                 _enemyHealth.TakeDamage(50f);
                 print("Get Hit");
