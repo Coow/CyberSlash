@@ -20,12 +20,12 @@ public class NPCIndicator : MonoBehaviour {
 	public bool spawned;
 	
 	void FixedUpdate () {
-		// Switch states are basiclly If statements, just.. easier. 
+		// Switch states are basiclly If statements, just.. easier.
+		// Might be a problem down the line with SQL or another database structure however. 
 		switch (CurState)
         {
             case NPCStates.Quest:
 			{	
-				DestroyMarker();
 				if (!spawned)
 				{
 					GameObject marker = Instantiate(QuestionMark,new Vector3(), Quaternion.identity);
@@ -34,6 +34,7 @@ public class NPCIndicator : MonoBehaviour {
 					marker.transform.position = (gameObject.transform.position + spawnPosition);
 					// If the prefab has a different scale, this can be done here.
 					// marker.transform.localScale = new Vector3(0.001f,0.001f,0.001f);
+					// Set the tag of the GameObject, for later use.
 					marker.tag = "NPCMarker";
 					spawned = true;
 				}
@@ -41,7 +42,6 @@ public class NPCIndicator : MonoBehaviour {
 			break;
 			case NPCStates.Note:
 			{	
-				DestroyMarker();
 				if (!spawned)
 				{	
 					GameObject marker = Instantiate(ExlamationMark,new Vector3(), Quaternion.identity);
@@ -50,6 +50,7 @@ public class NPCIndicator : MonoBehaviour {
 					marker.transform.position = (gameObject.transform.position + spawnPosition);
 					// If the prefab has a different scale, this can be done here.
 					// marker.transform.localScale = new Vector3(0.001f,0.001f,0.001f);
+					// Set the tag of the GameObject, for later use.
 					marker.tag = "NPCMarker";
 					spawned = true;
 				}

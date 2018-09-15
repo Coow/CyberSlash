@@ -124,10 +124,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53f62314733df744395f793336777e0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  QuestionMark: {fileID: 1221218052892216, guid: 986e9e5a7a8329d46b8a4328cc6c0d9e,
+  QuestionMark: {fileID: 1304968256511184, guid: 94f42ecf93480594e9d1a93210f68ca6,
     type: 2}
-  ExlamationMark: {fileID: 1008186722857700, guid: 22bfa135376971b4e94b3c224d7841b2,
+  ExlamationMark: {fileID: 1014631499025448, guid: 318b52f7a06cc004ca2285b19490197c,
     type: 2}
-  CurState: 2
+  CurState: 0
   spawnPosition: {x: 0, y: 5, z: 0}
   spawned: 0
