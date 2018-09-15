@@ -10,7 +10,11 @@ TagManager:
   - Enemy_Sword
   - Enemy
   - Fire_Ball_Enemy
+<<<<<<< HEAD
   - Corpse
+=======
+  - NPCMarker
+>>>>>>> upstream/master
   layers:
   - Default
   - TransparentFX
