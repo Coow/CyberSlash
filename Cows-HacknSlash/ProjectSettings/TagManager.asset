@@ -10,6 +10,7 @@ TagManager:
   - Enemy_Sword
   - Enemy
   - Fire_Ball_Enemy
+  - Corpse
   - NPCMarker
   layers:
   - Default
