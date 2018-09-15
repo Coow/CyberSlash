@@ -5,7 +5,8 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour, ISpawnController {
 
     [Header("Rat Spawn")]
-    [SerializeField] private float RatAmount = 5;           // Amount of rate to be spawn.
+    // Amount of rats to be spawned.
+    [SerializeField] private float RatAmount = 5;           
     [SerializeField] private GameObject RatPrefab;
 
     // Spawn Rats at specified points.

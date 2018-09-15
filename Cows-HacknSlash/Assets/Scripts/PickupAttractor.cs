@@ -9,12 +9,10 @@ public class PickupAttractor : MonoBehaviour {
     public float accelRate = 1f;
     public float maxMoveSpeed = 50f;
 
-
     private bool moveToPlayer;
     private float moveTimer;
     private Rigidbody attractorPRB;
     private GameObject movingTarget;
-
 
     private void Awake()
     {
@@ -22,10 +20,8 @@ public class PickupAttractor : MonoBehaviour {
     }
 
     void Start ()
-    {
-		
+    {		
 	}
-	
 
 	void Update ()
     {
@@ -41,7 +37,7 @@ public class PickupAttractor : MonoBehaviour {
 
     private void OnTriggerEnter(Collider enteredCol)
     {
-        if (enteredCol.gameObject.tag == "Player")
+        if (enteredCol.gameObject.CompareTag("Player"))
         {
             attractorPRB.useGravity = false;
             movingTarget = enteredCol.gameObject;
@@ -52,7 +48,7 @@ public class PickupAttractor : MonoBehaviour {
 
     private void OnTriggerExit(Collider exitedCol)
     {
-        if (exitedCol.gameObject.tag == "Player")
+        if (exitedCol.gameObject.CompareTag("Player"))
         {
             attractorPRB.useGravity = true;
             movingTarget = null;

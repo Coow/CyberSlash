@@ -5,13 +5,15 @@ using UnityEngine.AI;
 
 public class RatBehaviour : MonoBehaviour {
 
-   
     [SerializeField]
-    private Transform Eyes;             // Spherecast will release ray from this transfrom.
+    // Spherecast will release ray from this transfrom.
+    private Transform Eyes;             
 
     [Header("Collision")]
-    [SerializeField] private float Raduis = 0.5f;      // Radius of Sphere Cast.
-    [SerializeField] private float RayLength = 10f;    // Length of Shpere Cast.
+    // Radius of Sphere Cast.
+    [SerializeField] private float Raduis = 0.5f;
+    // Length of Shpere Cast.
+    [SerializeField] private float RayLength = 10f;    
 
     [Header("Rotation Of Eye")]
     [SerializeField]
@@ -25,20 +27,17 @@ public class RatBehaviour : MonoBehaviour {
     private int _hitCount = 0;
     private bool _hitPlayer = false;
 
-    private void Start()
-    {
+    private void Start() {
         _agent = GetComponent<NavMeshAgent>();
     }
 
-    void Update()
-    {
-
+    void Update() {
         Debug.DrawRay(Eyes.transform.position, Eyes.forward.normalized * RayLength, Color.blue);
         
         RotateEye();
         moveAwayFromPlayer();
 
-        // if Sphere cast hit the player, let the rat move away from player.
+        // If Sphere cast hit the player, let the rat move away from player.
         if (Physics.SphereCast(Eyes.transform.position, Raduis, Eyes.forward, out _hit, RayLength)
            && _hit.collider.CompareTag("Player") && _hitCount == 0)
         {
@@ -50,8 +49,7 @@ public class RatBehaviour : MonoBehaviour {
     }
 
     // Method -> Move away rat from player. And let the rat destroy when it reached to specified position.
-    private void moveAwayFromPlayer()
-    {
+    private void moveAwayFromPlayer() {
         if (_hitPlayer)
         {
             var direction = (_playerPosition - transform.position).normalized;
@@ -66,13 +64,11 @@ public class RatBehaviour : MonoBehaviour {
     }
 
     // Method -> Rotating eye on y-axis, so it can detech collision from any angle.
-    private void RotateEye()
-    {
+    private void RotateEye() {
         Eyes.transform.Rotate(0, RotationSpeed * Time.deltaTime, 0);
     }
 
-    private void OnDrawGizmos()
-    {
+    private void OnDrawGizmos() {
         if (Eyes != null)
         {
             Gizmos.color = Color.green;
@@ -80,8 +76,7 @@ public class RatBehaviour : MonoBehaviour {
         }
     }
 
-    private void destory()
-    {
+    private void destory() {
         Destroy(this.gameObject);
     }
 }

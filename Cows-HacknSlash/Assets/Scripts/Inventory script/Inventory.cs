@@ -63,7 +63,7 @@ public class Inventory : MonoBehaviour {
                 break;
             }
             // If there is something in the slot and it's the same as the one you are trying to add.
-            else if (slot.GetComponent<Slot>().iteminit == Alltheitems[id].Name && !slot.GetComponent<Slot>().full)
+            else if (slot.GetComponent<Slot>().iteminit.Equals(Alltheitems[id].Name) && !slot.GetComponent<Slot>().full)
             {
                 slot.GetComponentInChildren<a_Item>().itemsinit += amount;
 

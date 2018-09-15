@@ -11,7 +11,7 @@ public class AttackAction : Action
     }
 
     // Method -> This will check if enemy is in specified range to the player,
-    // if in range enemy will start attacking according to attack rate.
+    // If in range enemy will start attacking according to attack rate.
     private void Attack(StateController controller)
     {
         RaycastHit hit;

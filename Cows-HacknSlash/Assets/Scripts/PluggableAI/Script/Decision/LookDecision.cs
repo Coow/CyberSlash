@@ -11,9 +11,8 @@ public class LookDecision : Decision
         return targetVisible;
     }
 
-    // Method -> It check does the ray hit the user.
-    // if hit chase him.
-    // else remain in state.
+    // Method -> It checks if the ray hit the user.
+    // If it does, chase him, else remain in current state.
     private bool Look(StateController controller)
     {
         RaycastHit hit;

@@ -30,7 +30,7 @@ public class NPCIndicator : MonoBehaviour {
 				{
 					GameObject marker = Instantiate(QuestionMark,new Vector3(), Quaternion.identity);
 					marker.transform.parent = gameObject.transform;
-					// Set the Prefab above the NPC
+					// Set the Prefab above the NPC.
 					marker.transform.position = (gameObject.transform.position + spawnPosition);
 					// If the prefab has a different scale, this can be done here.
 					// marker.transform.localScale = new Vector3(0.001f,0.001f,0.001f);
@@ -43,10 +43,10 @@ public class NPCIndicator : MonoBehaviour {
 			{	
 				DestroyMarker();
 				if (!spawned)
-					{	
+				{	
 					GameObject marker = Instantiate(ExlamationMark,new Vector3(), Quaternion.identity);
 					marker.transform.parent = gameObject.transform;
-					// Set the Prefab above the NPC
+					// Set the Prefab above the NPC.
 					marker.transform.position = (gameObject.transform.position + spawnPosition);
 					// If the prefab has a different scale, this can be done here.
 					// marker.transform.localScale = new Vector3(0.001f,0.001f,0.001f);
@@ -57,7 +57,7 @@ public class NPCIndicator : MonoBehaviour {
 			break;
 			case NPCStates.Passive:
 			{
-					DestroyMarker();
+				DestroyMarker();
 			}
 			break;
         }
@@ -67,7 +67,7 @@ public class NPCIndicator : MonoBehaviour {
 		Transform parentTransform = this.gameObject.transform;
 		spawned = false;
 
-		// Runs through every child of the NPC/Game object, and checks for NPCMarker tag, and deletes that one
+		// Runs through every child of the NPC/Game object, and checks for NPCMarker tag, and deletes that one.
 		foreach (Transform child in parentTransform)
 			if(child.CompareTag ("NPCMarker")){
 				Destroy(child.gameObject);

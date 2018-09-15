@@ -18,7 +18,7 @@ public class CorpseBehaviour : MonoBehaviour {
         _spawnController = GameObject.Find("Spawn_Manager").GetComponent<ISpawnController>();
     }
 
-    // Update is called once per frame
+    // Update is called once per frame.
     void Update () {
 
         // Check if this object (corpse) is being renderer by Camera.

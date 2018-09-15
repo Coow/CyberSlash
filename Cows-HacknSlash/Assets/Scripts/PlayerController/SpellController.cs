@@ -17,7 +17,6 @@ public class SpellController : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-
             if (StaffSelected == 1)
             {
                 var projectile = Instantiate(FireBall, SpawnPos.transform.position, Quaternion.identity);

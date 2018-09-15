@@ -63,7 +63,6 @@ public class PlayerManager : MonoBehaviour {
         }
     }
 
-
     private void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();
@@ -71,7 +70,7 @@ public class PlayerManager : MonoBehaviour {
 
     void Start ()
     {
-        //Setting all of the stats.
+        // Setting all of the stats.
         currentHealth = startingHealth;
         currentMAXHealth = startingHealth;
 
@@ -87,8 +86,6 @@ public class PlayerManager : MonoBehaviour {
         navAgent.speed = currentMovementSpeed;
 	}
 
-
-
     public void LevelUp()
     {
         currentHealth += growthHealth;
@@ -101,7 +98,7 @@ public class PlayerManager : MonoBehaviour {
 
     public void LevelUpCheck()
     {
-        //100 is just a placeholder for now. 
+        // HACK 100 is a placeholder. 
 
         if (experience >= 100f)
         {

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 // <summary>
-// if you want know more about this check this link.
+// If you want know more about this check this link.
 // Click <see href = "http://wiki.unity3d.com/index.php?title=IsVisibleFrom">here</see>
 // </summary>
 

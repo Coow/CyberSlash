@@ -4,11 +4,12 @@ namespace Enemy
 {
     public class EnemyHealth : MonoBehaviour
     {
-
-        public float StartingHealth = 100f;         // The amount of health each enemy starts with.
-
-        private float _currentHealth;               // How much health the enemy currently has.
-        private bool _isDead;                       // Has the enemy been reduced beyond zero health yet?
+        // The amount of health each enemy starts with.
+        public float StartingHealth = 100f;
+        // How much health the enemy currently has.
+        private float _currentHealth;
+        // Has the enemy been reduced beyond zero health yet?
+        private bool _isDead;                       
 
         private void Start()
         {

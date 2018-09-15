@@ -20,7 +20,6 @@ public class ClickToMove : MonoBehaviour {
 	
 	// Update is called once per frame.
 	void Update () {
-		
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit hit;
 

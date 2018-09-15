@@ -11,17 +11,13 @@ public class PickUpTrigger : MonoBehaviour {
 
     private float experienceToGive;
 
-
     void Start ()
     {
-		
 	}
-	
 
 	void Update ()
     {
-
-        //Debug
+        // HACK Debug.
         if (Input.GetKeyDown(KeyCode.X))
         {
             GiveDrops();
@@ -29,10 +25,9 @@ public class PickUpTrigger : MonoBehaviour {
 		
 	}
 
-
     private void OnTriggerEnter(Collider enteredCol)
     {
-        if (enteredCol.gameObject.tag == "Player")
+        if (enteredCol.gameObject.CompareTag("Player"))
         {
             objectsInZone.Add(enteredCol.gameObject);
         }
@@ -40,7 +35,7 @@ public class PickUpTrigger : MonoBehaviour {
 
     private void OnTriggerExit(Collider exitedCol)
     {
-        if (exitedCol.gameObject.tag == "Player")
+        if (exitedCol.gameObject.CompareTag("Player"))
         {
             objectsInZone.Remove(exitedCol.gameObject);
         }
@@ -48,7 +43,7 @@ public class PickUpTrigger : MonoBehaviour {
 
     public void GiveDrops()
     {
-        //Removes objects from the list that were destroyed while in the trigger zone. 
+        // Removes objects from the list that were destroyed while in the trigger zone. 
         for (int i = objectsInZone.Count - 1; i > -1; i--)
         {
             if (objectsInZone[i] == null)
@@ -59,7 +54,7 @@ public class PickUpTrigger : MonoBehaviour {
 
         if (objectsInZone.Count > 0)
         {
-            //We probably want to provide some bonus to larger parties when it comes to experience earnings. Otherwise there won't be much of a benefit to larger parties.
+            // We probably want to provide some bonus to larger parties when it comes to experience earnings. Otherwise there won't be much of a benefit to larger parties.
             experienceToGive = (experienceValue / objectsInZone.Count);
 
             foreach (GameObject currentObj in objectsInZone)

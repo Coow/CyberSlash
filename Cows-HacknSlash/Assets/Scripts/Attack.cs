@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class Attack
 {
-
     public float damageValue;
     public string damageType;
-
-
+    
     public Attack(float damageValue, string damageType)
     {
         this.damageValue = damageValue;

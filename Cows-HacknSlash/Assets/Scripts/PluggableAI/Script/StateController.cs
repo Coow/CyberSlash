@@ -7,11 +7,11 @@ using Enemy;
 public class StateController : MonoBehaviour {
 
     public State CurrentState;
-    public State RemainState;           // it mean null,
+    public State RemainState; 
     public Transform Eyes;
     public EnemyStats EnemyStats;
 
-    // i don't want that other thing to setup this data, though they are not meant
+    // I don't want that other thing to setup this data, though they are not meant
     // to be setup from inspector, they are declare public cause need to be use in 
     // other class.
     [HideInInspector] public NavMeshAgent Agent;
@@ -48,7 +48,7 @@ public class StateController : MonoBehaviour {
 
     private void Update()
     {
-        // if AI is not active return nothing
+        // If the AI is not active, return nothing.
         if (!_aiActive)
         {
             return;

@@ -28,7 +28,8 @@ public class FireTest : MonoBehaviour {
         {
             // Getting the mouse input position.
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            Plane plane = new Plane(Vector3.up, Vector3.zero); // Using a simple plane cause our camera is on top.
+            // Using a simple plane cause our camera is on top.
+            Plane plane = new Plane(Vector3.up, Vector3.zero); 
             float dist;
             if (plane.Raycast(ray, out dist))
             {

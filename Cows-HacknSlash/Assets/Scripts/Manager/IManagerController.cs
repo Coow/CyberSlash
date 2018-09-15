@@ -5,4 +5,3 @@ public interface ISpawnController
 {
     void SpawnRat(List<Transform> spawnPoints);
 }
-
