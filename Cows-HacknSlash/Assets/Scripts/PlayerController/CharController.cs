@@ -20,7 +20,6 @@ public class CharController : MonoBehaviour {
 	
 	// Update is called once per frame.
 	void Update () {
-		
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit hit;
 
@@ -50,9 +49,12 @@ public class CharController : MonoBehaviour {
 	}
 
     private void OnTriggerEnter(Collider other) {
-        if (other.tag == "Enemy_Sword") {
+        if (other.tag.Equals("Fire_Ball_Enemy")) {
             this.gameObject.SetActive(false);
-            //DestroyPlayer();
+        }
+
+        if (other.tag.Equals("Enemy_Sword")) {
+            this.gameObject.SetActive(false);
         }
     }
 

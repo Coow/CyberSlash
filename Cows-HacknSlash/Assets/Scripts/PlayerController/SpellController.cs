@@ -38,19 +38,19 @@ public class SpellController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 var projectile = Instantiate(FireBall, SpawnPos.transform.position, Quaternion.identity);
-                SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform);
+                SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform, true);
                 Destroy(projectile.gameObject, 5f);
             }
             else if (Input.GetKeyDown(KeyCode.R))
             {
                 var projectile = Instantiate(ice, SpawnPos.transform.position, Quaternion.identity);
-                SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform);
+                SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform, true);
                 Destroy(projectile.gameObject, 5f);
             }
             else if (Input.GetKeyDown(KeyCode.T))
             {
                 var projectile = Instantiate(poison, SpawnPos.transform.position, Quaternion.identity);
-                SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform);
+                SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform, true);
                 Destroy(projectile.gameObject, 5f);
             }
         }

@@ -10,20 +10,16 @@ public class a_Item : MonoBehaviour {
 
     public int itemsinit;
 
-    private void Awake()
-    {
+    private void Awake() {
         transform.position = transform.parent.position;
     }
-    private void FixedUpdate()
-    {
-        //show how many items u have
+
+    private void FixedUpdate() {
+        // Show how many items you have.
         GetComponentInChildren<TextMeshProUGUI>().text = itemsinit.ToString();
 
-        //set position too the parent
-        
-
-        if (itemdisplaying != null)
-        {
+        // Set position to the parent.
+        if (itemdisplaying != null) {
             gameObject.GetComponent<Image>().sprite = itemdisplaying.sprite;         
         }
     }

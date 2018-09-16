@@ -1,0 +1,4 @@
+Each folder in this room will have only 1 type of room in it.  
+For example: the file named T will only have variations of rooms with entrances/exits to the top.
+
+This is for orginizations sake, so please try to keep everything organised.

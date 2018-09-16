@@ -14,26 +14,31 @@ public class FireTest : MonoBehaviour {
     [SerializeField]
     private float WaitTime = 0f;
 
-    private Vector3 target;
+    private Vector3 _target;
 	
-    public void Shoot(Transform FirePrefab) {
-         StartCoroutine(FireMovement(FirePrefab));
+    public void Shoot(Transform spawnPoint, bool useMouseInput) {
+         StartCoroutine(FireMovement(spawnPoint, useMouseInput));
     }
 
-    private IEnumerator FireMovement(Transform FirePrefab) {
+    private IEnumerator FireMovement(Transform spawnPoint, bool useMouseInput) {
         yield return new WaitForSeconds(WaitTime);
-        FirePrefab.position = transform.position;
+        spawnPoint.position = transform.position;
 
-        // Getting the mouse input position.
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Plane plane = new Plane(Vector3.up, Vector3.zero); // Using a simple plane cause our camera is on top.
-        float dist;
-        if (plane.Raycast(ray, out dist)) {
-            target = ray.GetPoint(dist);
+        if (useMouseInput)
+        {
+            // Getting the mouse input position.
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            // Using a simple plane cause our camera is on top.
+            Plane plane = new Plane(Vector3.up, Vector3.zero); 
+            float dist;
+            if (plane.Raycast(ray, out dist))
+            {
+                _target = ray.GetPoint(dist);
+            }
         }
 
         // Calculate distance to target.
-        float target_Distance = Vector3.Distance(FirePrefab.position, target);
+        float target_Distance = Vector3.Distance(spawnPoint.position, _target);
 
         // Calculate the velocity needed to throw the object to the target at specified angle.
         float velocity = target_Distance / (Mathf.Sin(2 * FiringAngle * Mathf.Deg2Rad) / Gravity);
@@ -46,18 +51,23 @@ public class FireTest : MonoBehaviour {
         float flightDutation = target_Distance / 2;
 
         // Rotate object to face the target.
-        FirePrefab.rotation = Quaternion.LookRotation(target - FirePrefab.position);
+        spawnPoint.rotation = Quaternion.LookRotation(_target - spawnPoint.position);
 
         float elapsed_time = 0;
 
         while (elapsed_time < flightDutation) {
-            if (FirePrefab != null) {
-                FirePrefab.Translate(0f, (y - (Gravity * elapsed_time)) * Time.deltaTime, x * Time.deltaTime);
+            if (spawnPoint != null) {
+                spawnPoint.Translate(0f, (y - (Gravity * elapsed_time)) * Time.deltaTime, x * Time.deltaTime);
             }
             elapsed_time += Time.deltaTime;
             yield return null;
         }
 
+    }
+
+    public void FollowTarget(Vector3 target)
+    {
+        this._target = target;
     }
 
 }
