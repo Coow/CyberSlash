@@ -8,13 +8,12 @@ public class NavigationBaker : MonoBehaviour {
     [Header("Navmesh Surfaces")]
     [Tooltip("Drag all the surfaces you want to bake at runtime here")]
     public NavMeshSurface[] surfaces;
-
-    // Use this for initialization
+    
     void Start () 
     {
         for (int i = 0; i < surfaces.Length; i++) 
         {
-            surfaces [i].BuildNavMesh ();   
+            surfaces [i].BuildNavMesh();   
         }   
     }
 
