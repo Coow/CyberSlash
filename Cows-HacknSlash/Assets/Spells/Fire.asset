@@ -13,4 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Fire
   material: {fileID: 2100000, guid: 7a7461faadf263f4e97dae9c0d2241b2, type: 2}
-  damage: 15
+  damage: 5
+  initialDamage: 10
+  isTickingDamage: 1
+  duration: 3

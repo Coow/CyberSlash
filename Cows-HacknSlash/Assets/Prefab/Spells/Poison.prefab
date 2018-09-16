@@ -25,7 +25,6 @@ GameObject:
   - component: {fileID: 136819551604624296}
   - component: {fileID: 54991979215145536}
   - component: {fileID: 114183353447147466}
-  - component: {fileID: 114333012249072772}
   - component: {fileID: 96761760700480900}
   m_Layer: 0
   m_Name: Poison
@@ -58,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1365834029318722}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 29.64, y: 5.2, z: 6.55}
+  m_LocalPosition: {x: 47.64, y: 5.2, z: -23.5}
   m_LocalScale: {x: 0.5031, y: 0.5031, z: 0.5031}
   m_Children:
   - {fileID: 4438943030366362}
@@ -300,18 +299,6 @@ MonoBehaviour:
   m_MultiplierMax: 1.71
   m_Octaves: 5
   m_Speed: 3.48
---- !u!114 &114333012249072772
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1365834029318722}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6f855e45848a6947affa9288658fcb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 50
 --- !u!122 &122916166040715956
 Halo:
   m_ObjectHideFlags: 1

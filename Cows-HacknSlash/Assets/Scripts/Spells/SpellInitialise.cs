@@ -18,10 +18,19 @@ public class SpellInitialise : MonoBehaviour
 
     }
 
-    void OnTriggerEnter(Collider other)
+    public void Damage(Enemy.EnemyHealth enemy)
+    {
+        spell.Damage(enemy);
+        if(spell.isTickingDamage){
+            StartCoroutine(spell.DoTickingDamage(enemy));
+        }
+        
+    }
+
+    void OnTriggerEnter()
     {
         // When it collides with something, call the damage the player.
-        spell.Damage();
+
     }
 
 }

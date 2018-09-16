@@ -7,21 +7,24 @@ namespace Enemy
         // The amount of health each enemy starts with.
         public float StartingHealth = 100f;
         // How much health the enemy currently has.
-        private float _currentHealth;
+        public float _currentHealth;
         // Has the enemy been reduced beyond zero health yet?
-        private bool _isDead;                       
+        private bool _isDead;
+        public TextMesh healthText;                       
 
         private void Start()
         {
             _currentHealth = StartingHealth;
             _isDead = false;
+            healthText.text = "Health: " + _currentHealth.ToString();
         }
 
-        public void TakeDamage(float amount)
+        public void TakeDamage(Collider other)
         {
             // Reduce current health by the amount of damage done.
-            _currentHealth -= amount;
-
+            var spell = other.GetComponent<SpellInitialise>();
+            spell.Damage(this);
+            healthText.text = "Health: " + _currentHealth.ToString();
             // if current health is at zero or below, call onDeath
             if (_currentHealth <= 0f)
             {
@@ -29,7 +32,7 @@ namespace Enemy
             }
         }
 
-        private void OnDeath()
+        public void OnDeath()
         {
             Destroy(this.gameObject);
         }

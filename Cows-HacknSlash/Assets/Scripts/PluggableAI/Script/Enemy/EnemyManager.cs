@@ -31,7 +31,7 @@ namespace Enemy {
         {
             if (other.tag.Equals("Fire_Ball"))
             {
-                _enemyHealth.TakeDamage(50f);
+                _enemyHealth.TakeDamage(other);
                 print("Get Hit");
             }
         }

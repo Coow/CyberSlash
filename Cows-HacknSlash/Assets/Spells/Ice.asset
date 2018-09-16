@@ -13,4 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Ice
   material: {fileID: 2100000, guid: cf2a643e22ae3644a8af6fefffbe1e4d, type: 2}
-  damage: 10
+  damage: 30
+  isTickingDamage: 0
+  speed: 0

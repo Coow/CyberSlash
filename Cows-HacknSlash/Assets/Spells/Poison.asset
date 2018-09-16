@@ -14,3 +14,6 @@ MonoBehaviour:
   name: Poison
   material: {fileID: 2100000, guid: 0853083389d54964db06993e775c2a87, type: 2}
   damage: 5
+  initialDamage: 10
+  isTickingDamage: 1
+  duration: 3

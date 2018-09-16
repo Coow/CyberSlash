@@ -25,7 +25,6 @@ GameObject:
   - component: {fileID: 136076307668596006}
   - component: {fileID: 54310662517319702}
   - component: {fileID: 114292865708927902}
-  - component: {fileID: 114380523362117416}
   - component: {fileID: 96696452434485772}
   m_Layer: 0
   m_Name: Ice
@@ -71,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1357231631288138}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 29.64, y: 5.2, z: 2.55}
+  m_LocalPosition: {x: 47.64, y: 5.2, z: -27.5}
   m_LocalScale: {x: 0.5031, y: 0.5031, z: 0.5031}
   m_Children:
   - {fileID: 4500361170759744}
@@ -285,18 +284,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spell: {fileID: 11400000, guid: 485f9d16871ae804bbb92654870b3252, type: 2}
---- !u!114 &114380523362117416
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1357231631288138}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6f855e45848a6947affa9288658fcb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 50
 --- !u!114 &114745334843557656
 MonoBehaviour:
   m_ObjectHideFlags: 1
