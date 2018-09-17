@@ -14,15 +14,52 @@ public class Inventory : MonoBehaviour {
 
     public GameObject Backpack;
 
+    public GameObject Slotselector;
+
+    public int slotselected;
+
+    public TextMeshProUGUI slotinfo;
+
     private void Awake()
     {
         Backpack.SetActive(false);
     }
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Slotselector.transform.position = Slots[0].transform.position;
+            slotselected = 0;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            Slotselector.transform.position = Slots[1].transform.position;
+            slotselected = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            Slotselector.transform.position = Slots[2].transform.position;
+            slotselected = 2;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            Slotselector.transform.position = Slots[3].transform.position;
+            slotselected = 3;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            Slotselector.transform.position = Slots[4].transform.position;
+            slotselected = 4;
+        }
+
+        //Set the info bar too what item selected name is
+        slotinfo.text = Slots[slotselected].GetComponent<Slot>().iteminit;
+
+
+
         if (Input.GetKeyDown(KeyCode.P))
         {
-            Additem(0, 1);
+            Additem(2, 1);
         }
         if (Input.GetKeyDown(KeyCode.A))
         {

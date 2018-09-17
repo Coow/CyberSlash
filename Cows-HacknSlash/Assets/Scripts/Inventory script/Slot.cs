@@ -21,6 +21,7 @@ public class Slot : MonoBehaviour {
         if (transform.childCount == 0)
         {
             somethingin = false;
+            iteminit = "None";
         }
     }
      

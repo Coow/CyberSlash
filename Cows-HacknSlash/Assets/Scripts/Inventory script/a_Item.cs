@@ -76,7 +76,7 @@ public class a_Item : MonoBehaviour {
     //when you are holding the item and touch another slot make that slot the parent
    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Item_Slot")
+        if(collision.gameObject.tag == "Item_Slot" && !collision.gameObject.GetComponent<Slot>().somethingin)
         {
             GetComponentInParent<Slot>().somethingin = false;
             GetComponentInParent<Slot>().full = false;

@@ -6,6 +6,7 @@ public class Additem : MonoBehaviour {
 
     public Inventory invenscript;
 
+    
     public int ObjectID;
 
     public int Objectamount = 1;
