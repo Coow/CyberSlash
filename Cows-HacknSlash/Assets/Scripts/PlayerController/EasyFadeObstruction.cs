@@ -81,7 +81,7 @@ public class EasyFadeObstruction : MonoBehaviour {
 		try {
 			direction = playerObject.transform.position - transform.position;
 		} catch(UnassignedReferenceException e) {
-			Debug.LogWarning(e.GetType()+": GameObject not assigned to playerObject variable in EasyFadeObstruction.");
+			Debug.LogWarning(e.GetType() + ": GameObject not assigned to playerObject variable in EasyFadeObstruction.");
 			this.enabled = false;
 		}
 		distance = direction.magnitude - fadeRadius + fadeDistanceOffset;
@@ -95,10 +95,10 @@ public class EasyFadeObstruction : MonoBehaviour {
 			    foreach (RaycastHit h in hits) {
 				    if (h.collider.gameObject.GetComponent<Renderer>() != null) {
 					    fadeSet.Add(h.collider.gameObject);
-					    //h.collider.gameObject.GetComponent<Renderer>().enabled = false;
+					    // h.collider.gameObject.GetComponent<Renderer>().enabled = false;
 					    makeTransparent(h.collider.gameObject.GetComponent<Renderer>());
 					
-					    //Set layermask back to Ground.
+					    // Set layermask back to Ground.
 					    h.collider.gameObject.layer = 9;
 				    }
 			    }
@@ -163,6 +163,7 @@ public class EasyFadeObstruction : MonoBehaviour {
 			fadeSet.Clear(); 
 		}
 	}
+
 	// Update is called once per frame.
 	void FixedUpdate () {
 		fadeBlockingObjects();

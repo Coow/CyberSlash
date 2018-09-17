@@ -56,13 +56,14 @@ public class a_Item : MonoBehaviour {
         }
     }
 
-    private void FixedUpdate()
-    {
-        //show how many items u have
+
+    private void FixedUpdate() {
+        // Show how many items you have.
         GetComponentInChildren<TextMeshProUGUI>().text = itemsinit.ToString();
 
-        if (itemdisplaying != null)
-        {
+        // Set position to the parent.
+        if (itemdisplaying != null) {
+
             gameObject.GetComponent<Image>().sprite = itemdisplaying.sprite;         
         }
 

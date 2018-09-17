@@ -4,22 +4,23 @@ using UnityEngine;
 
 public class Additem : MonoBehaviour {
 
-    public Inventory invenscript;
+    public Inventory inventory;
 
     
     public int ObjectID;
 
     public int Objectamount = 1;
+
 	void Start () {
-        invenscript = GameObject.Find("PlayerCharacter/char").GetComponent<Inventory>();
+        inventory = GameObject.Find("PlayerCharacter/char").GetComponent<Inventory>();
 	}
 
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag.Equals("Player"))
         {
-            invenscript.Additem(ObjectID, Objectamount);
+            inventory.Additem(ObjectID, Objectamount);
             Destroy(gameObject);
         }
     }
