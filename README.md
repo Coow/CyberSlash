@@ -5,8 +5,9 @@ Updates will be made on the version, once stable builds of Unity are released
 
 Multiplayer 3D Top-Down Hack N' Slash Game for; Windows, iOS and Linux
 
-(Game Design Doc WIP)[https://docs.google.com/document/d/1efqXgjajaEB8XXEQDPFiBsHdwfwno5MTNYbWqtctqqQ/edit?usp=sharing]
-(Task Spreadsheet)[https://docs.google.com/spreadsheets/d/1_9GojqTcnHBSy8lZDnV2v1iqEkBkA65GNwBtfiDgYKc/edit#gid=573005079]
+- [Game Design Doc WIP](https://docs.google.com/document/d/1efqXgjajaEB8XXEQDPFiBsHdwfwno5MTNYbWqtctqqQ/edit?usp=sharing)
+
+- [Task Spreadsheet](https://docs.google.com/spreadsheets/d/1_9GojqTcnHBSy8lZDnV2v1iqEkBkA65GNwBtfiDgYKc/edit#gid=573005079)
 
 Art style:
 = 
