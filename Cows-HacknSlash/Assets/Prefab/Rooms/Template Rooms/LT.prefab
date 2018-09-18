@@ -19,12 +19,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4851468581376538}
-  m_Layer: 13
+  - component: {fileID: 114197207017946834}
+  m_Layer: 15
   m_Name: LT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1587566834727926
 GameObject:
@@ -37,12 +38,12 @@ GameObject:
   - component: {fileID: 33772292167280104}
   - component: {fileID: 23756066678969986}
   - component: {fileID: 65213775363177102}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!1 &1886170826051062
 GameObject:
@@ -55,12 +56,12 @@ GameObject:
   - component: {fileID: 33211048102152822}
   - component: {fileID: 23555706086133746}
   - component: {fileID: 65540199585687828}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4049534023911732
 Transform:
@@ -96,7 +97,7 @@ Transform:
   m_GameObject: {fileID: 1026295035094308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_Children:
   - {fileID: 4325550503895374}
   - {fileID: 4049534023911732}
@@ -211,3 +212,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114197207017946834
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1026295035094308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff

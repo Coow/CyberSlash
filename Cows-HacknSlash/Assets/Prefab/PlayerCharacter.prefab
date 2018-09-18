@@ -106,13 +106,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1638138513263084}
-  m_LocalRotation: {x: -0.099133514, y: 0.83970696, z: -0.50816405, w: -0.1638115}
-  m_LocalPosition: {x: -476.74005, y: 547.4682, z: 148.60083}
-  m_LocalScale: {x: 13.711062, y: 7.0029283, z: 6.096592}
+  m_LocalRotation: {x: -0.09913351, y: 0.8397069, z: -0.508164, w: -0.1638115}
+  m_LocalPosition: {x: 9.6, y: 54.3, z: 23.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4992103162542776}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 41.929, y: -0.115, z: 0.030000001}
+  m_LocalEulerAnglesHint: {x: 62.362003, y: -157.923, z: 0}
 --- !u!4 &4379758192509650
 Transform:
   m_ObjectHideFlags: 1
@@ -145,8 +145,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1481924574175844}
-  m_LocalRotation: {x: -0, y: 0.90709895, z: -0, w: 0.4209176}
-  m_LocalPosition: {x: -487.85007, y: 491.01825, z: 121.209175}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4556544625833090}
@@ -161,7 +161,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1964879969324646}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 111.7, y: -95.35, z: -17.81}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 4012722761698424}
@@ -191,7 +191,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 90
+  field of view: 80
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -285,7 +285,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnPos: {fileID: 1704014934598326}
-  FireBall: {fileID: 1256920332960248, guid: 8960109136f5f7e4e8961928acc61e51, type: 2}
+  FireBall: {fileID: 0}
+  selectedText: {fileID: 0}
+  ice: {fileID: 0}
+  poison: {fileID: 0}
   StaffSelected: 1
 --- !u!114 &114532459605914202
 MonoBehaviour:
@@ -341,7 +344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 2871
+    m_Bits: 16384
   cursorClick: {fileID: 1210913089688338, guid: 62b4f4381e8c24547a12b8fb2734731a,
     type: 2}
   cursorOffset: {x: 0, y: 0.1, z: 0}

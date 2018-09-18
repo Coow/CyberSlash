@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class DungeonGenerator : MonoBehaviour {
 
@@ -14,6 +15,10 @@ public class DungeonGenerator : MonoBehaviour {
     [Header("Other generation factors")]
     public int ChanceToGoBack;
 
+    public GameObject Player;
+
+    private NavMeshSurface surface;
+
     void Start()
     {
         StartCoroutine("GenerateDungeon");
@@ -24,10 +29,13 @@ public class DungeonGenerator : MonoBehaviour {
         // Loads the dungeon.
         bool[,] roomLayout = new bool[(int)DungeonSize.x, (int)DungeonSize.y];
         Vector2 currentPos = new Vector2(DungeonSize.x / 2, DungeonSize.y / 2);
+        //For Navmesh Later
+        Vector2 startPos = currentPos;
 
         // Spawn the ground.
         GameObject ground = Instantiate(Ground, new Vector3(currentPos.x * RoomSize.x, 0, currentPos.y * RoomSize.x), Quaternion.identity, this.transform);
-        ground.transform.localScale = new Vector3((RoomCount * RoomSize.x), 1, (RoomCount * RoomSize.y));
+        ground.transform.localScale = new Vector3(DungeonSize.x / 10, 1, DungeonSize.x / 10);
+        surface = ground.gameObject.GetComponent<NavMeshSurface>();
 
         // Start spawning the dungeon.
         for (int i = 0; i < RoomCount; i++)
@@ -80,6 +88,17 @@ public class DungeonGenerator : MonoBehaviour {
                 }
             }
         }
+        //Navmesh Code
+        Vector2 groundPos;
+
+        groundPos.x = (startPos.x + currentPos.x) / 2;
+        groundPos.y = (startPos.y + currentPos.y) / 2;
+
+        ground.transform.position = new Vector3(groundPos.x * RoomSize.x, 0, groundPos.y * RoomSize.y);
+        surface.BuildNavMesh();
+
+        //Spawn The Player
+        Instantiate(Player, new Vector3(startPos.x * RoomSize.x, 1, startPos.y * RoomSize.y), Quaternion.identity);
     }
 
     void SpawnRoom(int x, int y, bool[,] roomLayout)
