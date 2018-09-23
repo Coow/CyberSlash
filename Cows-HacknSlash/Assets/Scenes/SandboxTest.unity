@@ -109,7 +109,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    accuratePlacement: 1
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 7237879f0bd0d0640a41a9d2d6e74f44, type: 2}
@@ -765,11 +765,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4992103162542776, guid: 54ae127340cc41d4ca369dea44ec0125, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 111.7
+      value: -1.4
       objectReference: {fileID: 0}
     - target: {fileID: 4992103162542776, guid: 54ae127340cc41d4ca369dea44ec0125, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -95.35
+      value: 2.87
       objectReference: {fileID: 0}
     - target: {fileID: 4992103162542776, guid: 54ae127340cc41d4ca369dea44ec0125, type: 2}
       propertyPath: m_LocalPosition.z
@@ -826,6 +826,16 @@ Prefab:
       propertyPath: selectedText
       value: 
       objectReference: {fileID: 1701725478}
+    - target: {fileID: 195570484653539168, guid: 54ae127340cc41d4ca369dea44ec0125,
+        type: 2}
+      propertyPath: m_BaseOffset
+      value: 11.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 114726114675348132, guid: 54ae127340cc41d4ca369dea44ec0125,
+        type: 2}
+      propertyPath: layerMask.m_Bits
+      value: 59955
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114732502256682990, guid: 54ae127340cc41d4ca369dea44ec0125, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 54ae127340cc41d4ca369dea44ec0125, type: 2}
@@ -846,7 +856,8 @@ GameObject:
   - component: {fileID: 483571997}
   - component: {fileID: 483571996}
   - component: {fileID: 483571995}
-  m_Layer: 9
+  - component: {fileID: 483571999}
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -920,6 +931,34 @@ Transform:
   m_Father: {fileID: 1362351418}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &483571999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 483571994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 1479372276
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_BuildHeightMesh: 0
+  m_NavMeshData: {fileID: 23800000, guid: 4c6b74100e2b4544ab56f052561a9950, type: 2}
 --- !u!1 &485198821
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,7 +1263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartingHealth: 100
   _currentHealth: 0
-  healthText: {fileID: 1660250696}
+  healthText: {fileID: 0}
 --- !u!114 &621512779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2265,7 +2304,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1.97
-  m_BaseOffset: 1
+  m_BaseOffset: 1.15
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!136 &1225392105
@@ -2336,7 +2375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartingHealth: 100
   _currentHealth: 0
-  healthText: {fileID: 315094521}
+  healthText: {fileID: 0}
 --- !u!114 &1225392109
 MonoBehaviour:
   m_ObjectHideFlags: 0
