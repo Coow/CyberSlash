@@ -29,7 +29,7 @@ public class DiscordController : MonoBehaviour
 
     public void OnClick()
     {
-        Debug.Log("Discord: on click!");
+        //Debug.Log("Discord: on click!");
         clickCounter++;
 
         presence.details = string.Format("Button clicked {0} times", clickCounter);
@@ -39,14 +39,14 @@ public class DiscordController : MonoBehaviour
 
     public void RequestRespondYes()
     {
-        Debug.Log("Discord: responding yes to Ask to Join request");
+        //Debug.Log("Discord: responding yes to Ask to Join request");
         DiscordRpc.Respond(joinRequest.userId, DiscordRpc.Reply.Yes);
         hasResponded.Invoke();
     }
 
     public void RequestRespondNo()
     {
-        Debug.Log("Discord: responding no to Ask to Join request");
+        //Debug.Log("Discord: responding no to Ask to Join request");
         DiscordRpc.Respond(joinRequest.userId, DiscordRpc.Reply.No);
         hasResponded.Invoke();
     }
@@ -54,41 +54,41 @@ public class DiscordController : MonoBehaviour
     public void ReadyCallback()
     {
         ++callbackCalls;
-        Debug.Log("Discord: ready");
+        //Debug.Log("Discord: ready");
         onConnect.Invoke();
     }
 
     public void DisconnectedCallback(int errorCode, string message)
     {
         ++callbackCalls;
-        Debug.Log(string.Format("Discord: disconnect {0}: {1}", errorCode, message));
+        //Debug.Log(string.Format("Discord: disconnect {0}: {1}", errorCode, message));
         onDisconnect.Invoke();
     }
 
     public void ErrorCallback(int errorCode, string message)
     {
         ++callbackCalls;
-        Debug.Log(string.Format("Discord: error {0}: {1}", errorCode, message));
+        //Debug.Log(string.Format("Discord: error {0}: {1}", errorCode, message));
     }
 
     public void JoinCallback(string secret)
     {
         ++callbackCalls;
-        Debug.Log(string.Format("Discord: join ({0})", secret));
+        //Debug.Log(string.Format("Discord: join ({0})", secret));
         onJoin.Invoke(secret);
     }
 
     public void SpectateCallback(string secret)
     {
         ++callbackCalls;
-        Debug.Log(string.Format("Discord: spectate ({0})", secret));
+        //Debug.Log(string.Format("Discord: spectate ({0})", secret));
         onSpectate.Invoke(secret);
     }
 
     public void RequestCallback(ref DiscordRpc.JoinRequest request)
     {
         ++callbackCalls;
-        Debug.Log(string.Format("Discord: join request {0}#{1}: {2}", request.username, request.discriminator, request.userId));
+        //Debug.Log(string.Format("Discord: join request {0}#{1}: {2}", request.username, request.discriminator, request.userId));
         joinRequest = request;
         onJoinRequest.Invoke(request);
     }
