@@ -28,7 +28,10 @@ Thank you for even considering joining the project. I truly appriciate every sin
 3) It simply did not fit the game. 
 If 1 or 3 is the case, please don't be discouraged. I still appriciate the effort and work you put in and I hope to see another addition from you. 
 Point 1 does not apply to rewrites of code or redoings of models or other assets. The original creator of said asset will still be credited. Don't take this as a "Wow, how rude! He replaced my <insert asset here>!". Rather take it as an opportunity to see what you could potentionally improve or something that you could have done in a different way.
-    
+
+### Dependencies
+[Discord Rich Presence](https://github.com/Imperium42/discord-rpc-unity)
+
 ### CODE
 - Please keep everything to:
 <img src="https://cdn.discordapp.com/attachments/454231546858176512/487641175843405835/Terminology.png" alt="drawing" width="150"/>
