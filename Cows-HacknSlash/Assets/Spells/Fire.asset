@@ -17,3 +17,4 @@ MonoBehaviour:
   initialDamage: 10
   isTickingDamage: 1
   duration: 3
+  cooldownPeriod: 0.8

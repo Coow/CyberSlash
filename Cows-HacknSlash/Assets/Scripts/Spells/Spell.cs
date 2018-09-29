@@ -14,6 +14,8 @@ public class Spell : ScriptableObject
     public float initialDamage;
     public bool isTickingDamage;
     public float duration = 3f;
+    public float cooldownPeriod = 1f;
+    public float timeStamp;
 
     public void Damage(Enemy.EnemyHealth enemy)
     {
@@ -27,6 +29,7 @@ public class Spell : ScriptableObject
             else
             {
                 enemy._currentHealth -= initialDamage;
+                DoTickingDamage(enemy);
             }
             if (enemy._currentHealth <= 0f)
             {
