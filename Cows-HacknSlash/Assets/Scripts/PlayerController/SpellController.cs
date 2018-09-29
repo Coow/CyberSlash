@@ -20,6 +20,7 @@ public class SpellController : MonoBehaviour
     [Tooltip("0 == null; 1 == FireStaff")]
     [SerializeField]
     private int StaffSelected;
+    public float cooldownPeriod = 1f;
 
     void Update()
     {
@@ -35,20 +36,23 @@ public class SpellController : MonoBehaviour
         }
         if (StaffSelected == 1)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && FireBall.GetComponent<SpellInitialise>().spell.timeStamp <= Time.time)
             {
+                FireBall.GetComponent<SpellInitialise>().spell.timeStamp = Time.time + FireBall.GetComponent<SpellInitialise>().spell.cooldownPeriod;
                 var projectile = Instantiate(FireBall, SpawnPos.transform.position, Quaternion.identity);
                 SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform, true);
                 Destroy(projectile.gameObject, 5f);
             }
-            else if (Input.GetKeyDown(KeyCode.R))
+            else if (Input.GetKeyDown(KeyCode.R) && ice.GetComponent<SpellInitialise>().spell.timeStamp <= Time.time)
             {
+                ice.GetComponent<SpellInitialise>().spell.timeStamp = Time.time + ice.GetComponent<SpellInitialise>().spell.cooldownPeriod;
                 var projectile = Instantiate(ice, SpawnPos.transform.position, Quaternion.identity);
                 SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform, true);
                 Destroy(projectile.gameObject, 5f);
             }
-            else if (Input.GetKeyDown(KeyCode.T))
+            else if (Input.GetKeyDown(KeyCode.T) && poison.GetComponent<SpellInitialise>().spell.timeStamp <= Time.time)
             {
+                poison.GetComponent<SpellInitialise>().spell.timeStamp = Time.time + poison.GetComponent<SpellInitialise>().spell.cooldownPeriod;
                 var projectile = Instantiate(poison, SpawnPos.transform.position, Quaternion.identity);
                 SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform, true);
                 Destroy(projectile.gameObject, 5f);

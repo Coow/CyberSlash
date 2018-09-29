@@ -14,5 +14,7 @@ MonoBehaviour:
   name: Ice
   material: {fileID: 2100000, guid: cf2a643e22ae3644a8af6fefffbe1e4d, type: 2}
   damage: 30
+  initialDamage: 0
   isTickingDamage: 0
-  speed: 0
+  duration: 3
+  cooldownPeriod: 2

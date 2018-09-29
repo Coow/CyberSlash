@@ -27,10 +27,4 @@ public class SpellInitialise : MonoBehaviour
         
     }
 
-    void OnTriggerEnter()
-    {
-        // When it collides with something, call the damage the player.
-
-    }
-
 }
