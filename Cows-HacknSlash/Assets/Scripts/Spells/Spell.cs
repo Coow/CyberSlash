@@ -17,6 +17,10 @@ public class Spell : ScriptableObject
     public float cooldownPeriod = 1f;
     public float timeStamp;
 
+    public void Start(){
+        timeStamp = 0;
+    }
+    
     public void Damage(Enemy.EnemyHealth enemy)
     {
         if (enemy != null)

@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 96243988333325332}
   m_Layer: 0
   m_Name: FireBall_Enemy
-  m_TagString: Fire_Ball_Enemy
+  m_TagString: SpellBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

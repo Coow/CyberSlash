@@ -12,6 +12,8 @@ TagManager:
   - Fire_Ball_Enemy
   - Corpse
   - NPCMarker
+  - SpellBall
+  - Boss
   layers:
   - Default
   - TransparentFX

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -311,9 +311,9 @@ MonoBehaviour:
     Rooms:
     - {fileID: 1954552516955852, guid: fe30bfe07c293a0479cca85fccfbbed1, type: 2}
   Ground: {fileID: 1430163534829968, guid: 21cbfa7a81d459144a5645d82b7cc17b, type: 2}
-  DungeonSize: {x: 1000, y: 1000}
+  DungeonSize: {x: 2000, y: 2000}
   RoomSize: {x: 8.5, y: 8.5}
-  RoomCount: 20
+  RoomCount: 50
   ChanceToGoBack: 0
   Player: {fileID: 1964879969324646, guid: 54ae127340cc41d4ca369dea44ec0125, type: 2}
 --- !u!1 &2048355944

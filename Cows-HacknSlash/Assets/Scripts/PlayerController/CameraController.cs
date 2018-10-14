@@ -45,7 +45,7 @@
     void Update() {
         float fov = Camera.main.fieldOfView;
         fov += Input.GetAxis("Mouse ScrollWheel") * -Sensitivity;
-        fov = Mathf.Clamp(fov, 30f, 90f);
+        fov = Mathf.Clamp(fov, 30f, 110f);
         Camera.main.fieldOfView = fov;
     }
 }

@@ -22,6 +22,12 @@ public class SpellController : MonoBehaviour
     private int StaffSelected;
     public float cooldownPeriod = 1f;
 
+    public void Start(){
+        FireBall.GetComponent<SpellInitialise>().spell.timeStamp = 0;
+        ice.GetComponent<SpellInitialise>().spell.timeStamp = 0;
+        poison.GetComponent<SpellInitialise>().spell.timeStamp = 0;
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
