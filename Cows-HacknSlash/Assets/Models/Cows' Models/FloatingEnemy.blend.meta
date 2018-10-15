@@ -41,6 +41,9 @@ ModelImporter:
     4300004: Icosphere
     7400000: Default Take
     9500000: //RootNode
+    13700000: Cube
+    13700002: Cube_001
+    13700004: Icosphere
   externalObjects: {}
   materials:
     importMaterials: 1

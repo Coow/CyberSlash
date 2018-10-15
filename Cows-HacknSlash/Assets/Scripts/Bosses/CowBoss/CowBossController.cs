@@ -24,17 +24,20 @@ public class CowBossController : MonoBehaviour {
 	[Header("Shake")]
 	private GameObject shakeDamageObject;
 	private Animator shakeAnimator;
-
-	// Failsafe, to make sure the shake object does go to shit.
+	// Failsafe, to make sure the shake object doesnt go to shit.
 	private bool ShakeEnabled = true;
+
+	[Header("Growl")]
+	private GameObject growlDamageObject;
+	private Animator growlAnimator;
+	// Failsafe, to make sure the growl object doesnt go to shit.
+	private bool GrowlEnabled = true;
 
 	void Start () {
 		navMeshAgent = GetComponent<NavMeshAgent>();
 		animator = GetComponent<Animator>();
 		
 		shakeDamageObject = this.gameObject.transform.GetChild(0).gameObject;
-		
-
 		shakeDamageObject.SetActive(false);
 
 		if (!shakeDamageObject.name.Equals("ShakeHit")){
@@ -43,6 +46,17 @@ public class CowBossController : MonoBehaviour {
 		} else {
 			// Set the animator of it!
 			shakeAnimator = shakeDamageObject.GetComponent<Animator>();
+		}
+
+		growlDamageObject = this.gameObject.transform.GetChild(1).gameObject;
+		growlDamageObject.SetActive(false);
+
+		if (!growlDamageObject.name.Equals("GrowlHit")){
+			Debug.LogError("GrowlHitObject has not been set properly. Make sure the GrowlHit Object is the 2nd child of the CowBoss");
+			GrowlEnabled = false;
+		} else {
+			// Set the animator of it!
+			growlAnimator = growlDamageObject.GetComponent<Animator>();
 		}
 
 		// Calculate the tickrate.
@@ -71,6 +85,9 @@ public class CowBossController : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.S)){
 			Shake();
 		}
+		if (Input.GetKeyDown(KeyCode.G)){
+			Growl();
+		}
 	}
 	
 	// Randomly select a target.
@@ -86,14 +103,19 @@ public class CowBossController : MonoBehaviour {
 	// Do the stomp!
 	public void Stomp()
 	{
-
-
+		
 	}
 
 	// Rawr xD
 	public void Growl()
 	{
-
+		// Fail safe
+		if (GrowlEnabled == false){
+			growlDamageObject.SetActive(false);
+			return;
+		}
+		growlDamageObject.SetActive(true);
+		growlAnimator.SetTrigger("GROWL");
 	}
 
 	// Do the harlem shake!
