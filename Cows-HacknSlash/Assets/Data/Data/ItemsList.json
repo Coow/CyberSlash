@@ -1,0 +1,18 @@
+[
+		{
+			"Id":0,
+			"MaxStack":5,
+			"Name":"Apple",
+			"Description":"Fun to eat",
+			"Image":"Images/apple",
+			"Slot":"Standard"
+		},
+		{
+			"Id":1,
+			"MaxStack":1,
+			"Name":"Bread",
+			"Description":"Best food ever",
+			"Image":"Images/bread2",
+			"Slot":"Standard"
+		}
+]

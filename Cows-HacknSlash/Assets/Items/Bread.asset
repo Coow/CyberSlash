@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61db704457702f745b18b0dfd44f43f6, type: 3}
   m_Name: Bread
   m_EditorClassIdentifier: 
+  Id: 1
   Name: Bread
   sprite: {fileID: 21300000, guid: 7940bd8709effad48a09e16830f5fd7b, type: 3}
   description: Best food ever
