@@ -1,5 +1,9 @@
 [
 		{
+			"Id":-1,
+			"MaxStack":0
+		},
+		{
 			"Id":0,
 			"MaxStack":5,
 			"Name":"Apple",
