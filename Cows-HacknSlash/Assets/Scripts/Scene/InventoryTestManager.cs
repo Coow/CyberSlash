@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class InventoryTestManager : MonoBehaviour {
 
@@ -11,7 +8,7 @@ public class InventoryTestManager : MonoBehaviour {
     public string ConfigurationSettingsFile = "mainConf.json";
     public ConfigurationSettings Configuration;
 
-    public int InventorySize = 10;
+    public int InventorySize = 12;
     public InventoryUI Bank;
     public InventoryUI Inventory;
 
@@ -41,7 +38,7 @@ public class InventoryTestManager : MonoBehaviour {
     private void InitTestBank()
     {
         PlayerBag inv = new PlayerBag(InventorySize);
-        inv.Add(0, 1);
+        inv.Add(0, 2);
         inv.Add(0, 1);
         inv.Add(1, 1);
         inv.Add(0, 5);
@@ -49,8 +46,10 @@ public class InventoryTestManager : MonoBehaviour {
 
         //inv.Remove(1, 2);
         //inv.Remove(0, 6);
-        //Debug.Log(inv.GetAmount(0));
-        //Debug.Log(inv.GetAmount(1));
+        Debug.Log($"Amount Apple : { inv.GetAmount(0)}");
+        Debug.Log($"Amount Bread : { inv.GetAmount(1)}");
+        Debug.Log($"Capacity Apple : { inv.GetFreeSpace(0)}");
+        Debug.Log($"Capacity Bread : { inv.GetFreeSpace(1)}");
 
         Bank.Initialize(inv);
     }
