@@ -29,14 +29,14 @@ public class CharController : MonoBehaviour {
 		Vector3 pointToLook = ray.GetPoint(50f);
 		Debug.DrawLine(ray.origin, pointToLook, Color.blue);
 		
-		if (Input.GetMouseButton(0) & ) {
+		if (Input.GetMouseButton(0) & _knockedOut.Equals(false)) {
 			if (Physics.Raycast(ray, out hit, 100, layerMask)) {
 				navMeshAgent.destination = hit.point;
 				navMeshAgent.updatePosition = true;
 			}
 		}
 
-		if (Input.GetMouseButtonDown(0)) {	
+		if (Input.GetMouseButtonDown(0) & _knockedOut.Equals(false)) {	
 			if (Physics.Raycast(ray, out hit, 100, layerMask)) {
 				Vector3 spawnPoint = hit.point + cursorOffset;
 

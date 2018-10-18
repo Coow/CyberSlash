@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class CowBossController : MonoBehaviour {
 
@@ -11,6 +12,7 @@ public class CowBossController : MonoBehaviour {
 	private float TickRate;
 	private float curTick = 0;
 	public float BossHealth;
+	public Slider healthBar;
 	public GameObject CowMinion;
 
 	[Header("Targeting")]
@@ -39,6 +41,9 @@ public class CowBossController : MonoBehaviour {
 		
 		shakeDamageObject = this.gameObject.transform.GetChild(0).gameObject;
 		shakeDamageObject.SetActive(false);
+
+		healthBar.maxValue = BossHealth;
+		healthBar.value = BossHealth;
 
 		if (!shakeDamageObject.name.Equals("ShakeHit")){
 			Debug.LogError("ShakeHitObject has not been set properly. Make sure the ShakeHit Object is the 1st child of the CowBoss");
@@ -77,6 +82,7 @@ public class CowBossController : MonoBehaviour {
 		//transform.LookAt(target);
 
 		//Movement();
+		healthBar.value = BossHealth;
 	}
 
 
