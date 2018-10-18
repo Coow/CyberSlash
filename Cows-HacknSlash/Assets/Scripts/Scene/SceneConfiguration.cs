@@ -9,5 +9,8 @@ using System.Threading.Tasks;
 /// </summary>
 public static class SceneConfiguration
 {
+    /// <summary>
+    /// Main configuration
+    /// </summary>
     public static ConfigurationSettings Settings;
 }

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 /// <summary>
 /// Used to manage resources
@@ -16,6 +13,9 @@ public static class ResourceManager
     //Faster than linear lookup for a key in an array
     public static Dictionary<int, InventoryItem> ItemsById;
 
+    /// <summary>
+    /// This will initialize all critical properties
+    /// </summary>
     public static void Initialize()
     {
         Items = DataManager.DeserializeDataFromFile<InventoryItem[]>(SceneConfiguration.Settings.ItemsListFile);
