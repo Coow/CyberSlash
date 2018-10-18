@@ -16,19 +16,25 @@ public class PlayerBag : ObservableProperties, IInventory
 
     #region Properties
 
+    /// <summary>
+    /// The number of free slots in the inventory
+    /// </summary>
     public int FreeSlots
     {
         get { return _freeSlots; }
-        set
+        protected set
         {
             SetField(ref _freeSlots, value);
         }
     }
 
+    /// <summary>
+    /// The total number of slots in the inventory
+    /// </summary>
     public int Size
     {
         get { return _size; }
-        set
+        protected set
         {
             SetField(ref _size, value);
         }
@@ -223,7 +229,6 @@ public class PlayerBag : ObservableProperties, IInventory
     /// Searches for the amount of items in the inventory
     /// </summary>
     /// <param name="itemId">The item to search for</param>
-    /// <param name="amount">The amount to search for</param>
     /// <returns>The amount found</returns>
     public int GetAmount(int itemId)
     {
@@ -277,15 +282,20 @@ public class PlayerBag : ObservableProperties, IInventory
 
     #region Accessors
 
-    public IInventorySlot this[int i]
+    /// <summary>
+    /// Gets the slot at the index
+    /// </summary>
+    /// <param name="index">The index</param>
+    /// <returns>The slot at index</returns>
+    public IInventorySlot this[int index]
     {
         get
         {
-            return _slots[i];
+            return _slots[index];
         }
         set
         {
-            _slots[i] = value;
+            _slots[index] = value;
         }
     }
     

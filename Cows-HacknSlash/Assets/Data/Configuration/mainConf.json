@@ -1,1 +1,4 @@
-{"ItemsListFile":"ItemsList.json"}
+{
+	"ItemsListFile":"ItemsList.json",
+	"EquipmentSlotTypeMapFile":"EquipmentSlotType.json"
+}
