@@ -8,4 +8,5 @@ using System.Threading.Tasks;
 public class ConfigurationSettings
 {
     public string ItemsListFile;
+    public string EquipmentSlotTypeMapFile;
 }
