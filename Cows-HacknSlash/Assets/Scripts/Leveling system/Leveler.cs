@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 [Serializable]
-public class Leveler : ObservableProperties
+public class Leveler : ObservableProperties, ILeveler
 {
     #region Fields
 
@@ -83,54 +79,7 @@ public class Leveler : ObservableProperties
         UpdateLevelInfo();
     }
 
-    /// <summary>
-    /// Adds an amount of xp
-    /// </summary>
-    /// <param name="amount">The amoun to add</param>
-    public void Add(ulong amount)
-    {
-        ulong xpToNextLevel;
-        ulong addXp;
-
-        //Add xp per level so we can level up accordingly
-        while (amount > 0)
-        {
-            xpToNextLevel = _nextLevelXP - _currentLevelXP;
-            addXp = xpToNextLevel >= amount ? amount : xpToNextLevel;
-
-            _currentLevelXP += addXp;
-            _totalXP += addXp;
-            amount -= addXp;
-
-            if (_currentLevelXP == _nextLevelXP)
-            {
-                LevelUp();
-            }
-        }
-    }
-
-    /// <summary>
-    /// Remove an amount of xp
-    /// </summary>
-    /// <param name="amount">The amount to remove</param>
-    public void Remove(ulong amount)
-    {
-        ulong delXp;
-
-        //Remove xp per level so we can level down accordingly
-        while (amount > 0)
-        {
-            delXp = _currentLevelXP >= amount ? amount : _currentLevelXP;
-            _currentLevelXP -= delXp;
-            amount -= delXp;
-            _totalXP -= delXp;
-
-            if (_currentLevelXP == 0 && amount > 0)
-            {
-                LevelDown();
-            }
-        }
-    }
+    #region Private
 
     /// <summary>
     /// Properly levels up
@@ -156,8 +105,8 @@ public class Leveler : ObservableProperties
     /// <param name="up">Are we leveling up</param>
     private void UpdateLevelInfo(bool up = true)
     {
-        _nextLevelXP = NeededXpForLevel(_currentLevel);
-        _currentLevelXP = up ? 0 : _nextLevelXP;
+        NextLevelXP = NeededXpForLevel(_currentLevel);
+        CurrentLevelXP = up ? 0 : _nextLevelXP;
     }
 
     /// <summary>
@@ -169,4 +118,59 @@ public class Leveler : ObservableProperties
     {
         return (ulong)(level + 300 * Mathf.Pow(2, level / 7.0f));
     }
+
+    #endregion
+
+    #region Public
+
+    /// <summary>
+    /// Adds an amount of xp
+    /// </summary>
+    /// <param name="amount">The amoun to add</param>
+    public void Add(ulong amount)
+    {
+        ulong xpToNextLevel;
+        ulong addXp;
+
+        //Add xp per level so we can level up accordingly
+        while (amount > 0)
+        {
+            xpToNextLevel = _nextLevelXP - _currentLevelXP;
+            addXp = xpToNextLevel >= amount ? amount : xpToNextLevel;
+
+            CurrentLevelXP += addXp;
+            TotalXP += addXp;
+            amount -= addXp;
+
+            if (_currentLevelXP == _nextLevelXP)
+            {
+                LevelUp();
+            }
+        }
+    }
+
+    /// <summary>
+    /// Remove an amount of xp
+    /// </summary>
+    /// <param name="amount">The amount to remove</param>
+    public void Remove(ulong amount)
+    {
+        ulong delXp;
+
+        //Remove xp per level so we can level down accordingly
+        while (amount > 0)
+        {
+            delXp = _currentLevelXP >= amount ? amount : _currentLevelXP;
+            CurrentLevelXP -= delXp;
+            amount -= delXp;
+            TotalXP -= delXp;
+
+            if (_currentLevelXP == 0 && amount > 0)
+            {
+                LevelDown();
+            }
+        }
+    }
+    
+    #endregion
 }

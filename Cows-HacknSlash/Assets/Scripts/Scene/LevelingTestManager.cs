@@ -9,7 +9,12 @@ public class LevelingTestManager : MonoBehaviour
     /// The GameObject containing the amount of xp to add/remove
     /// </summary>
     public TMP_InputField XPAmount;
-    
+
+    /// <summary>
+    /// The GameObject containing the percent of xp to add/remove
+    /// </summary>
+    public TMP_InputField PercentAmount;
+
     /// <summary>
     /// The GameObject displaying the total xp
     /// </summary>
@@ -33,13 +38,13 @@ public class LevelingTestManager : MonoBehaviour
     /// <summary>
     /// The leveler class to test
     /// </summary>
-    public Leveler leveler;
+    public ILeveler leveler;
 
     #endregion
 
     private void Start()
     {
-        leveler = new Leveler();
+        leveler = new TotalLeveler();
         leveler.PropertyChanged += Leveler_PropertyChanged;
         UpdateVisuals();
     }
@@ -60,6 +65,24 @@ public class LevelingTestManager : MonoBehaviour
     public void Remove()
     {
         leveler.Remove(ulong.Parse(XPAmount.text));
+    }
+
+    /// <summary>
+    /// Action for the add percentage button
+    /// Percentage [0, 100]
+    /// </summary>
+    public void AddPercent()
+    {
+        leveler.Add((ulong)(leveler.NextLevelXP * float.Parse(PercentAmount.text) / 100.0f));
+    }
+
+    /// <summary>
+    /// Action for the remove percentage button
+    /// Percentage [0, 100]
+    /// </summary>
+    public void RemovePercent()
+    {
+        leveler.Remove((ulong)(leveler.NextLevelXP * float.Parse(PercentAmount.text) / 100.0f));
     }
 
     #endregion

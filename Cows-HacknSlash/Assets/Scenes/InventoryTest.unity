@@ -158,6 +158,7 @@ GameObject:
   - component: {fileID: 62286344}
   - component: {fileID: 62286343}
   - component: {fileID: 62286342}
+  - component: {fileID: 62286345}
   - component: {fileID: 62286341}
   m_Layer: 5
   m_Name: Viewport
@@ -193,12 +194,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 62286339}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d224a009b26bcb848a86e28784f67673, type: 3}
+  m_Script: {fileID: 11500000, guid: fbfcb16910c641d418e217ba118389cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SlotPrefab: {fileID: 1582254174558768, guid: 2a87b8a6e0499ea479ac4b8fd8f0a136, type: 2}
-  Text: {fileID: 767946464}
-  Container: {fileID: 1873393677}
 --- !u!114 &62286342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,6 +243,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
+--- !u!114 &62286345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 62286339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de81b0077b0c3784aa4c0a8963f53434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SlotPrefab: {fileID: 1582254174558768, guid: 2a87b8a6e0499ea479ac4b8fd8f0a136, type: 2}
+  Container: {fileID: 1873393677}
+  Text: {fileID: 767946464}
 --- !u!1 &91874403
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,8 +332,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1154811081}
   m_HandleRect: {fileID: 1154811080}
   m_Direction: 0
-  m_Value: 0.75
-  m_Size: 0.9999998
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1011,7 +1023,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 421934376}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.9999647
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1859,7 +1871,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 521267514}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.9999647
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2373,7 +2385,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 450, y: -20}
-  m_SizeDelta: {x: 200, y: 400}
+  m_SizeDelta: {x: 300, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1742032378
 MonoBehaviour:
@@ -2576,9 +2588,9 @@ MonoBehaviour:
   DataFolder: Data/Data
   ConfigurationSettingsFile: mainConf.json
   InventorySize: 12
-  Bank: {fileID: 2000253501}
-  Inventory: {fileID: 2026134718}
-  Equipment: {fileID: 62286341}
+  Bank: {fileID: 2000253502}
+  Inventory: {fileID: 2026134719}
+  Equipment: {fileID: 62286345}
 --- !u!4 &1842791334
 Transform:
   m_ObjectHideFlags: 0
@@ -2624,8 +2636,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000025033192, y: 0.000018119812}
-  m_SizeDelta: {x: 0, y: 300}
+  m_AnchoredPosition: {x: -0.000011195018, y: 0.0000040277732}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1873393679
 MonoBehaviour:
@@ -2661,8 +2673,8 @@ MonoBehaviour:
   m_Script: {fileID: 1741964061, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalFit: 0
-  m_VerticalFit: 0
+  m_HorizontalFit: 2
+  m_VerticalFit: 2
 --- !u!1 &2000253496
 GameObject:
   m_ObjectHideFlags: 0
@@ -2675,6 +2687,7 @@ GameObject:
   - component: {fileID: 2000253499}
   - component: {fileID: 2000253498}
   - component: {fileID: 2000253501}
+  - component: {fileID: 2000253502}
   m_Layer: 5
   m_Name: Viewport
   m_TagString: Untagged
@@ -2755,12 +2768,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 2000253496}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d224a009b26bcb848a86e28784f67673, type: 3}
+  m_Script: {fileID: 11500000, guid: fbfcb16910c641d418e217ba118389cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2000253502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2000253496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de81b0077b0c3784aa4c0a8963f53434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SlotPrefab: {fileID: 1582254174558768, guid: 2a87b8a6e0499ea479ac4b8fd8f0a136, type: 2}
-  Text: {fileID: 1052396481}
   Container: {fileID: 1735464910}
+  Text: {fileID: 1052396481}
 --- !u!1 &2026134713
 GameObject:
   m_ObjectHideFlags: 0
@@ -2773,6 +2797,7 @@ GameObject:
   - component: {fileID: 2026134716}
   - component: {fileID: 2026134715}
   - component: {fileID: 2026134718}
+  - component: {fileID: 2026134719}
   m_Layer: 5
   m_Name: Viewport
   m_TagString: Untagged
@@ -2853,12 +2878,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 2026134713}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d224a009b26bcb848a86e28784f67673, type: 3}
+  m_Script: {fileID: 11500000, guid: fbfcb16910c641d418e217ba118389cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2026134719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2026134713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de81b0077b0c3784aa4c0a8963f53434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SlotPrefab: {fileID: 1582254174558768, guid: 2a87b8a6e0499ea479ac4b8fd8f0a136, type: 2}
-  Text: {fileID: 549296986}
   Container: {fileID: 2092441930}
+  Text: {fileID: 549296986}
 --- !u!1 &2066741998
 GameObject:
   m_ObjectHideFlags: 0
