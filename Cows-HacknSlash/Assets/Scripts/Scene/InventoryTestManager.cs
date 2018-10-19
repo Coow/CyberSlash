@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 
-public class InventoryTestManager : MonoBehaviour {
+public class InventoryTestManager : MonoBehaviour
+{
+    #region Fields
 
     //Any folder inside the application path
     public string ConfigurationFolder = "Data/Configuration";
@@ -13,7 +15,11 @@ public class InventoryTestManager : MonoBehaviour {
     public InventoryUI Inventory;
     public InventoryUI Equipment;
 
-    void Start () {
+    #endregion
+
+    #region Private
+
+    private void Start () {
         InitConfiguration();
 
         InitTestBank();
@@ -84,6 +90,9 @@ public class InventoryTestManager : MonoBehaviour {
         Inventory.Initialize(inv);
     }
 
+    /// <summary>
+    /// Initialize the equipment inventory for the test scene
+    /// </summary>
     private void InitTestEquipment()
     {
         var eq = new PlayerEquipment();
@@ -91,4 +100,5 @@ public class InventoryTestManager : MonoBehaviour {
         Equipment.Initialize(eq);
     }
 
+    #endregion
 }
