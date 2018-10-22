@@ -1,5 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelingTestManager : MonoBehaviour
 {
@@ -36,17 +41,28 @@ public class LevelingTestManager : MonoBehaviour
     public TMP_Text NextLevelXP;
 
     /// <summary>
+    /// The GameObject displaying the levelers available
+    /// </summary>
+    public Dropdown Choices;
+
+    /// <summary>
     /// The leveler class to test
     /// </summary>
-    public ILeveler leveler;
+    public ILeveler Leveler;
+
+    /// <summary>
+    /// The list of all levelers detected
+    /// </summary>
+    public IEnumerable<Type> Levelers;
 
     #endregion
 
     private void Start()
     {
-        leveler = new TotalLeveler();
-        leveler.PropertyChanged += Leveler_PropertyChanged;
-        UpdateVisuals();
+        Levelers = Assembly.GetExecutingAssembly().GetTypes().Where(t => typeof(ILeveler).IsAssignableFrom(t) && t != typeof(ILeveler));
+
+        Choices.AddOptions(Levelers.Select(l => l.Name).ToList());
+        LevelerChoiceChanged();
     }
 
     #region Actions
@@ -56,7 +72,7 @@ public class LevelingTestManager : MonoBehaviour
     /// </summary>
     public void Add()
     {
-        leveler.Add(ulong.Parse(XPAmount.text));
+        Leveler.Add(ulong.Parse(XPAmount.text));
     }
 
     /// <summary>
@@ -64,7 +80,7 @@ public class LevelingTestManager : MonoBehaviour
     /// </summary>
     public void Remove()
     {
-        leveler.Remove(ulong.Parse(XPAmount.text));
+        Leveler.Remove(ulong.Parse(XPAmount.text));
     }
 
     /// <summary>
@@ -73,7 +89,7 @@ public class LevelingTestManager : MonoBehaviour
     /// </summary>
     public void AddPercent()
     {
-        leveler.Add((ulong)(leveler.NextLevelXP * float.Parse(PercentAmount.text) / 100.0f));
+        Leveler.Add((ulong)(Leveler.NextLevelXP * float.Parse(PercentAmount.text) / 100.0f));
     }
 
     /// <summary>
@@ -82,7 +98,18 @@ public class LevelingTestManager : MonoBehaviour
     /// </summary>
     public void RemovePercent()
     {
-        leveler.Remove((ulong)(leveler.NextLevelXP * float.Parse(PercentAmount.text) / 100.0f));
+        Leveler.Remove((ulong)(Leveler.NextLevelXP * float.Parse(PercentAmount.text) / 100.0f));
+    }
+
+    /// <summary>
+    /// Action for changing the leveler
+    /// </summary>
+    public void LevelerChoiceChanged()
+    {
+        var chosen = Choices.options[Choices.value].text;
+        var type = Levelers.First(l => l.Name == chosen);
+
+        Set((ILeveler)Activator.CreateInstance(type));
     }
 
     #endregion
@@ -96,6 +123,23 @@ public class LevelingTestManager : MonoBehaviour
     /// <param name="e">The event data</param>
     private void Leveler_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
     {
+        UpdateVisuals();
+    }
+
+    /// <summary>
+    /// Properly sets up the leveler
+    /// </summary>
+    /// <param name="leveler">The leveler to set</param>
+    private void Set(ILeveler leveler)
+    {
+        Debug.Log("Leveler chosen");
+        if (Leveler != null)
+        {
+            Leveler.PropertyChanged -= Leveler_PropertyChanged;
+        }
+
+        Leveler = leveler;
+        Leveler.PropertyChanged += Leveler_PropertyChanged;
         UpdateVisuals();
     }
 
@@ -115,7 +159,7 @@ public class LevelingTestManager : MonoBehaviour
     /// </summary>
     private void UpdateTotalXP()
     {
-        TotalXP.text = $"Total XP : {leveler.TotalXP}";
+        TotalXP.text = $"Total XP : {Leveler.TotalXP}";
     }
 
     /// <summary>
@@ -123,7 +167,7 @@ public class LevelingTestManager : MonoBehaviour
     /// </summary>
     private void UpdateCurrentLevelXP()
     {
-        CurrentLevelXP.text = $"Current level XP : {leveler.CurrentLevelXP}";
+        CurrentLevelXP.text = $"Current level XP : {Leveler.CurrentLevelXP}";
     }
 
     /// <summary>
@@ -131,7 +175,7 @@ public class LevelingTestManager : MonoBehaviour
     /// </summary>
     private void UpdateCurrentLevel()
     {
-        CurrentLevel.text = $"Current level : {leveler.CurrentLevel}";
+        CurrentLevel.text = $"Current level : {Leveler.CurrentLevel}";
     }
 
     /// <summary>
@@ -139,7 +183,7 @@ public class LevelingTestManager : MonoBehaviour
     /// </summary>
     private void UpdateNextLevelXP()
     {
-        NextLevelXP.text = $"Next level XP : {leveler.NextLevelXP}";
+        NextLevelXP.text = $"Next level XP : {Leveler.NextLevelXP}";
     }
     
     #endregion
