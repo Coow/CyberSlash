@@ -43,6 +43,15 @@ public class PlayerEquipment : ObservableProperties, IInventory
             SetField(ref _size, value);
         }
     }
+
+    #endregion
+
+    #region Events
+
+    /// <summary>
+    /// Fired when a slot changes its content
+    /// </summary>
+    public event SlotContentChangedEventHandler SlotContentChanged;
     
     #endregion
 
@@ -59,9 +68,9 @@ public class PlayerEquipment : ObservableProperties, IInventory
         for (int i = 0; i < _size; i++)
         {
             _slots[i] = new InventorySlot(i, -1, 0, _map[(EquipmentSlot)i]);
+            _slots[i].PropertyChanged += PlayerEquipment_PropertyChanged;
         }
     }
-
 
     #region Set
 
@@ -229,6 +238,16 @@ public class PlayerEquipment : ObservableProperties, IInventory
     #endregion
 
     #region Utility
+
+    /// <summary>
+    /// Reacts to a slot changing its content
+    /// </summary>
+    /// <param name="sender">The sender of the event</param>
+    /// <param name="e">The event data</param>
+    private void PlayerEquipment_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+    {
+        SlotContentChanged?.Invoke(this, new global::SlotContentChanged { Slot = (IInventorySlot)sender });
+    }
 
     /// <summary>
     /// Searches for the amount of items in the inventory

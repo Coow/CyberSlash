@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 
 public interface IInventory : INotifyPropertyChanged
 {
@@ -123,6 +124,34 @@ public interface IInventory : INotifyPropertyChanged
     /// <param name="index">The index</param>
     /// <returns>The slot at index</returns>
     IInventorySlot this[int index] { get; set; }
-    
+
+    #endregion
+
+    #region Events
+
+    event SlotContentChangedEventHandler SlotContentChanged;
+
     #endregion
 }
+
+#region Event handlers
+
+/// <summary>
+/// Handles firing events about inventory slots changing content
+/// </summary>
+/// <param name="sender">The inventory firing the event</param>
+/// <param name="e">The event data</param>
+public delegate void SlotContentChangedEventHandler(object sender, SlotContentChanged e);
+
+/// <summary>
+/// Used to pass information about slot changes
+/// </summary>
+public class SlotContentChanged : EventArgs
+{
+    /// <summary>
+    /// The slot that has its content changed
+    /// </summary>
+    public IInventorySlot Slot;
+}
+
+#endregion
