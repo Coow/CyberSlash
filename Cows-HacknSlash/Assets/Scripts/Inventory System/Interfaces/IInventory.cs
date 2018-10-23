@@ -92,7 +92,14 @@ public interface IInventory : INotifyPropertyChanged
     #endregion
 
     #region Utility
-    
+
+    /// <summary>
+    /// Searches how much slots contain an item
+    /// </summary>
+    /// <param name="itemId">The item to search for</param>
+    /// <returns>The amount of slots containing the item</returns>
+    int GetSlotsWithItem(int itemId);
+
     /// <summary>
     /// Searches for the amount of items in the inventory
     /// </summary>

@@ -43,4 +43,6 @@ public static class Utility
         // Unsupported flag type
         throw new Exception($"The comparison of the type {e.GetType().Name} is not implemented.");
     }
+
+    public const int EmptyId = -1;
 }
