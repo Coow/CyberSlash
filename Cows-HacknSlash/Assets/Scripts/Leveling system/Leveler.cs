@@ -161,9 +161,19 @@ public class Leveler : ObservableProperties, ILeveler
         while (amount > 0)
         {
             delXp = _currentLevelXP >= amount ? amount : _currentLevelXP;
-            CurrentLevelXP -= delXp;
-            amount -= delXp;
-            TotalXP -= delXp;
+
+            if (TotalXP > delXp)
+            {
+                TotalXP -= delXp;
+                CurrentLevelXP -= delXp;
+                amount -= delXp;
+            }
+            else
+            {
+                TotalXP = 0;
+                CurrentLevelXP = 0;
+                amount = 0;
+            }
 
             if (_currentLevelXP == 0 && amount > 0)
             {

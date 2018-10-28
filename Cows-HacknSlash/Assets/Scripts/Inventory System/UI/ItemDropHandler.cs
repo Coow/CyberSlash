@@ -3,6 +3,9 @@ using UnityEngine.EventSystems;
 
 public class ItemDropHandler : MonoBehaviour, IDropHandler
 {
+    public KeyCode SplitKey = KeyCode.LeftShift;
+    public SplitUI Splitter;
+    
     /// <summary>
     /// This is called when the drag ends and a drop point is detected
     /// </summary>
@@ -44,7 +47,16 @@ public class ItemDropHandler : MonoBehaviour, IDropHandler
 
             if (drag.Slot.Id == slot.Slot.Id)
             {
-                drag.Slot.Set(slot.Slot.Add(drag.Slot.Amount));
+                //If hotkey is pressed, show the split stack dialog
+                //Otherwise simply fill in the stack
+                if (Input.GetKey(SplitKey) && drag.Slot.Amount > 1)
+                {
+                    Splitter.Set(drag.Slot, slot.Slot);
+                }
+                else
+                {
+                    drag.Slot.Set(slot.Slot.Add(drag.Slot.Amount));
+                }
             }
             else
             {

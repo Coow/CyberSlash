@@ -1,5 +1,8 @@
-﻿using System.Linq;
+﻿using System;
+using System.ComponentModel;
+using System.Linq;
 using UnityEngine;
+
 
 public class PlayerBag : ObservableProperties, IInventory
 {
@@ -41,6 +44,15 @@ public class PlayerBag : ObservableProperties, IInventory
     }
 
     #endregion
+
+    #region Events
+
+    /// <summary>
+    /// Fired when a slot changes its content
+    /// </summary>
+    public event SlotContentChangedEventHandler SlotContentChanged;
+    
+    #endregion
     
     /// <summary>
     /// Iinitalizes the inventory with the specified amound of slots
@@ -53,8 +65,8 @@ public class PlayerBag : ObservableProperties, IInventory
         _slots = new IInventorySlot[slotAmount];
         for (int i = 0; i < slotAmount; i++)
         {
-            _slots[i] = new InventorySlot(i, -1, 0);
-
+            _slots[i] = new InventorySlot(i, Utility.EmptyId, 0);
+            _slots[i].PropertyChanged += PlayerBag_PropertyChanged;
         }
     }
 
@@ -93,7 +105,6 @@ public class PlayerBag : ObservableProperties, IInventory
     {
         var slot = _slots[slotIndex];
         slot.Unset();
-        FreeSlots++;
     }
 
     /// <summary>
@@ -159,8 +170,6 @@ public class PlayerBag : ObservableProperties, IInventory
 
                 left = slot.Set(itemId, left);
 
-                FreeSlots--;
-
                 if (_freeSlots <= 0 || left <= 0)
                 {
                     break;
@@ -207,11 +216,6 @@ public class PlayerBag : ObservableProperties, IInventory
 
             left = slot.Remove(left);
 
-            if (slot.Empty)
-            {
-                FreeSlots++;
-            }
-
             if (left <= 0)
             {
                 break;
@@ -224,6 +228,37 @@ public class PlayerBag : ObservableProperties, IInventory
     #endregion
 
     #region Utility
+
+    /// <summary>
+    /// Reacts to a slot changing its content
+    /// </summary>
+    /// <param name="sender">The sender of the event</param>
+    /// <param name="e">The event data</param>
+    private void PlayerBag_PropertyChanged(object sender, PropertyChangedEventArgs e)
+    {
+        FreeSlots = GetSlotsWithItem(Utility.EmptyId);
+        SlotContentChanged?.Invoke(this, new global::SlotContentChanged { Slot = (IInventorySlot)sender });
+    }
+
+    /// <summary>
+    /// Searches how much slots contain an item
+    /// </summary>
+    /// <param name="itemId">The item to search for</param>
+    /// <returns>The amount of slots containing the item</returns>
+    public int GetSlotsWithItem(int itemId)
+    {
+        int amount = 0;
+
+        foreach (var slot in _slots)
+        {
+            if (slot.Id == itemId)
+            {
+                amount++;
+            }
+        }
+
+        return amount;
+    }
 
     /// <summary>
     /// Searches for the amount of items in the inventory
@@ -295,7 +330,7 @@ public class PlayerBag : ObservableProperties, IInventory
         }
         set
         {
-            _slots[index] = value;
+            SetField(ref _slots[index], value);
         }
     }
     

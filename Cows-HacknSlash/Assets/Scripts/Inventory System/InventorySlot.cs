@@ -198,7 +198,7 @@ public class InventorySlot : ObservableProperties, IInventorySlot
     /// </summary>
     public void Unset()
     {
-        Set(-1, 0);
+        Set(Utility.EmptyId, 0);
     }
 
     /// <summary>

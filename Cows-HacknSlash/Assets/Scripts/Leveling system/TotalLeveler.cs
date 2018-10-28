@@ -133,7 +133,7 @@ public class TotalLeveler : ObservableProperties, ILeveler
     /// <param name="amount">The amount to remove</param>
     public void Remove(ulong amount)
     {
-        TotalXP -= amount;
+        TotalXP = TotalXP <= amount ? 0 : TotalXP - amount;
         CalculateCurrentLevelInfo();
     }
     

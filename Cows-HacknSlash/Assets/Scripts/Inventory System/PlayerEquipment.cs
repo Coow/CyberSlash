@@ -43,6 +43,15 @@ public class PlayerEquipment : ObservableProperties, IInventory
             SetField(ref _size, value);
         }
     }
+
+    #endregion
+
+    #region Events
+
+    /// <summary>
+    /// Fired when a slot changes its content
+    /// </summary>
+    public event SlotContentChangedEventHandler SlotContentChanged;
     
     #endregion
 
@@ -58,10 +67,10 @@ public class PlayerEquipment : ObservableProperties, IInventory
 
         for (int i = 0; i < _size; i++)
         {
-            _slots[i] = new InventorySlot(i, -1, 0, _map[(EquipmentSlot)i]);
+            _slots[i] = new InventorySlot(i, Utility.EmptyId, 0, _map[(EquipmentSlot)i]);
+            _slots[i].PropertyChanged += PlayerEquipment_PropertyChanged;
         }
     }
-
 
     #region Set
 
@@ -98,7 +107,6 @@ public class PlayerEquipment : ObservableProperties, IInventory
     {
         var slot = _slots[slotIndex];
         slot.Unset();
-        FreeSlots++;
     }
 
     /// <summary>
@@ -164,8 +172,6 @@ public class PlayerEquipment : ObservableProperties, IInventory
 
                 left = slot.Set(itemId, left);
 
-                FreeSlots--;
-
                 if (_freeSlots <= 0 || left <= 0)
                 {
                     break;
@@ -212,11 +218,6 @@ public class PlayerEquipment : ObservableProperties, IInventory
 
             left = slot.Remove(left);
 
-            if (slot.Empty)
-            {
-                FreeSlots++;
-            }
-
             if (left <= 0)
             {
                 break;
@@ -229,6 +230,37 @@ public class PlayerEquipment : ObservableProperties, IInventory
     #endregion
 
     #region Utility
+
+    /// <summary>
+    /// Reacts to a slot changing its content
+    /// </summary>
+    /// <param name="sender">The sender of the event</param>
+    /// <param name="e">The event data</param>
+    private void PlayerEquipment_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+    {
+        FreeSlots = GetSlotsWithItem(Utility.EmptyId);
+        SlotContentChanged?.Invoke(this, new global::SlotContentChanged { Slot = (IInventorySlot)sender });
+    }
+
+    /// <summary>
+    /// Searches how much slots contain an item
+    /// </summary>
+    /// <param name="itemId">The item to search for</param>
+    /// <returns>The amount of slots containing the item</returns>
+    public int GetSlotsWithItem(int itemId)
+    {
+        int amount = 0;
+
+        foreach (var slot in _slots)
+        {
+            if (slot.Id == itemId)
+            {
+                amount++;
+            }
+        }
+
+        return amount;
+    }
 
     /// <summary>
     /// Searches for the amount of items in the inventory
