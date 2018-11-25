@@ -1,0 +1,28 @@
+html {
+    font-size: 20;
+    background: black;
+    font-style: normal;
+    font-family: Courier;
+    display: inline;
+    color: white;
+}
+
+form{
+    display: inline-block;
+}
+
+input[type=text]{
+    border: 0px solid black;
+    border-radius: 4px;
+    font-size: 20;
+    background: black;
+    font-style: normal;
+    color: white;
+    font-family: Courier;
+    width: 70vw;
+    height: 
+}
+
+input[type=text]:focus{
+  outline: 0px solid black;
+}
