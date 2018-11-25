@@ -7,7 +7,8 @@ using UnityEngine.AI;
 public class CharController : MonoBehaviour {
 
 	private NavMeshAgent navMeshAgent;
-	private bool running;
+	private Animator anim_Controller;
+	private bool m_Running;
 	[SerializeField]
 	private LayerMask layerMask;
 	public float KnockoutTime = 1.5f;
@@ -19,6 +20,7 @@ public class CharController : MonoBehaviour {
 	public Vector3 cursorOffset;
 	void Start () {
 		navMeshAgent = GetComponent<NavMeshAgent>();
+		anim_Controller = gameObject.transform.GetChild(1).GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame.
@@ -33,6 +35,7 @@ public class CharController : MonoBehaviour {
 			if (Physics.Raycast(ray, out hit, 100, layerMask)) {
 				navMeshAgent.destination = hit.point;
 				navMeshAgent.updatePosition = true;
+				Debug.Log("Player clicked to move");
 			}
 		}
 
@@ -40,6 +43,7 @@ public class CharController : MonoBehaviour {
 			if (Physics.Raycast(ray, out hit, 100, layerMask)) {
 				Vector3 spawnPoint = hit.point + cursorOffset;
 
+				Debug.Log("Player held to move");
 				Instantiate(cursorClick, spawnPoint ,Quaternion.identity);
 				navMeshAgent.updatePosition = true;	
 			}
@@ -47,10 +51,12 @@ public class CharController : MonoBehaviour {
 
 		// When animations get added.
 		if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance) {
-			running = false;
+			m_Running = false;
+			anim_Controller.SetBool("running", m_Running);
 			navMeshAgent.updatePosition = false;
 		} else {
-			running = true;
+			m_Running = true;
+			anim_Controller.SetBool("running", m_Running);
 		}
 	}
 

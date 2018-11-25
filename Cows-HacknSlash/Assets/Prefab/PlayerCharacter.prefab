@@ -285,7 +285,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1964879969324646}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.1258082, y: 3.3847802, z: 30.09293}
+  m_LocalPosition: {x: -3.675012, y: 2.5, z: 3.48833}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 224633049805795392}
@@ -478,6 +478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnPos: {fileID: 1704014934598326}
+  anim_controller: {fileID: 0}
   FireBall: {fileID: 1323090985563594, guid: 536e3bfbc79844541a6eec8ea269ead8, type: 2}
   selectedText: {fileID: 1018859267048058}
   ice: {fileID: 1357231631288138, guid: 3b567bb8f4d49d844ad46b82d2afa055, type: 2}
@@ -707,6 +708,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 59955
+  KnockoutTime: 1.5
   cursorClick: {fileID: 1210913089688338, guid: 62b4f4381e8c24547a12b8fb2734731a,
     type: 2}
   cursorOffset: {x: 0, y: 0.1, z: 0}

@@ -36,6 +36,7 @@ public class DungeonGenerator : MonoBehaviour {
         GameObject ground = Instantiate(Ground, new Vector3(currentPos.x * RoomSize.x, 0, currentPos.y * RoomSize.x), Quaternion.identity, this.transform);
         ground.transform.localScale = new Vector3(DungeonSize.x / 10, 1, DungeonSize.x / 10);
         surface = ground.gameObject.GetComponent<NavMeshSurface>();
+        
 
         // Start spawning the dungeon.
         for (int i = 0; i < RoomCount; i++)
@@ -98,7 +99,7 @@ public class DungeonGenerator : MonoBehaviour {
         surface.BuildNavMesh();
 
         //Spawn The Player
-        Instantiate(Player, new Vector3(startPos.x * RoomSize.x, 1, startPos.y * RoomSize.y), Quaternion.identity);
+        //Instantiate(Player, new Vector3(startPos.x * RoomSize.x, 1, startPos.y * RoomSize.y), Quaternion.identity);
     }
 
     void SpawnRoom(int x, int y, bool[,] roomLayout)

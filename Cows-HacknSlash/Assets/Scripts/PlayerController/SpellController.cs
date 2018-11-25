@@ -7,6 +7,7 @@ public class SpellController : MonoBehaviour
 
     [SerializeField]
     private GameObject SpawnPos;
+    public Animator anim_controller;
 
     [Header("FireBall")]
     [SerializeField]
@@ -48,6 +49,7 @@ public class SpellController : MonoBehaviour
                 var projectile = Instantiate(FireBall, SpawnPos.transform.position, Quaternion.identity);
                 SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform, true);
                 Destroy(projectile.gameObject, 5f);
+                anim_controller.SetTrigger("castSpell");
             }
             else if (Input.GetKeyDown(KeyCode.R) && ice.GetComponent<SpellInitialise>().spell.timeStamp <= Time.time)
             {
@@ -55,6 +57,7 @@ public class SpellController : MonoBehaviour
                 var projectile = Instantiate(ice, SpawnPos.transform.position, Quaternion.identity);
                 SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform, true);
                 Destroy(projectile.gameObject, 5f);
+                anim_controller.SetTrigger("castSpell");
             }
             else if (Input.GetKeyDown(KeyCode.T) && poison.GetComponent<SpellInitialise>().spell.timeStamp <= Time.time)
             {
@@ -62,6 +65,7 @@ public class SpellController : MonoBehaviour
                 var projectile = Instantiate(poison, SpawnPos.transform.position, Quaternion.identity);
                 SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform, true);
                 Destroy(projectile.gameObject, 5f);
+                anim_controller.SetTrigger("castSpell");
             }
         }
 
