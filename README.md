@@ -31,6 +31,7 @@ Point 1 does not apply to rewrites of code or redoings of models or other assets
 
 ### Dependencies
 [Discord Rich Presence](https://github.com/Imperium42/discord-rpc-unity)
+[Newtonsoft Json](https://www.newtonsoft.com/json)
 
 ### CODE
 - Please keep everything to:
