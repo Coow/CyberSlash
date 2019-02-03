@@ -16,6 +16,7 @@ public class DungeonGenerator : MonoBehaviour {
     public int ChanceToGoBack;
 
     public GameObject Player;
+    public GameObject Portal;
 
     private NavMeshSurface surface;
 
@@ -100,6 +101,7 @@ public class DungeonGenerator : MonoBehaviour {
 
         //Spawn The Player
         //Instantiate(Player, new Vector3(startPos.x * RoomSize.x, 1, startPos.y * RoomSize.y), Quaternion.identity);
+        Instantiate(Portal, new Vector3(startPos.x * RoomSize.x, 1, startPos.y * RoomSize.y), Quaternion.identity);
     }
 
     void SpawnRoom(int x, int y, bool[,] roomLayout)
