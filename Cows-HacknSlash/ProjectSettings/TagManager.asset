@@ -14,6 +14,7 @@ TagManager:
   - NPCMarker
   - SpellBall
   - Boss
+  - NMS
   layers:
   - Default
   - TransparentFX

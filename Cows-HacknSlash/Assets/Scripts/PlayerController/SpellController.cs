@@ -19,20 +19,26 @@ public class SpellController : MonoBehaviour
     private GameObject ice;
     [SerializeField]
     private GameObject poison;
+
     [Tooltip("0 == null; 1 == FireStaff")]
-    [SerializeField]
-    private int StaffSelected;
+    public int StaffSelected;
     public float cooldownPeriod = 1f;
 
     private NavMeshAgent navMeshAgent;
 
     //Fixing bug being unable too move caused by spamming spells 
-    private bool canCastSpell;
-    public void Start(){
+    private bool canCastSpell = true;
+    public GameObject baseballBat;
+
+    public void Start() {
         navMeshAgent = GetComponent<NavMeshAgent>();
         FireBall.GetComponent<SpellInitialise>().spell.timeStamp = 0;
         ice.GetComponent<SpellInitialise>().spell.timeStamp = 0;
         poison.GetComponent<SpellInitialise>().spell.timeStamp = 0;
+
+        //Temp for testing melee
+        //baseballBat = GameObject.Find("BaseballBat");
+        baseballBat.gameObject.SetActive(false);
     }
 
     void Update()
@@ -42,12 +48,14 @@ public class SpellController : MonoBehaviour
             Debug.Log("Staff has been selected");
             StaffSelected = 1;
             selectedText.SetActive(true);
+            baseballBat.gameObject.SetActive(false);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             Debug.Log("Staff has been de-selected");
             StaffSelected = 0;
             selectedText.SetActive(false);
+            baseballBat.gameObject.SetActive(true);
         }
         if (StaffSelected == 1 && canCastSpell)
         {
@@ -57,7 +65,7 @@ public class SpellController : MonoBehaviour
                 var projectile = Instantiate(FireBall, SpawnPos.transform.position, Quaternion.identity);
                 SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform, true);
                 Destroy(projectile.gameObject, 5f);
-                StartCoroutine(StopAndCast());
+                StartCoroutine(StopAndCast(0.75f));
                 
             }
             else if (Input.GetKeyDown(KeyCode.R) && ice.GetComponent<SpellInitialise>().spell.timeStamp <= Time.time)
@@ -66,7 +74,7 @@ public class SpellController : MonoBehaviour
                 var projectile = Instantiate(ice, SpawnPos.transform.position, Quaternion.identity);
                 SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform, true);
                 Destroy(projectile.gameObject, 5f);
-                StartCoroutine(StopAndCast());
+                StartCoroutine(StopAndCast(0.75f));
             }
             else if (Input.GetKeyDown(KeyCode.T) && poison.GetComponent<SpellInitialise>().spell.timeStamp <= Time.time)
             {
@@ -74,23 +82,21 @@ public class SpellController : MonoBehaviour
                 var projectile = Instantiate(poison, SpawnPos.transform.position, Quaternion.identity);
                 SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform, true);
                 Destroy(projectile.gameObject, 5f);
-                StartCoroutine(StopAndCast());
+                StartCoroutine(StopAndCast(0.75f));
             }
         }
 
         
     }
 
-    private IEnumerator StopAndCast(){
+    private IEnumerator StopAndCast(float stopTime){
         Debug.Log("Player should stop moving here");
         canCastSpell = false;
         float curSpeed = navMeshAgent.speed;
         navMeshAgent.speed = 0;
         anim_controller.SetTrigger("castSpell");
         
-        //This should be changed too be more dynamic with the length
-        //of the player casting animation 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(stopTime);
 
         navMeshAgent.speed = curSpeed;
         canCastSpell = true;

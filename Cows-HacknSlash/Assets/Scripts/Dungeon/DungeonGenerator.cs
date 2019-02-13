@@ -17,6 +17,10 @@ public class DungeonGenerator : MonoBehaviour {
 
     public GameObject Player;
     public GameObject Portal;
+    public GameObject Floor;
+
+    [SerializeField]
+    private GameObject NMS;
 
     private NavMeshSurface surface;
 
@@ -102,10 +106,14 @@ public class DungeonGenerator : MonoBehaviour {
         //Spawn The Player
         //Instantiate(Player, new Vector3(startPos.x * RoomSize.x, 1, startPos.y * RoomSize.y), Quaternion.identity);
         Instantiate(Portal, new Vector3(startPos.x * RoomSize.x, 1, startPos.y * RoomSize.y), Quaternion.identity);
+        Instantiate(NMS, new Vector3(startPos.x * RoomSize.x, 0, startPos.y * RoomSize.y), Quaternion.identity);
+        
     }
 
     void SpawnRoom(int x, int y, bool[,] roomLayout)
-    {
+    {   
+        
+
         // Just a little somthing I made to make the room that spawn the correct room.
         foreach (Room room in Rooms)
         {
@@ -115,10 +123,31 @@ public class DungeonGenerator : MonoBehaviour {
                 room.OpenTop == roomLayout[x, y + 1])
             {
                 if (room.Rooms[0] == null) {
-                    return;
+                    Instantiate(Floor, new Vector3(x * RoomSize.x, 0, y * RoomSize.y + RoomSize.y/2), Quaternion.identity, this.transform);
+                    return;                    
                 }
                 Instantiate(room.Rooms[(int)Random.Range(0, room.Rooms.Count)], new Vector3(x * RoomSize.x, 0, y * RoomSize.y), Quaternion.identity, this.transform);
+                //Spawn in floor here?
+                Instantiate(Floor, new Vector3(x * RoomSize.x, 0, y * RoomSize.y + RoomSize.y/2), Quaternion.identity, this.transform);
             }
+        }
+        Debug.Log("Done building Dungeon! Time to build NavMesh :D");
+
+        BuildNavigationMesh();  
+        /*
+        var NMSController = GameObject.FindGameObjectWithTag("NMS");
+        NMSController.AddComponent<NavMeshSurface>();
+        NMSController.GetComponent<NavMeshSurface>().BuildNavMesh();
+        */
+    }
+
+    void BuildNavigationMesh(){
+
+        var NMSController = GameObject.FindGameObjectWithTag("NMS");
+        if(NMSController == null) {return;} else {
+            NMSController.AddComponent<NavMeshSurface>();
+            NMSController.GetComponent<NavMeshSurface>().BuildNavMesh();
+            Debug.LogWarning("Done building NavMesh!");
         }
     }
 }
