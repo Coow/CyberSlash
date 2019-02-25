@@ -1,65 +1,16 @@
 fileFormatVersion: 2
-guid: b060f259b853e824288b6bb727ed4f06
+guid: 4e61a1ea00db7114cb5c325b2d5e2304
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Body
-    100002: Bottom
-    100004: Connector
-    100006: Empty
-    100008: Glass
-    100010: //RootNode
-    100012: Tail
-    100014: Thruster
-    100016: Top
-    100018: Torus
-    100020: Wing
-    400000: Body
-    400002: Bottom
-    400004: Connector
-    400006: Empty
-    400008: Glass
-    400010: //RootNode
-    400012: Tail
-    400014: Thruster
-    400016: Top
-    400018: Torus
-    400020: Wing
-    2100000: unnamed
-    2100002: Material_002
-    2100004: Material_001
-    2100006: red
-    2100008: Material_003
-    2300000: Body
-    2300002: Bottom
-    2300004: Connector
-    2300006: Glass
-    2300008: Tail
-    2300010: Thruster
-    2300012: Top
-    2300014: Torus
-    2300016: Wing
-    3300000: Body
-    3300002: Bottom
-    3300004: Connector
-    3300006: Glass
-    3300008: Tail
-    3300010: Thruster
-    3300012: Top
-    3300014: Torus
-    3300016: Wing
-    4300000: Torus
-    4300002: Top
-    4300004: Thruster
-    4300006: Bottom
-    4300008: Glass
-    4300010: Tail
-    4300012: Connector
-    4300014: Body
-    4300016: Wing
-    7400000: Default Take
-    9500000: //RootNode
-    2186277476908879412: ImportLogs
+    100000: T
+    100002: //RootNode
+    400000: T
+    400002: //RootNode
+    2100000: palette
+    2300000: T
+    3300000: T
+    4300000: T
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -112,7 +63,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -136,7 +87,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
