@@ -147,6 +147,6 @@ MonoBehaviour:
   Difficulty: 1
   RoomCount: 2500
   RoomSize: 10
-  ChanceToGoBack: 100
+  ChanceToGoBack: 75
   Player: {fileID: 0}
   testBlock: {fileID: 0}
