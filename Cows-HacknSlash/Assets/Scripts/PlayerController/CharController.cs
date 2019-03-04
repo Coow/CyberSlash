@@ -13,11 +13,14 @@ public class CharController : MonoBehaviour {
 	private LayerMask layerMask;
 	public float KnockoutTime = 1.5f;
 	private bool _knockedOut = false;
+	private bool canMove = true;
 	
 	[Header("Misc")]
 	public GameObject cursorClick;
-
 	public Vector3 cursorOffset;
+
+	public GameObject portalEndPoint;
+
 	void Start () {
 		navMeshAgent = GetComponent<NavMeshAgent>();
 		anim_Controller = gameObject.transform.GetChild(1).GetComponent<Animator>();
@@ -35,7 +38,7 @@ public class CharController : MonoBehaviour {
 			if (Physics.Raycast(ray, out hit, 100, layerMask)) {
 				navMeshAgent.destination = hit.point;
 				navMeshAgent.updatePosition = true;
-				Debug.Log("Player clicked to move");
+				//Debug.Log("Player clicked to move");
 			}
 		}
 
@@ -43,10 +46,19 @@ public class CharController : MonoBehaviour {
 			if (Physics.Raycast(ray, out hit, 100, layerMask)) {
 				Vector3 spawnPoint = hit.point + cursorOffset;
 
-				Debug.Log("Player held to move");
+				//Debug.Log("Player held to move");
 				Instantiate(cursorClick, spawnPoint ,Quaternion.identity);
 				navMeshAgent.updatePosition = true;	
 			}
+		}
+
+		//Portal hop
+		if (Input.GetKeyDown(KeyCode.Space)){
+			anim_Controller.SetTrigger("portalling");
+			//anim_Controller.SetBool("running", m_Running);
+			navMeshAgent.ResetPath();
+			StartCoroutine(PortalHop(0.2f));
+
 		}
 
 		// When animations get added.
@@ -76,5 +88,12 @@ public class CharController : MonoBehaviour {
 
 	public void KnockedOut(){
 
+	}
+
+	private IEnumerator PortalHop(float waitTime){
+		Debug.Log("Going to warp!");
+		yield return new WaitForSeconds(waitTime);
+		navMeshAgent.Warp(portalEndPoint.transform.position);
+		Debug.Log("Warped!");
 	}
 }

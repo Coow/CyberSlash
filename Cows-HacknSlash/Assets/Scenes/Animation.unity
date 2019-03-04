@@ -188,15 +188,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4532650430122532, guid: 5db5f7e11cf88d945be6b38d815dfd6a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.021105
+      value: -0.51799
       objectReference: {fileID: 0}
     - target: {fileID: 4532650430122532, guid: 5db5f7e11cf88d945be6b38d815dfd6a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.96
+      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: 4532650430122532, guid: 5db5f7e11cf88d945be6b38d815dfd6a, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -30.259
+      value: -30.437
       objectReference: {fileID: 0}
     - target: {fileID: 4532650430122532, guid: 5db5f7e11cf88d945be6b38d815dfd6a, type: 2}
       propertyPath: m_LocalRotation.x
@@ -226,6 +226,23 @@ Prefab:
     - target: {fileID: 1724150675839116, guid: 5db5f7e11cf88d945be6b38d815dfd6a, type: 2}
       propertyPath: m_Name
       value: Flying Dragon
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532650430122532, guid: 5db5f7e11cf88d945be6b38d815dfd6a, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532650430122532, guid: 5db5f7e11cf88d945be6b38d815dfd6a, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4532650430122532, guid: 5db5f7e11cf88d945be6b38d815dfd6a, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114254557779791384, guid: 5db5f7e11cf88d945be6b38d815dfd6a,
+        type: 2}
+      propertyPath: animationSpeed
+      value: 0.42
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5db5f7e11cf88d945be6b38d815dfd6a, type: 2}

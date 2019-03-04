@@ -12,6 +12,9 @@ public class FlyingDragon : MonoBehaviour {
 	[SerializeField]
 	private GameObject Target;
 	public float Range;
+	[SerializeField]
+	[Range(0.0f, 5f)]
+	private float animationSpeed = 2.5f;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +24,8 @@ public class FlyingDragon : MonoBehaviour {
 	}
 	
 	void FixedUpdate(){
+
+		anim_Controller.speed = animationSpeed;
 
 		if(Vector3.Distance(Target.transform.position, transform.position) <= Range)
     	{
