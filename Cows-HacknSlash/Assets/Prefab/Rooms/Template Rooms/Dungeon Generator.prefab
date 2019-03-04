@@ -1,0 +1,152 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1959240205845318}
+  m_IsPrefabAsset: 1
+--- !u!1 &1959240205845318
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4158746659858740}
+  - component: {fileID: 114690165018510314}
+  m_Layer: 0
+  m_Name: Dungeon Generator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4158746659858740
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1959240205845318}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114690165018510314
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1959240205845318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e42f38875a5a754185a6201cdfd1d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EasyRooms:
+  - OpenBottom: 1
+    OpenLeft: 0
+    OpenRight: 0
+    OpenTop: 0
+    Rooms:
+    - {fileID: 1720309534765584, guid: cf1d0377501535c43bbb76385fbce87f, type: 2}
+  - OpenBottom: 1
+    OpenLeft: 1
+    OpenRight: 0
+    OpenTop: 0
+    Rooms:
+    - {fileID: 1150944527245078, guid: 72038ccf9acd8bd44bb48b02dcb12f86, type: 2}
+  - OpenBottom: 1
+    OpenLeft: 1
+    OpenRight: 1
+    OpenTop: 0
+    Rooms:
+    - {fileID: 1934755846753502, guid: 851a29f93cc89bc459c54e1918a4588d, type: 2}
+  - OpenBottom: 1
+    OpenLeft: 1
+    OpenRight: 1
+    OpenTop: 1
+    Rooms:
+    - {fileID: 1758181039999598, guid: a3734b63fc9e64d4ead48fe70b6cc7ea, type: 2}
+  - OpenBottom: 1
+    OpenLeft: 1
+    OpenRight: 0
+    OpenTop: 1
+    Rooms:
+    - {fileID: 1630380863589240, guid: f154d28ad6279de4cb4cbd08114240f7, type: 2}
+  - OpenBottom: 1
+    OpenLeft: 0
+    OpenRight: 1
+    OpenTop: 0
+    Rooms:
+    - {fileID: 1811833865624942, guid: ddb264f32f6c6bf48817687feb6dabc4, type: 2}
+  - OpenBottom: 1
+    OpenLeft: 0
+    OpenRight: 1
+    OpenTop: 1
+    Rooms:
+    - {fileID: 1150055404122246, guid: e839882ee4ad6f74fa1e947bf766d4b7, type: 2}
+  - OpenBottom: 1
+    OpenLeft: 0
+    OpenRight: 0
+    OpenTop: 1
+    Rooms:
+    - {fileID: 1564076674064326, guid: a90c3c76373b1564082352f13e8b8e2c, type: 2}
+  - OpenBottom: 0
+    OpenLeft: 1
+    OpenRight: 0
+    OpenTop: 0
+    Rooms:
+    - {fileID: 1365106407770180, guid: cba80b42eb3f8df40ba4581257c23f6b, type: 2}
+  - OpenBottom: 0
+    OpenLeft: 1
+    OpenRight: 1
+    OpenTop: 0
+    Rooms:
+    - {fileID: 1021175779942562, guid: 6440183ac24d3bb468bfe13f6e11d5f2, type: 2}
+  - OpenBottom: 0
+    OpenLeft: 1
+    OpenRight: 1
+    OpenTop: 1
+    Rooms:
+    - {fileID: 1925280845606276, guid: eeadd652fb3a260459c33c796480d747, type: 2}
+  - OpenBottom: 0
+    OpenLeft: 1
+    OpenRight: 0
+    OpenTop: 1
+    Rooms:
+    - {fileID: 1873872950647158, guid: ba32947779918b344a671f97f74df4db, type: 2}
+  - OpenBottom: 0
+    OpenLeft: 0
+    OpenRight: 1
+    OpenTop: 0
+    Rooms:
+    - {fileID: 1764747440941736, guid: 1e27bb5ab1d4f4940927460a54d66e0c, type: 2}
+  - OpenBottom: 0
+    OpenLeft: 0
+    OpenRight: 1
+    OpenTop: 1
+    Rooms:
+    - {fileID: 1664923891160260, guid: d253ed4a1f2ed8f4ba60c7a296fad5bf, type: 2}
+  - OpenBottom: 0
+    OpenLeft: 0
+    OpenRight: 0
+    OpenTop: 1
+    Rooms:
+    - {fileID: 1546851380027756, guid: 7dacd3ef0636fac47b33bf0ea3fd5d5f, type: 2}
+  NormalRooms: []
+  HardRooms: []
+  Difficulty: 1
+  RoomCount: 2500
+  RoomSize: 10
+  ChanceToGoBack: 75
+  Player: {fileID: 0}
+  testBlock: {fileID: 0}
