@@ -12,6 +12,9 @@ TagManager:
   - Fire_Ball_Enemy
   - Corpse
   - NPCMarker
+  - SpellBall
+  - Boss
+  - NMS
   layers:
   - Default
   - TransparentFX

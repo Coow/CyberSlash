@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Enemy {
-    public enum EnemyType { Foot_Soldier, Magic_Caster };
+    public enum EnemyType { Foot_Soldier, Magic_Caster, Cow_Minion};
 
     public class EnemyManager : MonoBehaviour
     {
@@ -29,7 +29,7 @@ namespace Enemy {
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.tag.Equals("Fire_Ball"))
+            if (other.tag.Equals("SpellBall"))
             {
                 _enemyHealth.TakeDamage(other);
                 print("Get Hit");
