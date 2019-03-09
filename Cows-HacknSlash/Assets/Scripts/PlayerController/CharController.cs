@@ -10,6 +10,7 @@ public class CharController : MonoBehaviour {
 	private Animator anim_Controller;
 	private bool m_Running;
 	[SerializeField]
+	[Tooltip("Layers the RayCasts will check if it has hit\nApplies to both PortalHop and ClickToMove")]
 	private LayerMask layerMask;
 	public float KnockoutTime = 1.5f;
 	private bool _knockedOut = false;
@@ -19,7 +20,12 @@ public class CharController : MonoBehaviour {
 	public GameObject cursorClick;
 	public Vector3 cursorOffset;
 
-	public GameObject portalEndPoint;
+	[SerializeField]
+	private float PortalDistance = 5f;
+	[SerializeField]
+	private GameObject portalEndPoint;
+
+
 
 	void Start () {
 		navMeshAgent = GetComponent<NavMeshAgent>();
@@ -35,10 +41,11 @@ public class CharController : MonoBehaviour {
 		Debug.DrawLine(ray.origin, pointToLook, Color.blue);
 		
 		if (Input.GetMouseButton(0) & _knockedOut.Equals(false)) {
+			Debug.Log("Player tried to click to move!");
 			if (Physics.Raycast(ray, out hit, 100, layerMask)) {
 				navMeshAgent.destination = hit.point;
 				navMeshAgent.updatePosition = true;
-				//Debug.Log("Player clicked to move");
+				Debug.Log("Player clicked to move");
 			}
 		}
 
@@ -87,13 +94,37 @@ public class CharController : MonoBehaviour {
     }
 
 	public void KnockedOut(){
-
+		//Implement the player dying :LUL:
 	}
 
 	private IEnumerator PortalHop(float waitTime){
 		Debug.Log("Going to warp!");
+
 		yield return new WaitForSeconds(waitTime);
+		//Jump to the Portal GameObject
 		navMeshAgent.Warp(portalEndPoint.transform.position);
+
 		Debug.Log("Warped!");
+	}
+
+	void FixedUpdate() {
+		#region PortalObjectCalculations
+		Vector3 forward = transform.TransformDirection(Vector3.forward) * PortalDistance;
+		Debug.DrawRay(transform.position, forward, Color.green);
+		
+		RaycastHit hit;
+		if(Physics.Raycast(transform.position, transform.forward, out hit, PortalDistance, layerMask)) {
+			if(hit.collider.name==null) {
+				portalEndPoint.transform.position = transform.position + forward.normalized * PortalDistance;
+				return;
+			} else {
+				portalEndPoint.transform.position = hit.point - forward.normalized;
+			}
+		}
+		#endregion
+	}
+
+	public void CalculatePlayerSpeed(string _AgilityLevel){
+		navMeshAgent.speed = 8 + (ulong.Parse(_AgilityLevel) / 10);
 	}
 }

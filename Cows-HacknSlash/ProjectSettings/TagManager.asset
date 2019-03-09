@@ -15,6 +15,7 @@ TagManager:
   - SpellBall
   - Boss
   - NMS
+  - DungeonOrigin
   layers:
   - Default
   - TransparentFX
