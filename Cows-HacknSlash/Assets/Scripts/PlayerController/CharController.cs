@@ -3,19 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshAgent))]
 public class CharController : MonoBehaviour {
 
 	private NavMeshAgent navMeshAgent;
-	private bool running;
+	private Animator anim_Controller;
+	private bool m_Running;
 	[SerializeField]
 	private LayerMask layerMask;
+	public float KnockoutTime = 1.5f;
+	private bool _knockedOut = false;
+	private bool canMove = true;
 	
 	[Header("Misc")]
 	public GameObject cursorClick;
-
 	public Vector3 cursorOffset;
+
+	public GameObject portalEndPoint;
+
 	void Start () {
 		navMeshAgent = GetComponent<NavMeshAgent>();
+		anim_Controller = gameObject.transform.GetChild(1).GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame.
@@ -26,25 +34,41 @@ public class CharController : MonoBehaviour {
 		Vector3 pointToLook = ray.GetPoint(50f);
 		Debug.DrawLine(ray.origin, pointToLook, Color.blue);
 		
-		if (Input.GetMouseButton(0)) {
+		if (Input.GetMouseButton(0) & _knockedOut.Equals(false)) {
 			if (Physics.Raycast(ray, out hit, 100, layerMask)) {
 				navMeshAgent.destination = hit.point;
+				navMeshAgent.updatePosition = true;
+				//Debug.Log("Player clicked to move");
 			}
 		}
 
-		if (Input.GetMouseButtonDown(0)) {	
+		if (Input.GetMouseButtonDown(0) & _knockedOut.Equals(false)) {	
 			if (Physics.Raycast(ray, out hit, 100, layerMask)) {
 				Vector3 spawnPoint = hit.point + cursorOffset;
 
+				//Debug.Log("Player held to move");
 				Instantiate(cursorClick, spawnPoint ,Quaternion.identity);
+				navMeshAgent.updatePosition = true;	
 			}
+		}
+
+		//Portal hop
+		if (Input.GetKeyDown(KeyCode.Space)){
+			anim_Controller.SetTrigger("portalling");
+			//anim_Controller.SetBool("running", m_Running);
+			navMeshAgent.ResetPath();
+			StartCoroutine(PortalHop(0.2f));
+
 		}
 
 		// When animations get added.
 		if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance) {
-			running = false;
+			m_Running = false;
+			anim_Controller.SetBool("running", m_Running);
+			navMeshAgent.updatePosition = false;
 		} else {
-			running = true;
+			m_Running = true;
+			anim_Controller.SetBool("running", m_Running);
 		}
 	}
 
@@ -61,4 +85,15 @@ public class CharController : MonoBehaviour {
     private void DestroyPlayer() {
         Destroy(this.gameObject);
     }
+
+	public void KnockedOut(){
+
+	}
+
+	private IEnumerator PortalHop(float waitTime){
+		Debug.Log("Going to warp!");
+		yield return new WaitForSeconds(waitTime);
+		navMeshAgent.Warp(portalEndPoint.transform.position);
+		Debug.Log("Warped!");
+	}
 }

@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4689475862659940}
-  - component: {fileID: 114465829138823192}
+  - component: {fileID: 114543712967583564}
   m_Layer: 0
   m_Name: DiscordCtrl
   m_TagString: Untagged
@@ -40,7 +40,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114465829138823192
+--- !u!114 &114543712967583564
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -51,9 +51,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 300cffd3803ef31428f4bb282fb424bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  applicationId: 333435323239383930393830393337373339
+  applicationId: 491656252611493910
   optionalSteamId: 
   callbackCalls: 0
+  clickCounter: 0
   joinRequest:
     userId: 
     username: 

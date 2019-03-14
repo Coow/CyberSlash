@@ -69,14 +69,14 @@ NavMeshProjectSettings:
     cost: 1
   - name: 
     cost: 1
-  m_LastAgentTypeID: -902729914
+  m_LastAgentTypeID: 287145453
   m_Settings:
   - serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 0.05
     agentHeight: 2
     agentSlope: 45
-    agentClimb: 1
+    agentClimb: 0.5
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -104,11 +104,11 @@ NavMeshProjectSettings:
     debug:
       m_Flags: 0
   - serializedVersion: 2
-    agentTypeID: -902729914
-    agentRadius: 0.25
-    agentHeight: 3
+    agentTypeID: 287145453
+    agentRadius: 0.5
+    agentHeight: 2
     agentSlope: 45
-    agentClimb: 1
+    agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -122,4 +122,4 @@ NavMeshProjectSettings:
   m_SettingNames:
   - Humanoid
   - NPC
-  - TestSkill
+  - Boss

@@ -1,0 +1,234 @@
+fileFormatVersion: 2
+guid: 4cf1842c0d694d5478e18cede6d625b7
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: arm1.l
+    100002: arm1.r.001
+    100004: arm2.l
+    100006: arm2.l.001
+    100008: arm2.l.002
+    100010: arm2.l.003
+    100012: arm2.l.004
+    100014: arm2.l.004_end
+    100016: arm2.l.005
+    100018: arm2.l.006
+    100020: arm2.l.007
+    100022: arm2.l.008
+    100024: arm2.l.008_end
+    100026: arm2.l.009
+    100028: arm2.l.010
+    100030: arm2.l.011
+    100032: arm2.l.012
+    100034: arm2.l.012_end
+    100036: arm2.l.013
+    100038: arm2.l.014
+    100040: arm2.l.015
+    100042: arm2.l.016
+    100044: arm2.l.016_end
+    100046: arm2.l.017
+    100048: arm2.l.018
+    100050: arm2.l.019
+    100052: arm2.l.019_end
+    100054: arm2.r.020
+    100056: arm2.r.021
+    100058: arm2.r.022
+    100060: arm2.r.023
+    100062: arm2.r.024
+    100064: arm2.r.024_end
+    100066: arm2.r.025
+    100068: arm2.r.026
+    100070: arm2.r.027
+    100072: arm2.r.028
+    100074: arm2.r.028_end
+    100076: arm2.r.029
+    100078: arm2.r.030
+    100080: arm2.r.031
+    100082: arm2.r.032
+    100084: arm2.r.032_end
+    100086: arm2.r.033
+    100088: arm2.r.034
+    100090: arm2.r.035
+    100092: arm2.r.036
+    100094: arm2.r.036_end
+    100096: arm2.r.037
+    100098: arm2.r.038
+    100100: arm2.r.039
+    100102: arm2.r.039_end
+    100104: Armature
+    100106: body
+    100108: body 1
+    100110: body2
+    100112: body5
+    100114: head
+    100116: head_end
+    100118: hip.l
+    100120: hip.r.001
+    100122: leg.l.003
+    100124: leg.l.004
+    100126: leg.l.005
+    100128: leg.l.005_end
+    100130: leg.r
+    100132: leg.r.001
+    100134: leg.r.002
+    100136: leg.r.002_end
+    100138: neck
+    100140: //RootNode
+    400000: arm1.l
+    400002: arm1.r.001
+    400004: arm2.l
+    400006: arm2.l.001
+    400008: arm2.l.002
+    400010: arm2.l.003
+    400012: arm2.l.004
+    400014: arm2.l.004_end
+    400016: arm2.l.005
+    400018: arm2.l.006
+    400020: arm2.l.007
+    400022: arm2.l.008
+    400024: arm2.l.008_end
+    400026: arm2.l.009
+    400028: arm2.l.010
+    400030: arm2.l.011
+    400032: arm2.l.012
+    400034: arm2.l.012_end
+    400036: arm2.l.013
+    400038: arm2.l.014
+    400040: arm2.l.015
+    400042: arm2.l.016
+    400044: arm2.l.016_end
+    400046: arm2.l.017
+    400048: arm2.l.018
+    400050: arm2.l.019
+    400052: arm2.l.019_end
+    400054: arm2.r.020
+    400056: arm2.r.021
+    400058: arm2.r.022
+    400060: arm2.r.023
+    400062: arm2.r.024
+    400064: arm2.r.024_end
+    400066: arm2.r.025
+    400068: arm2.r.026
+    400070: arm2.r.027
+    400072: arm2.r.028
+    400074: arm2.r.028_end
+    400076: arm2.r.029
+    400078: arm2.r.030
+    400080: arm2.r.031
+    400082: arm2.r.032
+    400084: arm2.r.032_end
+    400086: arm2.r.033
+    400088: arm2.r.034
+    400090: arm2.r.035
+    400092: arm2.r.036
+    400094: arm2.r.036_end
+    400096: arm2.r.037
+    400098: arm2.r.038
+    400100: arm2.r.039
+    400102: arm2.r.039_end
+    400104: Armature
+    400106: body
+    400108: body 1
+    400110: body2
+    400112: body5
+    400114: head
+    400116: head_end
+    400118: hip.l
+    400120: hip.r.001
+    400122: leg.l.003
+    400124: leg.l.004
+    400126: leg.l.005
+    400128: leg.l.005_end
+    400130: leg.r
+    400132: leg.r.001
+    400134: leg.r.002
+    400136: leg.r.002_end
+    400138: neck
+    400140: //RootNode
+    2100000: initialShadingGroup
+    4300000: body
+    9500000: //RootNode
+    13700000: body
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

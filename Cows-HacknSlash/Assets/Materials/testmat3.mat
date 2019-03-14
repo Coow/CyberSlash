@@ -62,7 +62,7 @@ Material:
     - _DstBlend: 0
     - _FirstOutlineWidth: 1.61
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0
     - _GlossyReflections: 1
     - _Limiter: 3.37
     - _Metallic: 0

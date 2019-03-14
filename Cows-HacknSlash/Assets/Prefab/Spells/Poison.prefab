@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 96761760700480900}
   m_Layer: 0
   m_Name: Poison
-  m_TagString: Fire_Ball
+  m_TagString: SpellBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
