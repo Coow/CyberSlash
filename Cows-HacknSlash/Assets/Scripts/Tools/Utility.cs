@@ -43,4 +43,24 @@ public static class Utility
         // Unsupported flag type
         throw new Exception($"The comparison of the type {e.GetType().Name} is not implemented.");
     }
+
+    /// <summary>
+    /// Checks if the <paramref name="contained"/> can be found inside <paramref name="container"/>
+    /// </summary>
+    /// <param name="container">The containing string</param>
+    /// <param name="contained">The contained string</param>
+    /// <returns>True if <paramref name="contained"/> is found inside <paramref name="contained"/></returns>
+    public static bool ContainsString(this string container, string contained)
+    {
+        if (string.IsNullOrEmpty(container) && string.IsNullOrEmpty(contained))
+        {
+            return true;
+        }
+        else if (string.IsNullOrEmpty(container) || string.IsNullOrEmpty(contained))
+        {
+            return false;
+        }
+
+        return container.ToLower().Contains(contained.ToLower());
+    }
 }
