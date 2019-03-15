@@ -1,4 +1,11 @@
 {
 	"ItemsListFile":"ItemsList.json",
-	"EquipmentSlotTypeMapFile":"EquipmentSlotType.json"
+	"EquipmentSlotTypeMapFile":"EquipmentSlotType.json",
+	"FormulasFile":"Formulas.json",
+	"FunctionsFile":"Functions.json",
+	"StatsFile":"Stats.json",
+	"ModifiableStatsFile":"ModifiableStats.json",
+	"StatModifiersFile":"StatModifiers.json",
+	"ListManagerFile":"ListManagerLists.json",
+	"ObjectsList": "ObjectsList.json"
 }
