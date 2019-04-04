@@ -1,0 +1,26 @@
+<?php
+    $loginURL = $_SERVER['HTTP_HOST'].'/php/userpages/loginpage.php';
+    $frontpageURL = $_SERVER['HTTP_HOST'].'/php/frontpage.php';
+    $aboutURL = $_SERVER['HTTP_HOST'].'/php/about.php';
+    $blogURL = $_SERVER['HTTP_HOST'].'/php/blog.php';
+    $statsURL = $_SERVER['HTTP_HOST'].'/php/stats.php';
+    $wipURL = $_SERVER['HTTP_HOST'].'/php/WIP.php';
+    $icon = $_SERVER['HTTP_HOST'].'/CyberSlash-Icon.png';
+?>
+ 
+<div class="header-left">
+    <a class="navigator"href="//<?php echo $frontpageURL; ?>" class="homepage">CyberSlash</a>
+    <a class="divider">|</a>
+    <a class="navigator"href="//<?php echo $aboutURL; ?>" class="aboutpage">About</a>
+    <a class="divider">|</a>
+    <a class="navigator"href="//<?php echo $wipURL; ?>" class="statspage">Statistics</a>
+    <a class="divider">|</a>
+    <a class="navigator"href="//<?php echo $wipURL; ?>" class="statspage">Forum</a>
+</div>
+<div class="header-right">
+    <a id="loginButton" href="//<?php echo $loginURL; ?>">Login</a>
+    <a id="headerButton" href="https://docs.google.com/document/d/1efqXgjajaEB8XXEQDPFiBsHdwfwno5MTNYbWqtctqqQ/" target="_blank"><span class="far fa-file-alt fa-3x"></span></a>
+    <a id="headerButton" href="https://github.com/Coow/cows-hacknslash" target="_blank"><span class="fab fa-github fa-3x"></span></a>
+    <a id="headerButton" href="https://discordapp.com/invite/hxcJsXu" target="_blank"><span class="fab fa-discord fa-3x"></span></a>
+    <a id="headerButton" href="https://www.youtube.com/channel/UC5wEVNGqD1wtjUNm-ai6Uug" target="_blank"><span class="fab fa-youtube fa-3x"></span></a>
+</div>
