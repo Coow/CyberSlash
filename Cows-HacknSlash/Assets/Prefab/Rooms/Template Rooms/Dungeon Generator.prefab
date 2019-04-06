@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4158746659858740}
   - component: {fileID: 114690165018510314}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Dungeon Generator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,6 +76,7 @@ MonoBehaviour:
     OpenTop: 1
     Rooms:
     - {fileID: 1758181039999598, guid: a3734b63fc9e64d4ead48fe70b6cc7ea, type: 2}
+    - {fileID: 1610224877902174, guid: e0f3c0b92c5ec39449bf8f7fa5773b8f, type: 2}
   - OpenBottom: 1
     OpenLeft: 1
     OpenRight: 0
@@ -145,8 +146,8 @@ MonoBehaviour:
   NormalRooms: []
   HardRooms: []
   Difficulty: 1
-  RoomCount: 2500
+  RoomCount: 25
   RoomSize: 10
   ChanceToGoBack: 75
   Player: {fileID: 0}
-  testBlock: {fileID: 0}
+  testBlock: {fileID: 1698491239684414, guid: 3d2d3fd5905721048b263fe900d4c48f, type: 2}
