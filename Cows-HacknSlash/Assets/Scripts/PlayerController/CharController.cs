@@ -25,6 +25,11 @@ public class CharController : MonoBehaviour {
 	[SerializeField]
 	private GameObject portalEndPoint;
 
+	[Header("Inventory Related")]
+	[SerializeField]
+	private Animator inventoryAnimator;
+	[SerializeField]
+	private bool levelsShown = false;
 
 
 	void Start () {
@@ -68,14 +73,27 @@ public class CharController : MonoBehaviour {
 
 		}
 
-		// When animations get added.
+		// Running
 		if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance) {
 			m_Running = false;
 			anim_Controller.SetBool("running", m_Running);
 			navMeshAgent.updatePosition = false;
-		} else {
+		} 
+		else {
 			m_Running = true;
 			anim_Controller.SetBool("running", m_Running);
+		}
+	
+		if (Input.GetKeyDown(KeyCode.Tab)) {
+			Debug.Log("Tab pressed");
+			if(levelsShown == false) {
+				inventoryAnimator.SetBool("showLevels", true);
+				levelsShown = true;
+			} else {
+				inventoryAnimator.SetBool("showLevels", false);
+				levelsShown = false;
+			}
+			inventoryAnimator.SetTrigger("levelsTrigger");
 		}
 	}
 
