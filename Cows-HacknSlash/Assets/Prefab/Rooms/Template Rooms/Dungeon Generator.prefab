@@ -76,7 +76,6 @@ MonoBehaviour:
     OpenTop: 1
     Rooms:
     - {fileID: 1758181039999598, guid: a3734b63fc9e64d4ead48fe70b6cc7ea, type: 2}
-    - {fileID: 1610224877902174, guid: e0f3c0b92c5ec39449bf8f7fa5773b8f, type: 2}
   - OpenBottom: 1
     OpenLeft: 1
     OpenRight: 0
@@ -146,7 +145,7 @@ MonoBehaviour:
   NormalRooms: []
   HardRooms: []
   Difficulty: 1
-  RoomCount: 25
+  RoomCount: 50
   RoomSize: 10
   ChanceToGoBack: 75
   Player: {fileID: 0}
