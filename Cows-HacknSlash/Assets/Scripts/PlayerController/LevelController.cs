@@ -122,6 +122,7 @@ public class LevelController : MonoBehaviour {
 		AgilityCurrentLevel.text = $"{agilityLevel.CurrentLevel}";
 
 		this.GetComponent<CharController>().CalculatePlayerSpeed(AgilityCurrentLevel.text);
+		this.GetComponent<CharController>().CalculatePlayerMaxHealth(DefenseCurrentLevel.text);
     }
 
     /// <summary>

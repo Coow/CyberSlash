@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using TMPro;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class CharController : MonoBehaviour {
@@ -15,6 +16,7 @@ public class CharController : MonoBehaviour {
 	public float KnockoutTime = 1.5f;
 	private bool _knockedOut = false;
 	private bool canMove = true;
+	public bool dead = false;
 	
 	[Header("Misc")]
 	public GameObject cursorClick;
@@ -32,9 +34,20 @@ public class CharController : MonoBehaviour {
 	private bool levelsShown = false;
 
 
+	[Header("Health and Resources")]
+	private int startingHealth = 10;
+	[HideInInspector]
+	public string strHealth;
+	public int curHealth;
+	public int maxHealth;
+	public TMP_Text HealthText;
+
+
 	void Start () {
 		navMeshAgent = GetComponent<NavMeshAgent>();
 		anim_Controller = gameObject.transform.GetChild(1).GetComponent<Animator>();
+		curHealth = startingHealth;
+		maxHealth = startingHealth;
 	}
 	
 	// Update is called once per frame.
@@ -107,12 +120,14 @@ public class CharController : MonoBehaviour {
         }
     }
 
-    private void DestroyPlayer() {
-        Destroy(this.gameObject);
-    }
-
-	public void KnockedOut(){
-		//Implement the player dying :LUL:
+	public void Die(){
+		Debug.Log("DIE MOTHER FUCKER");
+		_knockedOut = true;
+		if(dead == false) {
+			anim_Controller.SetBool("dead", true);
+			dead = true;
+		}
+		
 	}
 
 	private IEnumerator PortalHop(float waitTime){
@@ -131,6 +146,7 @@ public class CharController : MonoBehaviour {
 		Debug.DrawRay(transform.position, forward, Color.green);
 		
 		RaycastHit hit;
+
 		if(Physics.Raycast(transform.position, transform.forward, out hit, PortalDistance, layerMask)) {
 			if(hit.collider.name==null) {
 				portalEndPoint.transform.position = transform.position + forward.normalized * PortalDistance;
@@ -140,9 +156,28 @@ public class CharController : MonoBehaviour {
 			}
 		}
 		#endregion
+
+		#region HealthCalc
+
+		if(curHealth > maxHealth) {
+			curHealth = maxHealth;
+		}
+
+		strHealth = curHealth + " / " + maxHealth;
+
+		HealthText.text = $"{strHealth}";
+
+		if(curHealth <= 0) {
+			Die();
+		}
+		#endregion
 	}
 
 	public void CalculatePlayerSpeed(string _AgilityLevel){
 		navMeshAgent.speed = 8 + (ulong.Parse(_AgilityLevel) / 10);
+	}
+
+	public void CalculatePlayerMaxHealth(string _DefenseLevel){
+		maxHealth = 8 + (int.Parse(_DefenseLevel) * 2); 
 	}
 }

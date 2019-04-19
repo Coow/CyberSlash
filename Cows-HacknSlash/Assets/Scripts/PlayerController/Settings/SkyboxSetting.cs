@@ -15,7 +15,7 @@ public class SkyboxSetting : MonoBehaviour {
 		skybox = GetComponent<Skybox>();
 	}
 
-	void FixedUpdate() {
+	void UpdateSkybox() {
 		if(skyboxEnabled) {
 			skybox.enabled = true;
 			camera.clearFlags = CameraClearFlags.Skybox;

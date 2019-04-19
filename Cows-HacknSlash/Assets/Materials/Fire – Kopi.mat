@@ -5,7 +5,8 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: "Fire \u2013 Kopi"
   m_Shader: {fileID: 4800000, guid: 02a91a53d0f20f942a1cc6f872f60719, type: 3}
   m_ShaderKeywords: _DEPTH_AWARE_ON _DETAIL_O4
@@ -134,7 +135,7 @@ Material:
     - _Metallic3: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RampVal: -0.239
+    - _RampVal: -0.213
     - _Smoothness0: 0.5
     - _Smoothness1: 0.5
     - _Smoothness2: 0.5

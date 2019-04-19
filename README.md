@@ -1,6 +1,6 @@
 # Cows Open Source Hack N' Slash Game
 
-Made in Unity - 2018.2.x
+Made in Unity - 2019.1.02f
 Updates will be made on the version, once stable builds of Unity are released
 
 Multiplayer 3D Top-Down Hack N' Slash Game for; Windows, iOS and Linux

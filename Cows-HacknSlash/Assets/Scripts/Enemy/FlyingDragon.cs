@@ -8,13 +8,18 @@ public class FlyingDragon : MonoBehaviour {
 	private NavMeshAgent navMeshAgent;
 	private Animator anim_Controller;
 	private bool m_Running;
-	
-	[SerializeField]
-	private GameObject Target;
+
+	public GameObject Target;
 	public float Range;
+	public float AttackRange;
+	private bool canStartNewAttack = true;
 	[SerializeField]
 	[Range(0.0f, 5f)]
 	private float animationSpeed = 2.5f;
+
+	[Header("Damage")]
+	public GameObject damageObject;
+	public int damageToDeal;
 
 	[Header("Sound Effects")]
 	public AudioClip aggro;
@@ -32,6 +37,8 @@ public class FlyingDragon : MonoBehaviour {
 		navMeshAgent = GetComponent<NavMeshAgent>();
 		anim_Controller.SetBool("running", true);
 		
+		Target = GameObject.Find("char");
+
 	}
 	
 	void FixedUpdate(){
@@ -41,7 +48,12 @@ public class FlyingDragon : MonoBehaviour {
 		if(Vector3.Distance(Target.transform.position, transform.position) <= Range)
     	{
     		navMeshAgent.destination = Target.transform.position;
-    	}
+    	} else { 
+			if(navMeshAgent.hasPath) {
+				//Debug.Log("I should stop moving");
+				navMeshAgent.ResetPath();
+			}
+		}
 
 	
 		if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance) {
@@ -52,5 +64,26 @@ public class FlyingDragon : MonoBehaviour {
 			m_Running = true;
 			anim_Controller.SetBool("running", m_Running);
 		}
+
+		if(Vector3.Distance(Target.transform.position, transform.position) <= AttackRange) {
+			if(canStartNewAttack){StartCoroutine(Attack(1f));}
+		}
+	}
+
+	private IEnumerator Attack(float stopTime) {
+		canStartNewAttack = false;
+		anim_Controller.SetTrigger("attack");
+		float curSpeed = navMeshAgent.speed;
+		navMeshAgent.speed = 0;
+		Debug.Log("Attacked", gameObject);
+
+		GameObject go = (GameObject)Instantiate (damageObject, transform.position + (transform.forward.normalized * 2), transform.rotation);
+		PlayerDamager _playerDamager = go.GetComponent<PlayerDamager>();
+		_playerDamager._DamageToDeal = damageToDeal;
+
+		yield return new WaitForSeconds(stopTime);
+
+		navMeshAgent.speed = curSpeed;
+		canStartNewAttack = true;
 	}
 }

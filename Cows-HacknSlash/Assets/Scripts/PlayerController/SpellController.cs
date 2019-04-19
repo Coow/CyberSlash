@@ -90,7 +90,7 @@ public class SpellController : MonoBehaviour
     }
 
     private IEnumerator StopAndCast(float stopTime){
-        Debug.Log("Player should stop moving here");
+        //Debug.Log("Player should stop moving here");
         canCastSpell = false;
         float curSpeed = navMeshAgent.speed;
         navMeshAgent.speed = 0;
@@ -100,6 +100,6 @@ public class SpellController : MonoBehaviour
 
         navMeshAgent.speed = curSpeed;
         canCastSpell = true;
-        Debug.Log("Player can start moving agian!");
+        //Debug.Log("Player can start moving agian!");
     }
 }
