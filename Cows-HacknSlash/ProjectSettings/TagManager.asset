@@ -16,6 +16,7 @@ TagManager:
   - Boss
   - NMS
   - DungeonOrigin
+  - Hostile
   layers:
   - Default
   - TransparentFX
