@@ -1,22 +1,3 @@
-@font-face {
-    font-family: 'mainFont';
-    src: url('../ocraextended.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    url('../ocraextended.tff') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
-}
-
-html {
-    margin: 0;
-    font-family: "mainFont", monospace;
-    font-style: normal;
-    font-weight: lighter;
-    width: 100%;
-}
-
-body {
-    color: white;
-    margin: 0;
-}
-
 #blogsection {
     padding: 0px 0px;
     display: flex;
@@ -32,7 +13,7 @@ body {
     margin-right: 0%;
     background-color: #3a506b;
     border-radius: 8px;
-    
+    color: white;
 }
 
 .heading {
@@ -40,11 +21,17 @@ body {
 }
 
 #title {
-    font-size: 32;
+    font-size: 32px;
+    color:white;
+    text-decoration: none;
+}
+
+#read {
+    color: #5bc0be;
 }
 
 img {
-    width: 70%;
+    width: 80%;
     height: auto;
     border-radius: 8px;
     border: 1px solid #1c2541;

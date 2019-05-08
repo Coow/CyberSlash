@@ -1,3 +1,4 @@
+<?php //http://codewithawa.com/posts/check-if-username-is-already-taken-with-php-and-mysql!--?>
 <html>
     <head>
          

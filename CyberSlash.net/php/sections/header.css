@@ -10,6 +10,7 @@ html {
     font-style: normal;
     font-weight: lighter;
     background-color: #0B132B; 
+    width: 100%;
 }
 
 body {
@@ -89,6 +90,14 @@ body {
     transform: perspective(1px) translateY(-50%);
 }
 
+.header-right div{
+    padding: 0px 6px;
+    float: right;
+    position: relative;
+    top: 50%;
+    transform: perspective(1px) translateY(-50%);
+}
+
 #headerButton {
     color: white;
     padding-right: 10px;
@@ -101,15 +110,46 @@ body {
 #loginButton {
     background-color: #1c2541;
     border: 4px solid white;
-    font-size: 20px;
+    
     text-decoration:none;
     color: white;
-    padding: 10px;
+    height: 60%;
     border-radius: 10px;
-    margin: auto;
+    cursor: pointer;
+}
+
+#loginButton a{
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    margin: 0 auto;
 }
 
 #loginButton:hover {
     color: white;
     background: #101c3f;
 }
+
+#menu-icon {
+    display: hidden;
+    color: white;
+	width: 40px;
+	height: 40px;
+	background-image:url(menu-icon.png);
+
+}
+/*
+@media only screen and (max-width: 1635px) {
+    /* For mobile phones: Should probably change to Mobile First design
+    .header-left, .header-right {
+        font-size: 20px;
+        background-color: #3A506B; 
+    }
+    #menu-icon {
+
+		display: relative;
+        background-color: white;
+	}
+
+}
+*/

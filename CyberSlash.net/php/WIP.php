@@ -11,9 +11,11 @@
     <link rel="stylesheet" href="../css/WIP.css">
 </head>
     <body>
+            <?php include $_SERVER['DOCUMENT_ROOT'].'/php/sections/hexagon-bg.html'; ?> 
         <div id="game-info">
                 <a id="title" style="font-size: 8em">Website in progress</a>
                 <a id="undertitle" style="font-size: 38px;color: #3A506B;">Like everything else</a>
+                
         </div>
     </body>
 </html>
