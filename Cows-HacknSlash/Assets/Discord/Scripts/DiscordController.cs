@@ -96,11 +96,11 @@ public class DiscordController : MonoBehaviour
 
     void Start()
     {
-        presence.state = "testing";
+        presence.state = string.Format("In dungeon T6(Solo)");
         presence.largeImageKey = "cow";
         presence.largeImageText = "this is a cow";
-        presence.partyMax = 4;
-        presence.partySize = 1;
+        //presence.partyMax = 4;
+        //presence.partySize = 1;
         presence.startTimestamp = 0000;
         presence.endTimestamp = 1111;
         presence.joinSecret = "MTI4NzM0OjFpMmhuZToxMjMxMjM= ";

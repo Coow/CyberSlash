@@ -138,7 +138,7 @@ MonoBehaviour:
   HardRooms: []
   Difficulty: 1
   RoomCount: 50
-  RoomSize: 10
+  RoomSize: 25
   ChanceToGoBack: 75
   Player: {fileID: 0}
   testBlock: {fileID: 1698491239684414, guid: 3d2d3fd5905721048b263fe900d4c48f, type: 3}

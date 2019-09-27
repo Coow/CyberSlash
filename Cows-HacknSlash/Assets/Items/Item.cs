@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Item", menuName = "Item")]
+[CreateAssetMenu(fileName = "New Item", menuName = "CyberSlash/Item")]
 public class Item : ScriptableObject{
     
     public int Id;

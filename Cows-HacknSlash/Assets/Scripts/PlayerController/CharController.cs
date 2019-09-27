@@ -21,6 +21,8 @@ public class CharController : MonoBehaviour {
 	[Header("Misc")]
 	public GameObject cursorClick;
 	public Vector3 cursorOffset;
+	private CapsuleCollider capscol;
+
 
 	[SerializeField]
 	private float PortalDistance = 5f;
@@ -42,40 +44,18 @@ public class CharController : MonoBehaviour {
 	public int maxHealth;
 	public TMP_Text HealthText;
 
-
 	void Start () {
 		navMeshAgent = GetComponent<NavMeshAgent>();
 		anim_Controller = gameObject.transform.GetChild(1).GetComponent<Animator>();
+		capscol = GetComponent<CapsuleCollider>();
+		capscol.enabled = true;
 		curHealth = startingHealth;
 		maxHealth = startingHealth;
 	}
 	
 	// Update is called once per frame.
 	void Update () {
-		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-		RaycastHit hit;
-
-		Vector3 pointToLook = ray.GetPoint(50f);
-		Debug.DrawLine(ray.origin, pointToLook, Color.blue);
-		
-		if (Input.GetMouseButton(0) & _knockedOut.Equals(false)) {
-			Debug.Log("Player tried to click to move!");
-			if (Physics.Raycast(ray, out hit, 100, layerMask)) {
-				navMeshAgent.destination = hit.point;
-				navMeshAgent.updatePosition = true;
-				Debug.Log("Player clicked to move");
-			}
-		}
-
-		if (Input.GetMouseButtonDown(0) & _knockedOut.Equals(false)) {	
-			if (Physics.Raycast(ray, out hit, 100, layerMask)) {
-				Vector3 spawnPoint = hit.point + cursorOffset;
-
-				//Debug.Log("Player held to move");
-				Instantiate(cursorClick, spawnPoint ,Quaternion.identity);
-				navMeshAgent.updatePosition = true;	
-			}
-		}
+		playerClickMove();
 
 		//Portal hop
 		if (Input.GetKeyDown(KeyCode.Space)){
@@ -121,11 +101,12 @@ public class CharController : MonoBehaviour {
     }
 
 	public void Die(){
-		Debug.Log("DIE MOTHER FUCKER");
+		Debug.Log("DIE");
 		_knockedOut = true;
 		if(dead == false) {
 			anim_Controller.SetBool("dead", true);
 			dead = true;
+			capscol.enabled = false;
 		}
 		
 	}
@@ -180,4 +161,31 @@ public class CharController : MonoBehaviour {
 	public void CalculatePlayerMaxHealth(string _DefenseLevel){
 		maxHealth = 8 + (int.Parse(_DefenseLevel) * 2); 
 	}
+
+	private void playerClickMove(){
+		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		RaycastHit hit;
+
+		Vector3 pointToLook = ray.GetPoint(50f);
+		Debug.DrawLine(ray.origin, pointToLook, Color.blue);
+		
+		if (Input.GetMouseButton(1) & _knockedOut.Equals(false)) {
+			if (Physics.Raycast(ray, out hit, 100, layerMask)) {
+				navMeshAgent.destination = hit.point;
+				navMeshAgent.updatePosition = true;
+			}
+		}
+
+		if (Input.GetMouseButtonDown(1) & _knockedOut.Equals(false)) {	
+			if (Physics.Raycast(ray, out hit, 100, layerMask)) {
+				Vector3 spawnPoint = hit.point + cursorOffset;
+
+				//Debug.Log("Player held to move");
+				Instantiate(cursorClick, spawnPoint ,Quaternion.identity);
+				navMeshAgent.updatePosition = true;	
+			}
+		}	
+	}
+
+
 }

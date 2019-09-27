@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerDamager : MonoBehaviour
 {   
-    [HideInInspector]
+  
     public int _DamageToDeal;
 
     void Start()
@@ -12,12 +12,13 @@ public class PlayerDamager : MonoBehaviour
         Destroy(gameObject, 1f);
     }
 
-    void OnCollisonEnter(Collision other){
+    void OnCollisionEnter(Collision other){
         Debug.Log("I hit something!");
-        Debug.Log(other);
-        if(other.gameObject.name == "char") {
+        if(other.gameObject.tag == "Player") {
+
             var _CharController = other.gameObject.GetComponent<CharController>();
             _CharController.curHealth -= _DamageToDeal;
+            Destroy(gameObject);
         }
     }
 }

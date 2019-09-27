@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c228721d9b52ffe4194d3868974ddd89, type: 3}
+  m_Name: Baseball Bat
+  m_EditorClassIdentifier: 
+  Name: Baseball Bat
+  Description: Used for playing Baseball, or smashing other thins
+  weaponType: 1
+  TwoHanded: 0
+  RightHand: 1
+  damageType: 0
+  itemRareness: 0
+  damageAmount: 2
+  durabilityPercentage: 100
+  currentDurabilityPercentage: 100
+  weaponObject: {fileID: 1951345567439170703, guid: dcec727fdcf121e46910c77ca6b48780,
+    type: 3}
+  inventoryItem: {fileID: 0}
+  PrefabQuaternion: {x: 0, y: 0, z: 0}

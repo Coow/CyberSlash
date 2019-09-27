@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+
+[RequireComponent(typeof(DamagableEntity))]
+
 public class FlyingDragon : MonoBehaviour {
 
 	private NavMeshAgent navMeshAgent;
@@ -71,17 +74,22 @@ public class FlyingDragon : MonoBehaviour {
 	}
 
 	private IEnumerator Attack(float stopTime) {
+
+		float attackDelay = 0.91f;
+
 		canStartNewAttack = false;
 		anim_Controller.SetTrigger("attack");
 		float curSpeed = navMeshAgent.speed;
 		navMeshAgent.speed = 0;
 		Debug.Log("Attacked", gameObject);
 
+		yield return new WaitForSeconds(attackDelay);
+
 		GameObject go = (GameObject)Instantiate (damageObject, transform.position + (transform.forward.normalized * 2), transform.rotation);
 		PlayerDamager _playerDamager = go.GetComponent<PlayerDamager>();
 		_playerDamager._DamageToDeal = damageToDeal;
 
-		yield return new WaitForSeconds(stopTime);
+		yield return new WaitForSeconds(stopTime - attackDelay);
 
 		navMeshAgent.speed = curSpeed;
 		canStartNewAttack = true;

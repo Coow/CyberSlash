@@ -15,7 +15,7 @@ public class DungeonGeneration : MonoBehaviour {
     [Tooltip("Amount of rooms to spawn")]
     public int RoomCount;
     [Tooltip("Distance between rooms")]
-    public int RoomSize;
+    public int RoomSize = 25;
 
     [Header("Will also affect dungeon size, more explination in code")]
     //Affects the chance of a room trying to spawn on another room (on the list), will affect the spread of the dungeon
@@ -134,7 +134,21 @@ public class DungeonGeneration : MonoBehaviour {
         yield return new WaitForEndOfFrame();
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        player.transform.position = new Vector3(0,0,0);
+        player.transform.position = RandomNavmeshLocation(30f);
         player.GetComponent<NavMeshAgent>().enabled = true;
+
+
     }
+
+    public Vector3 RandomNavmeshLocation(float radius) {
+        Vector3 randomDirection = Random.insideUnitSphere * radius;
+        randomDirection += transform.position;
+        NavMeshHit hit;
+        Vector3 finalPosition = Vector3.zero;
+        if (NavMesh.SamplePosition(randomDirection, out hit, radius, 1)) {
+            finalPosition = hit.position;            
+        }
+        return finalPosition;
+    }
+
 }

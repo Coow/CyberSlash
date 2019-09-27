@@ -5,58 +5,53 @@ using UnityEngine.AI;
 
 public class SpellController : MonoBehaviour
 {
-
+    public bool _Enabled = false;
+    [Space(2f)]
     [SerializeField]
     private GameObject SpawnPos;
     public Animator anim_controller;
-
-    [Header("FireBall")]
-    [SerializeField]
-    private GameObject FireBall;
     public GameObject selectedText;
-
+    
     [SerializeField]
-    private GameObject ice;
-    [SerializeField]
-    private GameObject poison;
+    private GameObject FireBall, ice, poison;
 
-    [Tooltip("0 == null; 1 == FireStaff")]
+    [Tooltip("0 == null; 1 == FireStaff;" )]
     public int StaffSelected;
-    public float cooldownPeriod = 1f;
 
+    public int damageToDeal;
+	public DamageEnum damageType;
+
+    //Used for StopAndCast function
     private NavMeshAgent navMeshAgent;
 
-    //Fixing bug being unable too move caused by spamming spells 
+    [Space(1f)]
     private bool canCastSpell = true;
-    public GameObject baseballBat;
 
     public void Start() {
         navMeshAgent = GetComponent<NavMeshAgent>();
         FireBall.GetComponent<SpellInitialise>().spell.timeStamp = 0;
         ice.GetComponent<SpellInitialise>().spell.timeStamp = 0;
         poison.GetComponent<SpellInitialise>().spell.timeStamp = 0;
-
-        //Temp for testing melee
-        //baseballBat = GameObject.Find("BaseballBat");
-        baseballBat.gameObject.SetActive(false);
     }
 
     void Update()
     {
+        if(!_Enabled) {
+			return;
+		}
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             Debug.Log("Staff has been selected");
             StaffSelected = 1;
             selectedText.SetActive(true);
-            baseballBat.gameObject.SetActive(false);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            Debug.Log("Staff has been de-selected");
+            Debug.Log("Melee has been selected");
             StaffSelected = 0;
             selectedText.SetActive(false);
-            baseballBat.gameObject.SetActive(true);
         }
+
         if (StaffSelected == 1 && canCastSpell)
         {
             if (Input.GetKeyDown(KeyCode.E) && FireBall.GetComponent<SpellInitialise>().spell.timeStamp <= Time.time)
@@ -84,9 +79,7 @@ public class SpellController : MonoBehaviour
                 Destroy(projectile.gameObject, 5f);
                 StartCoroutine(StopAndCast(0.75f));
             }
-        }
-
-        
+        }        
     }
 
     private IEnumerator StopAndCast(float stopTime){
@@ -101,5 +94,9 @@ public class SpellController : MonoBehaviour
         navMeshAgent.speed = curSpeed;
         canCastSpell = true;
         //Debug.Log("Player can start moving agian!");
+    }
+
+    public void CalculateAttackDamage(string _AttackLevel) {
+        
     }
 }
