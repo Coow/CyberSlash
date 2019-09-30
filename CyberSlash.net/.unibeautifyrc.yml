@@ -1,0 +1,25 @@
+JavaScript:
+  beautifiers:
+    - Prettier
+    - Pretty Diff
+    - JS-Beautify
+    - ESLint
+  quotes: double
+SVG:
+  beautifiers:
+    - Pretty Diff
+  quotes: double
+PHP:
+  beautifiers:
+    - PHP-CS-Fixer
+HTML:
+  beautifiers:
+    - Pretty Diff
+    - JS-Beautify
+  quotes: double
+  align_assignments: true
+Mustache: !<tag:yaml.org,2002:js/undefined> ''
+Markdown:
+  beautifiers:
+    - Prettier
+  quotes: double

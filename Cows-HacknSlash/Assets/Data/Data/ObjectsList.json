@@ -1,0 +1,116 @@
+{
+  "$id": "1",
+  "d7cd38bc-3216-468f-9cbf-62826a5019a2": {
+    "$id": "2",
+    "$type": "Mechanics.FunctionsSystem.FunctionBase, Assembly-CSharp",
+    "Expression": "a + b",
+    "Id": "d7cd38bc-3216-468f-9cbf-62826a5019a2",
+    "Name": "Simple add",
+    "Type": -1771040969
+  },
+  "f9ec450c-87e8-4012-8a5d-45a1bee04534": {
+    "$id": "3",
+    "$type": "Mechanics.FunctionsSystem.FunctionBase, Assembly-CSharp",
+    "Expression": "a - b",
+    "Id": "f9ec450c-87e8-4012-8a5d-45a1bee04534",
+    "Name": "Simple substraction",
+    "Type": -1771040969
+  },
+  "920b719e-7766-4e2e-9fc5-32ecc5765545": {
+    "$id": "4",
+    "$type": "Mechanics.StatsSystem.StatBase, Assembly-CSharp",
+    "Id": "920b719e-7766-4e2e-9fc5-32ecc5765545",
+    "Name": "Strength",
+    "Type": -1271283349
+  },
+  "6dfa6261-e832-49cc-87aa-1ae999a824c0": {
+    "$id": "5",
+    "$type": "Mechanics.StatsSystem.StatBase, Assembly-CSharp",
+    "Id": "6dfa6261-e832-49cc-87aa-1ae999a824c0",
+    "Name": "Intelligence",
+    "Type": -1271283349
+  },
+  "71d6b35a-bffe-40fe-baa7-70ba34aea31a": {
+    "$id": "6",
+    "$type": "Mechanics.StatsSystem.StatBase, Assembly-CSharp",
+    "Id": "71d6b35a-bffe-40fe-baa7-70ba34aea31a",
+    "Name": "Agility",
+    "Type": -1271283349
+  },
+  "50fdd74e-2f85-4183-a874-c2f677d534e6": {
+    "$id": "7",
+    "$type": "Mechanics.StatsSystem.StatBaseModifier, Assembly-CSharp",
+    "Function": {
+      "$ref": "3"
+    },
+    "Map": {
+      "a": {
+        "$id": "8",
+        "$type": "Mechanics.StatsSystem.ArgumentToStatBinder, Assembly-CSharp",
+        "Stat": {
+          "$ref": "5"
+        },
+        "Id": "f9beb941-27b0-4cd1-9e14-e75070a56f7a",
+        "Name": "a",
+        "Type": -1073339170
+      },
+      "b": {
+        "$id": "9",
+        "$type": "Mechanics.StatsSystem.ArgumentToStatBinder, Assembly-CSharp",
+        "Stat": {
+          "$ref": "6"
+        },
+        "Id": "ac57563e-bbad-4aa5-bc24-8a2fc80aef20",
+        "Name": "b",
+        "Type": -1073339170
+      }
+    },
+    "Id": "50fdd74e-2f85-4183-a874-c2f677d534e6",
+    "Name": "New modifier",
+    "Type": -1811817320
+  },
+  "f9beb941-27b0-4cd1-9e14-e75070a56f7a": {
+    "$ref": "8"
+  },
+  "ac57563e-bbad-4aa5-bc24-8a2fc80aef20": {
+    "$ref": "9"
+  },
+  "050a4c12-0b75-4d80-baf3-eda105dc092d": {
+    "$id": "10",
+    "$type": "Mechanics.StatsSystem.StatBaseModifier, Assembly-CSharp",
+    "Function": {
+      "$ref": "2"
+    },
+    "Map": {
+      "a": {
+        "$id": "11",
+        "$type": "Mechanics.StatsSystem.ArgumentToStatBinder, Assembly-CSharp",
+        "Stat": {
+          "$ref": "6"
+        },
+        "Id": "c8d01bcc-91be-46ef-becc-1333b4e989b8",
+        "Name": "a",
+        "Type": -1073339170
+      },
+      "b": {
+        "$id": "12",
+        "$type": "Mechanics.StatsSystem.ArgumentToStatBinder, Assembly-CSharp",
+        "Stat": {
+          "$ref": "4"
+        },
+        "Id": "d31e6eec-efa1-48f4-9fb0-440d8c28ceab",
+        "Name": "b",
+        "Type": -1073339170
+      }
+    },
+    "Id": "050a4c12-0b75-4d80-baf3-eda105dc092d",
+    "Name": "New modifier",
+    "Type": -1811817320
+  },
+  "c8d01bcc-91be-46ef-becc-1333b4e989b8": {
+    "$ref": "11"
+  },
+  "d31e6eec-efa1-48f4-9fb0-440d8c28ceab": {
+    "$ref": "12"
+  }
+}

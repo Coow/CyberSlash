@@ -22,9 +22,19 @@ public static class DataManager
     /// </summary>
     public static string DataPath;
 
+    /// <summary>
+    /// The instance of the serializer
+    /// </summary>
+    private static JsonSerializer _serializer;
+
     #endregion
 
     #region Methods
+
+    static DataManager()
+    {
+        InitializeSerializer();
+    }
 
     /// <summary>
     /// Utility method to get the full configuration path
@@ -42,6 +52,18 @@ public static class DataManager
     private static string AssembleDataPathFromDefault()
     {
         return ApplicationPath + "/" + DataPath + "/";
+    }
+
+    /// <summary>
+    /// Utility method to get a configured serializer
+    /// </summary>
+    /// <returns></returns>
+    private static void InitializeSerializer()
+    {
+        _serializer = new JsonSerializer();
+        _serializer.Formatting = Formatting.Indented;
+        _serializer.PreserveReferencesHandling = PreserveReferencesHandling.All;
+        _serializer.TypeNameHandling = TypeNameHandling.Auto;
     }
 
     #endregion
@@ -73,9 +95,9 @@ public static class DataManager
 
             using (StreamWriter sw = File.CreateText(file))
             {
-                JsonSerializer js = new JsonSerializer();
-                js.Serialize(sw, data);
+                _serializer.Serialize(sw, data);
             }
+            Debug.Log($"Data saved in : {file}");
         }
         catch (Exception e)
         {
@@ -126,8 +148,9 @@ public static class DataManager
 
             using (StreamReader sr = File.OpenText(file))
             {
-                JsonSerializer js = new JsonSerializer();
-                return (T)js.Deserialize(sr, typeof(T));
+                object result = _serializer.Deserialize(sr, typeof(T));
+                Debug.Log($"Data loaded from : {file}");
+                return (T)result;
             }
         }
         catch (Exception e)

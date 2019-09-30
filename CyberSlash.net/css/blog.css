@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'mainFont';
+    src: url('../ocraextended.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('../ocraextended.tff') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+html {
+    margin: 0;
+    font-family: "mainFont", monospace;
+    font-style: normal;
+    font-weight: lighter;
+    width: 100%;
+}
+
+body {
+    color: white;
+    margin: 0;
+}

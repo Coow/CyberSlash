@@ -1,0 +1,25 @@
+html {
+    color: white;
+}
+
+#adminmenu a{
+    text-decoration: underline;
+    color: #5bc0be;
+}
+
+td a {
+    color: #5bc0be;
+}
+
+td {
+    padding: 5px;
+}
+
+#addPost a{
+    color: #5bc0be;
+}
+
+p a{
+    text-decoration: underline;
+    color: #5bc0be;
+}

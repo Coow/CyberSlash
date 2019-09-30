@@ -1,0 +1,8 @@
+html {
+    color: white;
+}
+
+#adminmenu a{
+    text-decoration: underline;
+    color: #5bc0be;
+}

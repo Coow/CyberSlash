@@ -1,0 +1,115 @@
+/* General */
+@font-face {
+    font-family: 'mainFont';
+    src: url('/ocraextended.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('/ocraextended.tff') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}  
+
+html {
+    margin: 0;
+    font-family: "mainFont", monospace;
+    font-style: normal;
+    font-weight: lighter;
+    height: 200%;
+    font-size: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+canvas {
+    background: #0B132B;
+}
+
+body {
+    background-color: #0B132B; 
+    color: white;
+    text-align: center;
+    justify-content: center;
+    place-items: center;
+    height: 200vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: "Top" "bottom";
+}
+
+.topinfo { 
+    grid-area: Top;
+}
+
+.topinfo a{
+    padding: 10px;
+}
+
+.botinfo {
+    grid-area: bottom;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 300px;
+    grid-template-areas: "leftBottom rightBottom";
+}
+
+#aboutText {
+    padding: 0px 120px;
+    padding-top: 60px;
+}
+
+/* ---------------- */
+
+/* Game info section */
+#game-info {
+    display: grid;
+    padding-bottom: 20%;
+}
+
+#frontPageButton {
+    background-color: #0B132B; 
+    font-size: 38px;
+    text-decoration:none;
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+    border: 4px solid white;
+}
+
+
+#frontPageButton:hover{
+    color: white;
+    background: #101c3f;
+}
+
+/* ---------------- */
+
+/* Social media buttons ul */
+#social {
+    list-style: none;
+    padding-top: 5%;
+}
+
+/* Individual social media button */
+.github {
+    margin: 4vw;
+}
+
+#button {
+    color: white;
+}
+
+#button:hover {
+    color: #3A506B;
+}
+
+/* ---------------- */
+
+.botinfo div {
+    display: grid;
+}
+
+#title {
+    text-decoration:none;
+    color: white;
+}
