@@ -97,6 +97,8 @@ public class InventoryTestManager : MonoBehaviour
     {
         var eq = new PlayerEquipment();
 
+        eq.Add(3, 1);
+
         Equipment.Initialize(eq);
     }
 

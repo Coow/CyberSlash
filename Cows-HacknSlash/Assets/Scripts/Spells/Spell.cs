@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Spell")]
+[CreateAssetMenu(fileName = "New Spell", menuName = "CyberSlash/Spell")]
 public class Spell : ScriptableObject
 {
 

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c228721d9b52ffe4194d3868974ddd89, type: 3}
+  m_Name: Hands
+  m_EditorClassIdentifier: 
+  Name: Hands
+  Description: Catch these
+  weaponType: 0
+  TwoHanded: 1
+  RightHand: 0
+  damageType: 0
+  itemRareness: 0
+  damageAmount: 1
+  durabilityPercentage: 100
+  currentDurabilityPercentage: 100
+  weaponObject: {fileID: 0}
+  inventoryItem: {fileID: 0}
+  PrefabQuaternion: {x: 0, y: 0, z: 0}

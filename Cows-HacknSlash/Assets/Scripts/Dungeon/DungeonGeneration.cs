@@ -12,8 +12,11 @@ public class DungeonGeneration : MonoBehaviour {
     [Tooltip("1 = easy, 2 = med, 3 = high")]
     public int Difficulty;
     [Header("Amount of rooms, will affect the size of the dungeon")]
+    [Tooltip("Amount of rooms to spawn")]
     public int RoomCount;
-    public int RoomSize;
+    [Tooltip("Distance between rooms")]
+    public int RoomSize = 25;
+
     [Header("Will also affect dungeon size, more explination in code")]
     //Affects the chance of a room trying to spawn on another room (on the list), will affect the spread of the dungeon
     public int ChanceToGoBack;
@@ -81,7 +84,10 @@ public class DungeonGeneration : MonoBehaviour {
                 {
                     GameObject newRoom = Instantiate(chooseRoomToSpawn(x, y), new Vector3((x - codeToWorld) * RoomSize, 0, (y - codeToWorld) * RoomSize), 
                         Quaternion.identity, this.transform);
-                    if (x - codeToWorld == 0 & y - codeToWorld == 0) { newRoom.name = "0, 0 Room!!!"; }
+                    if (x - codeToWorld == 0 & y - codeToWorld == 0) {
+                        newRoom.name = "0, 0 Room!!!";
+                        newRoom.tag = "DungeonOrigin";
+                        }
                     newRoom.transform.Rotate(0, 180, 0);
                     yield return new WaitForSeconds(0.01f);
                 }
@@ -115,11 +121,34 @@ public class DungeonGeneration : MonoBehaviour {
 
     private IEnumerator addNavmesh ()
     {
-        for (int i = 0; i < this.transform.childCount; i++)
-        {
+        
+        //for (int i = 0; i < this.transform.childCount; i++){}
             //Add The NavMesh implementation Here(In The If Statement, Before The yeild return waitForSeconds)
             //Just use 'this.transform.getchild(i)' to get the rooms
-            yield return new WaitForSeconds(0.01f);
-        }
+
+        GameObject originGO = GameObject.FindGameObjectWithTag("DungeonOrigin");
+        originGO.AddComponent<NavMeshSurface>();
+        originGO.GetComponent<NavMeshSurface>().BuildNavMesh();
+
+        //    yield return new WaitForSeconds(0.01f);
+        yield return new WaitForEndOfFrame();
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.transform.position = RandomNavmeshLocation(30f);
+        player.GetComponent<NavMeshAgent>().enabled = true;
+
+
     }
+
+    public Vector3 RandomNavmeshLocation(float radius) {
+        Vector3 randomDirection = Random.insideUnitSphere * radius;
+        randomDirection += transform.position;
+        NavMeshHit hit;
+        Vector3 finalPosition = Vector3.zero;
+        if (NavMesh.SamplePosition(randomDirection, out hit, radius, 1)) {
+            finalPosition = hit.position;            
+        }
+        return finalPosition;
+    }
+
 }
