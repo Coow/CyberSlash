@@ -8,16 +8,17 @@ public class DamagableEntity : MonoBehaviour
     public float health;
     private float startHealth;
 
-
     public Image healthBar;
 
     void Start(){
         startHealth = health;
     }
 
-    void OnCollisionEnter(Collision collision) {
+    void OnTriggerEnter(Collider collision) {
         Debug.Log("Something triggered me", gameObject);
-
+        if(collision.gameObject.tag == "SpellBall"){
+            TakeDamage(collision.gameObject.GetComponent<SpellInitialise>().spell.damage);
+        }
     }
 
     public void TakeDamage (float amount) {

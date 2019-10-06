@@ -15,7 +15,6 @@ public class SpellInitialise : MonoBehaviour
         this.gameObject.GetComponent<MeshRenderer>().material = spell.material;
         trail = this.gameObject.GetComponent<TrailRenderer>();
         trail.material = spell.material;
-
     }
 
     public void Damage(Enemy.EnemyHealth enemy)

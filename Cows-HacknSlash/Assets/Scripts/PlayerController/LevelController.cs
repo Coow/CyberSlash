@@ -8,21 +8,25 @@ public class LevelController : MonoBehaviour {
 	//Attack Level
 	public TMP_Text AttackCurrentLevelXP;
 	public TMP_Text AttackCurrentLevel;
+	public int AttackLvl;
 	[Space(10f)]
 
 	//Spell Level
 	public TMP_Text SpellCurrentLevelXP;
 	public TMP_Text SpellCurrentLevel;
+	public int SpellLvl;
 	[Space(10f)]
 
 	//Defense Level
 	public TMP_Text DefenseCurrentLevelXP;
 	public TMP_Text DefenseCurrentLevel;
+	public int DefenseLvl;
 	[Space(10f)]
 
 	//Agility Level
 	public TMP_Text AgilityCurrentLevelXP;
 	public TMP_Text AgilityCurrentLevel;
+	public int AgilityLvl;
 	[Space(10f)]
 
 	public ILeveler attackLevel;

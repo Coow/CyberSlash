@@ -103,9 +103,9 @@ GameObject:
   - component: {fileID: 2206683588837397478}
   - component: {fileID: 2206683588844370990}
   - component: {fileID: 2922262757080008229}
+  - component: {fileID: 6842867272064874732}
   - component: {fileID: 3049154490619954729}
   - component: {fileID: 6842867272013787017}
-  - component: {fileID: 6842867272064874732}
   - component: {fileID: 3623828451377902735}
   m_Layer: 0
   m_Name: BasicEnemy1
@@ -173,6 +173,20 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &6842867272064874732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2206683588837101446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d14f8f8693b6974080fe23a50df3cdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 20
+  healthBar: {fileID: 6842867271400161748}
 --- !u!114 &3049154490619954729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,25 +218,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2206683588837101446}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 4.1787405, y: 5.6, z: 3.4}
   m_Center: {x: -0.010629654, y: 2.72, z: 0}
---- !u!114 &6842867272064874732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2206683588837101446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d14f8f8693b6974080fe23a50df3cdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 20
-  healthBar: {fileID: 6842867271400161748}
 --- !u!54 &3623828451377902735
 Rigidbody:
   m_ObjectHideFlags: 0

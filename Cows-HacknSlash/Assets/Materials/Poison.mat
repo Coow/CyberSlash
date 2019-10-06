@@ -5,9 +5,11 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Poison
-  m_Shader: {fileID: 4800000, guid: 02a91a53d0f20f942a1cc6f872f60719, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 5e200a1957431094e99f6e7c33ce2a0c,
+    type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -63,6 +65,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_C33742C3: 0.1
     - _Amplitude: 0.0255
     - _BumpScale: 1
     - _Cutoff: 0.5
@@ -82,5 +85,8 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
+    - Color_4038AE74: {r: 0, g: 2.639016, b: 0, a: 0}
+    - Color_4ACAACF7: {r: 0, g: 0, b: 0, a: 0}
+    - Color_C1A1D4A4: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

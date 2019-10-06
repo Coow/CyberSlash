@@ -16,6 +16,8 @@ public class CombatController : MonoBehaviour
 	//TODO Im on a plane and I know there is some function of observing when a property changes, but I cant be bothered RN
 	[SerializeField]private bool ChangedWeapon = false;
 
+	[SerializeField]private int targetIndex;
+
     void Start() {
 		spellController = gameObject.GetComponent<SpellController>();
 		meleeController = gameObject.GetComponent<MeleeController>();
@@ -23,6 +25,11 @@ public class CombatController : MonoBehaviour
 
     void Update()
     {	
+		//DEBUG
+		if(Input.GetKeyDown(KeyCode.C)){
+			ChangedWeapon = true;
+		}
+
 		if(ChangedWeapon){
 			ChangeWeaponStats();
 		}
@@ -33,6 +40,10 @@ public class CombatController : MonoBehaviour
     }
 
 	void FixedUpdate() {
+		//GetAvaliabeTargets();
+	}
+
+	public void GetAvaliabeTargets() {
 
 	}
 
@@ -57,6 +68,7 @@ public class CombatController : MonoBehaviour
 			Debug.Log("Player selected a weapon type: <b>Melee</b>");
 			meleeController.damageToDeal = selectedWeapon.damageAmount;
 			meleeController.damageType = selectedWeapon.damageType;
+			meleeController.attackRange = selectedWeapon.attackRange;
 
 			InstantiateWeapon();
 			

@@ -68,6 +68,10 @@ MonoBehaviour:
     OpenTop: 1
     Rooms:
     - {fileID: 1758181039999598, guid: a3734b63fc9e64d4ead48fe70b6cc7ea, type: 3}
+    - {fileID: 1758181039999598, guid: a3734b63fc9e64d4ead48fe70b6cc7ea, type: 3}
+    - {fileID: 1758181039999598, guid: a3734b63fc9e64d4ead48fe70b6cc7ea, type: 3}
+    - {fileID: 1758181039999598, guid: a3734b63fc9e64d4ead48fe70b6cc7ea, type: 3}
+    - {fileID: 1245212712575633158, guid: 1778356b9d57e4d479a5a921b0841adb, type: 3}
   - OpenBottom: 1
     OpenLeft: 1
     OpenRight: 0
@@ -141,4 +145,4 @@ MonoBehaviour:
   RoomSize: 25
   ChanceToGoBack: 75
   Player: {fileID: 0}
-  testBlock: {fileID: 1698491239684414, guid: 3d2d3fd5905721048b263fe900d4c48f, type: 3}
+  testBlock: {fileID: 0}

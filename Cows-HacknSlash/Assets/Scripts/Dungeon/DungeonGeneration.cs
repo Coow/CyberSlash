@@ -85,7 +85,7 @@ public class DungeonGeneration : MonoBehaviour {
                     GameObject newRoom = Instantiate(chooseRoomToSpawn(x, y), new Vector3((x - codeToWorld) * RoomSize, 0, (y - codeToWorld) * RoomSize), 
                         Quaternion.identity, this.transform);
                     if (x - codeToWorld == 0 & y - codeToWorld == 0) {
-                        newRoom.name = "0, 0 Room!!!";
+                        newRoom.name = "NavMeshOrigin";
                         newRoom.tag = "DungeonOrigin";
                         }
                     newRoom.transform.Rotate(0, 180, 0);

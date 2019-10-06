@@ -11,24 +11,28 @@ public class SpellController : MonoBehaviour
     private GameObject SpawnPos;
     public Animator anim_controller;
     public GameObject selectedText;
-    
+
     [SerializeField]
     private GameObject FireBall, ice, poison;
 
-    [Tooltip("0 == null; 1 == FireStaff;" )]
+    [Tooltip("0 == null; 1 == FireStaff;")]
     public int StaffSelected;
 
     public int damageToDeal;
-	public DamageEnum damageType;
+    public DamageEnum damageType;
 
     //Used for StopAndCast function
     private NavMeshAgent navMeshAgent;
 
+    private CombatController combatController;
+
     [Space(1f)]
     private bool canCastSpell = true;
 
-    public void Start() {
+    public void Start()
+    {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        combatController = GetComponent<CombatController>();
         FireBall.GetComponent<SpellInitialise>().spell.timeStamp = 0;
         ice.GetComponent<SpellInitialise>().spell.timeStamp = 0;
         poison.GetComponent<SpellInitialise>().spell.timeStamp = 0;
@@ -36,9 +40,10 @@ public class SpellController : MonoBehaviour
 
     void Update()
     {
-        if(!_Enabled) {
-			return;
-		}
+        if (!_Enabled)
+        {
+            return;
+        }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             Debug.Log("Staff has been selected");
@@ -58,16 +63,35 @@ public class SpellController : MonoBehaviour
             {
                 FireBall.GetComponent<SpellInitialise>().spell.timeStamp = Time.time + FireBall.GetComponent<SpellInitialise>().spell.cooldownPeriod;
                 var projectile = Instantiate(FireBall, SpawnPos.transform.position, Quaternion.identity);
-                SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform, true);
+                                if (combatController.selectedTarget == null)
+                {
+                    SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform, true);
+                    Debug.Log("Dont follow non existing target");
+                }
+                else
+                {
+                    SpawnPos.GetComponent<FireTest>().FollowTarget(combatController.selectedTarget.transform.position);
+                    SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform, false);
+                    Debug.Log("Follow target");
+                }
                 Destroy(projectile.gameObject, 5f);
                 StartCoroutine(StopAndCast(0.75f));
-                
             }
             else if (Input.GetKeyDown(KeyCode.R) && ice.GetComponent<SpellInitialise>().spell.timeStamp <= Time.time)
             {
                 ice.GetComponent<SpellInitialise>().spell.timeStamp = Time.time + ice.GetComponent<SpellInitialise>().spell.cooldownPeriod;
                 var projectile = Instantiate(ice, SpawnPos.transform.position, Quaternion.identity);
-                SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform, true);
+                                if (combatController.selectedTarget == null)
+                {
+                    SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform, true);
+                    Debug.Log("Dont follow non existing target");
+                }
+                else
+                {
+                    SpawnPos.GetComponent<FireTest>().FollowTarget(combatController.selectedTarget.transform.position);
+                    SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform, false);
+                    Debug.Log("Follow target");
+                }
                 Destroy(projectile.gameObject, 5f);
                 StartCoroutine(StopAndCast(0.75f));
             }
@@ -75,20 +99,33 @@ public class SpellController : MonoBehaviour
             {
                 poison.GetComponent<SpellInitialise>().spell.timeStamp = Time.time + poison.GetComponent<SpellInitialise>().spell.cooldownPeriod;
                 var projectile = Instantiate(poison, SpawnPos.transform.position, Quaternion.identity);
-                SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform, true);
+                if (combatController.selectedTarget == null)
+                {
+                    SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform, true);
+                    Debug.Log("Dont follow non existing target");
+                }
+                else
+                {
+                    SpawnPos.GetComponent<FireTest>().FollowTarget(combatController.selectedTarget.transform.position);
+                    SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform, false);
+                    Debug.Log("Follow target");
+                }
+
                 Destroy(projectile.gameObject, 5f);
                 StartCoroutine(StopAndCast(0.75f));
             }
-        }        
+        }
     }
 
-    private IEnumerator StopAndCast(float stopTime){
+    private IEnumerator StopAndCast(float stopTime)
+    {
         //Debug.Log("Player should stop moving here");
         canCastSpell = false;
         float curSpeed = navMeshAgent.speed;
         navMeshAgent.speed = 0;
+        transform.LookAt(combatController.selectedTarget.transform.position);
         anim_controller.SetTrigger("castSpell");
-        
+
         yield return new WaitForSeconds(stopTime);
 
         navMeshAgent.speed = curSpeed;
@@ -96,7 +133,8 @@ public class SpellController : MonoBehaviour
         //Debug.Log("Player can start moving agian!");
     }
 
-    public void CalculateAttackDamage(string _AttackLevel) {
-        
+    public void CalculateAttackDamage(string _AttackLevel)
+    {
+
     }
 }

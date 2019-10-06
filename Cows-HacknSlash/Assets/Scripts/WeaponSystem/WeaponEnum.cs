@@ -1,4 +1,6 @@
 ﻿public enum WeaponEnum
 {
-    None, Melee, Staff
+    None = 0,
+    Melee = 1, 
+    Staff = 2
 }

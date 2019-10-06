@@ -1,0 +1,6 @@
+Open Mixamo.com
+Upload the Idle.FBX file.
+Download:
+FBX, Without Skin, 30 FPS, No Keyframe Reduction
+
+Wherever possible Download with "In Place" checked

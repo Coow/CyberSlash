@@ -3061,6 +3061,7 @@ MonoBehaviour:
   RightHandAttachmentPoint: {fileID: 2236605935377302170}
   EquipedWeapon: {fileID: 0}
   ChangedWeapon: 0
+  targetIndex: 0
 --- !u!114 &181794468054439802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3075,12 +3076,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackCurrentLevelXP: {fileID: 7124053258744509064}
   AttackCurrentLevel: {fileID: 2984205455735112159}
+  AttackLvl: 0
   SpellCurrentLevelXP: {fileID: 0}
   SpellCurrentLevel: {fileID: 0}
+  SpellLvl: 0
   DefenseCurrentLevelXP: {fileID: 2926383316544970912}
   DefenseCurrentLevel: {fileID: 8762344890238266199}
+  DefenseLvl: 0
   AgilityCurrentLevelXP: {fileID: 6621095136381603132}
   AgilityCurrentLevel: {fileID: 3470855849296334874}
+  AgilityLvl: 0
 --- !u!114 &6110579891053629624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3120,6 +3125,7 @@ MonoBehaviour:
   selectedText: {fileID: 8499401638260621951}
   damageToDeal: 0
   damageType: 0
+  attackRange: 0
 --- !u!114 &5552521096292707789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3336,7 +3342,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
   m_LegacyBlendHint: 0
   m_YAxis:
-    Value: 0.97
+    Value: 1
     m_MaxSpeed: 2
     m_AccelTime: 0.2
     m_DecelTime: 0.1
@@ -3363,7 +3369,7 @@ MonoBehaviour:
     m_MaxSpeed: 300
     m_AccelTime: 0.1
     m_DecelTime: 0.1
-    m_InputAxisName: 0
+    m_InputAxisName: CameraMove
     m_InputAxisValue: 0
     m_InvertInput: 0
     m_MinValue: -180

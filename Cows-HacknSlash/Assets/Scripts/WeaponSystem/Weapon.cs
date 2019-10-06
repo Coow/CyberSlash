@@ -8,11 +8,12 @@ public class Weapon : ScriptableObject
     public WeaponEnum weaponType;
     public Spell[] spells;
     public Attacks[] attacks;
-    public bool RightHand = false;
+    public bool RightHand = true;
     public DamageEnum damageType;
     public ItemRareness itemRareness;
     public int damageAmount;
     public int durabilityPercentage, currentDurabilityPercentage;
+    public float attackRange;
     public GameObject weaponObject;
 
     public Item inventoryItem;

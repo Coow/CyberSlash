@@ -11,10 +11,8 @@ public class WeaponEditor : Editor
     bool _meleeSelected, _staffSelected = false;
 
     public override void OnInspectorGUI(){
-
-        serializedObject.Update();
-
         Weapon _weapon = (Weapon)target; 
+        serializedObject.Update();
 
         #region Setup
 
@@ -36,20 +34,21 @@ public class WeaponEditor : Editor
 
         SerializedProperty _inventoryItem = serializedObject.FindProperty("inventoryItem");
 
-        #endregion
+        SerializedProperty _rightHandPrefabQuaternion = serializedObject.FindProperty("RightHandPrefabQuaternion");
+        SerializedProperty _leftHandPrefabQuaternion = serializedObject.FindProperty("LeftHandPrefabQuaternion");
 
-        serializedObject.Update();
+        #endregion
 
         GUILayout.Label("Weapon", EditorStyles.boldLabel);
 
-        _weapon.Name = EditorGUILayout.TextField("Name: ", _weapon.Name);
-        _weapon.Description = EditorGUILayout.TextField("Description: ", _weapon.Description);
+        _Name.stringValue = EditorGUILayout.TextField("Name: ", _Name.stringValue);
+        _Description.stringValue = EditorGUILayout.TextField("Description: ", _Description.stringValue);
 
         GUILayout.Label("Weapon Settings", EditorStyles.boldLabel);
 
         EditorGUILayout.BeginHorizontal();
-        GUILayout.Label("Type of Weapon: ");
-        _weapon.weaponType = (WeaponEnum)EditorGUILayout.EnumPopup(_weapon.weaponType);
+        //_weaponType.va = (WeaponEnum)EditorGUILayout.EnumPopup(_weaponType);
+        EditorGUILayout.PropertyField(_weaponType);
         EditorGUILayout.EndHorizontal();
 
         /// <summary>
@@ -91,9 +90,9 @@ public class WeaponEditor : Editor
 
         _weapon.RightHand = GUILayout.Toggle(_weapon.RightHand, "Right Handed Weapon");
         if(_weapon.RightHand) {
-            _weapon.RightHandPrefabQuaternion = EditorGUILayout.Vector3Field("Right Hand Quaternion:",_weapon.RightHandPrefabQuaternion);
-        } else {
-            _weapon.LeftHandPrefabQuaternion = EditorGUILayout.Vector3Field("Left Hand Quaternion:",_weapon.LeftHandPrefabQuaternion);
+            _rightHandPrefabQuaternion.vector3Value = EditorGUILayout.Vector3Field("Right Hand Quaternion:",_rightHandPrefabQuaternion.vector3Value);
+        } else {    
+            _leftHandPrefabQuaternion.vector3Value = EditorGUILayout.Vector3Field("Left Hand Quaternion:",_leftHandPrefabQuaternion.vector3Value);
         }
 
         GUILayout.Space(4f);
@@ -101,6 +100,8 @@ public class WeaponEditor : Editor
         _weapon.damageType = (DamageEnum)EditorGUILayout.EnumPopup("Damage Type:",_weapon.damageType);
         _weapon.itemRareness = (ItemRareness)EditorGUILayout.EnumPopup("Item Rareness:",_weapon.itemRareness);
         _weapon.damageAmount = EditorGUILayout.IntField("Damage Amount:",_weapon.damageAmount);
+
+        _weapon.attackRange = EditorGUILayout.FloatField("Attack Range:", _weapon.attackRange);
 
         _weapon.currentDurabilityPercentage = EditorGUILayout.IntSlider("Durability Left:",_weapon.currentDurabilityPercentage, 0, 100);
         // TODO Make a Custom GameObject preview for the Weapon Object
@@ -114,5 +115,6 @@ public class WeaponEditor : Editor
 
         _weapon.inventoryItem = (Item)EditorGUILayout.ObjectField("Inventory Item:",_weapon.inventoryItem, typeof(Item), true);
 
+        serializedObject.ApplyModifiedProperties();
     }
 }

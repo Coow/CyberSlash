@@ -6,10 +6,10 @@ public class FireTest : MonoBehaviour {
 
     [SerializeField]
     [Range (1, 45)]
-    private float FiringAngle = 45f;
+    private float FiringAngle = 1f;
 
     [SerializeField]
-    private float Gravity = 9.8f;
+    private float Gravity = 20f;
 
     [SerializeField]
     private float WaitTime = 0f;

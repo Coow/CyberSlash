@@ -37,7 +37,7 @@ public class CharController : MonoBehaviour {
 
 
 	[Header("Health and Resources")]
-	private int startingHealth = 10;
+	private int startingHealth = 1000;
 	[HideInInspector]
 	public string strHealth;
 	public int curHealth;

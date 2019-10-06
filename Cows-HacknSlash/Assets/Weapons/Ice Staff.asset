@@ -15,15 +15,20 @@ MonoBehaviour:
   Name: Ice Staff
   Description: Chilling
   weaponType: 2
-  TwoHanded: 0
-  RightHand: 0
+  spells:
+  - {fileID: 11400000, guid: 485f9d16871ae804bbb92654870b3252, type: 2}
+  - {fileID: 11400000, guid: 2a35cc156fa5fe644ae30021ce6d1304, type: 2}
+  - {fileID: 11400000, guid: 132ddf8ebf49be448b0b821924bd12ca, type: 2}
+  attacks: []
+  RightHand: 1
   damageType: 2
   itemRareness: 1
   damageAmount: 5
-  spells: []
   durabilityPercentage: 100
   currentDurabilityPercentage: 100
+  attackRange: 0
   weaponObject: {fileID: 6879229062194416240, guid: 8f580033391f2cb49a059142da4e07d0,
     type: 3}
   inventoryItem: {fileID: 0}
-  PrefabQuaternion: {x: 2.4, y: -74.52, z: 83.679}
+  RightHandPrefabQuaternion: {x: -170, y: 90, z: 225}
+  LeftHandPrefabQuaternion: {x: 0, y: 0, z: 0}
