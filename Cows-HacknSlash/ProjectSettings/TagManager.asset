@@ -17,6 +17,7 @@ TagManager:
   - NMS
   - DungeonOrigin
   - Hostile
+  - NPC
   layers:
   - Default
   - TransparentFX

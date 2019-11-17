@@ -37,7 +37,7 @@ public class CharController : MonoBehaviour {
 
 
 	[Header("Health and Resources")]
-	private int startingHealth = 1000;
+	private int startingHealth = 10;
 	[HideInInspector]
 	public string strHealth;
 	public int curHealth;
@@ -51,6 +51,7 @@ public class CharController : MonoBehaviour {
 		capscol.enabled = true;
 		curHealth = startingHealth;
 		maxHealth = startingHealth;
+
 	}
 	
 	// Update is called once per frame.
@@ -186,6 +187,5 @@ public class CharController : MonoBehaviour {
 			}
 		}	
 	}
-
 
 }

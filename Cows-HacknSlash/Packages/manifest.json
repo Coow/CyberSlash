@@ -8,6 +8,7 @@
     "com.unity.postprocessing": "2.1.6",
     "com.unity.probuilder": "4.1.0",
     "com.unity.purchasing": "2.0.6",
+    "com.unity.render-pipelines.core": "5.13.0",
     "com.unity.render-pipelines.lightweight": "5.13.0",
     "com.unity.textmeshpro": "2.0.0",
     "com.unity.timeline": "1.0.0",

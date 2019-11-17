@@ -26,7 +26,8 @@ MonoBehaviour:
   damageAmount: 5
   durabilityPercentage: 100
   currentDurabilityPercentage: 100
-  attackRange: 0
+  attackRange: 50
+  attackSpeed: 1
   weaponObject: {fileID: 6879229062194416240, guid: 8f580033391f2cb49a059142da4e07d0,
     type: 3}
   inventoryItem: {fileID: 0}

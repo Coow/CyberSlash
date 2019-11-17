@@ -63,7 +63,7 @@ public class SpellController : MonoBehaviour
             {
                 FireBall.GetComponent<SpellInitialise>().spell.timeStamp = Time.time + FireBall.GetComponent<SpellInitialise>().spell.cooldownPeriod;
                 var projectile = Instantiate(FireBall, SpawnPos.transform.position, Quaternion.identity);
-                                if (combatController.selectedTarget == null)
+                if (combatController.selectedTarget == null)
                 {
                     SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform, true);
                     Debug.Log("Dont follow non existing target");
@@ -81,7 +81,7 @@ public class SpellController : MonoBehaviour
             {
                 ice.GetComponent<SpellInitialise>().spell.timeStamp = Time.time + ice.GetComponent<SpellInitialise>().spell.cooldownPeriod;
                 var projectile = Instantiate(ice, SpawnPos.transform.position, Quaternion.identity);
-                                if (combatController.selectedTarget == null)
+                if (combatController.selectedTarget == null)
                 {
                     SpawnPos.GetComponent<FireTest>().Shoot(projectile.transform, true);
                     Debug.Log("Dont follow non existing target");
@@ -123,7 +123,9 @@ public class SpellController : MonoBehaviour
         canCastSpell = false;
         float curSpeed = navMeshAgent.speed;
         navMeshAgent.speed = 0;
-        transform.LookAt(combatController.selectedTarget.transform.position);
+        if (combatController.selectedTarget != null) {
+            transform.LookAt(combatController.selectedTarget.transform.position);
+        }
         anim_controller.SetTrigger("castSpell");
 
         yield return new WaitForSeconds(stopTime);

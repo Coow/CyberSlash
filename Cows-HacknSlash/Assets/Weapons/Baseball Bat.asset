@@ -15,14 +15,18 @@ MonoBehaviour:
   Name: Baseball Bat
   Description: Used for playing Baseball, or smashing other thins
   weaponType: 1
-  TwoHanded: 0
+  spells: []
+  attacks: []
   RightHand: 1
   damageType: 0
   itemRareness: 0
   damageAmount: 2
   durabilityPercentage: 100
   currentDurabilityPercentage: 100
+  attackRange: 5
+  attackSpeed: 1
   weaponObject: {fileID: 1951345567439170703, guid: dcec727fdcf121e46910c77ca6b48780,
     type: 3}
   inventoryItem: {fileID: 0}
-  PrefabQuaternion: {x: 0, y: 0, z: 0}
+  RightHandPrefabQuaternion: {x: 0, y: 0, z: 0}
+  LeftHandPrefabQuaternion: {x: 0, y: 0, z: 0}

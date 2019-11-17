@@ -13,7 +13,7 @@ public class Weapon : ScriptableObject
     public ItemRareness itemRareness;
     public int damageAmount;
     public int durabilityPercentage, currentDurabilityPercentage;
-    public float attackRange;
+    public float attackRange, attackSpeed;
     public GameObject weaponObject;
 
     public Item inventoryItem;
