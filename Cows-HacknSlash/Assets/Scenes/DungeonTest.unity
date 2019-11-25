@@ -2813,6 +2813,9 @@ MonoBehaviour:
   health: 40
   maxHealth: 0
   HealthBar: {fileID: 299136458}
+  damagePopup: {fileID: 2366377994484357345, guid: 5e2ce7ee00cca92428d86a6413c3f325,
+    type: 3}
+  offset: {x: 0, y: 10, z: 0}
 --- !u!54 &1727379121
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3525,11 +3528,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCharacter
       objectReference: {fileID: 0}
-    - target: {fileID: 17526917017099962, guid: b10fb83035e2f18458cfa0e4776f3302,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 379326282605699329, guid: b10fb83035e2f18458cfa0e4776f3302,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3708,22 +3706,22 @@ PrefabInstance:
     - target: {fileID: 7980311255744651702, guid: b10fb83035e2f18458cfa0e4776f3302,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.217961
+      value: 0.21796095
       objectReference: {fileID: 0}
     - target: {fileID: 7980311255744651702, guid: b10fb83035e2f18458cfa0e4776f3302,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.041456945
+      value: 0.04145697
       objectReference: {fileID: 0}
     - target: {fileID: 7980311255744651702, guid: b10fb83035e2f18458cfa0e4776f3302,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.08281765
+      value: 0.08281763
       objectReference: {fileID: 0}
     - target: {fileID: 7980311255744651702, guid: b10fb83035e2f18458cfa0e4776f3302,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.97155327
+      value: 0.97155315
       objectReference: {fileID: 0}
     - target: {fileID: 7980311255744651702, guid: b10fb83035e2f18458cfa0e4776f3302,
         type: 3}
@@ -3795,6 +3793,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 17526917017099962, guid: b10fb83035e2f18458cfa0e4776f3302,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1047855947429269931, guid: b10fb83035e2f18458cfa0e4776f3302,
         type: 3}
@@ -3927,6 +3930,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6842867272064874732, guid: 8c161c807e8e0ab4db38afe8daeb6bde,
+        type: 3}
+      propertyPath: offset.y
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2370193013139457701, guid: 8c161c807e8e0ab4db38afe8daeb6bde, type: 3}

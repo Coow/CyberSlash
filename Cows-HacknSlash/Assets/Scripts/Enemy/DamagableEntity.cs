@@ -11,6 +11,9 @@ public class DamagableEntity : MonoBehaviour
 
     public GameObject HealthBar;
     private EnemyHealthBar enemyHealthBar;
+    [Header("Damage Popup")]
+    public GameObject damagePopup;
+    public Vector3 offset;
 
     void Start(){
         startHealth = health;
@@ -39,6 +42,17 @@ public class DamagableEntity : MonoBehaviour
             Debug.Log(gameObject.name + " died!");
             Destroy(gameObject);
         }
+
+        DamageUI(amount, false);
+
+    }
+
+    void DamageUI(float amount, bool crit) {
+        GameObject _popup = Instantiate(damagePopup, transform.position, Quaternion.identity);
+        _popup.transform.localPosition += offset;
+        _popup.GetComponent<DamageText>().color = new Color(255,0,0,1);
+        _popup.GetComponent<DamageText>().lifeTime = 1f;
+        _popup.GetComponent<DamageText>().damage = amount;
     }
 
 }

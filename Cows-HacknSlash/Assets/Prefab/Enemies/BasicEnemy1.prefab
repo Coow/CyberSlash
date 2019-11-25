@@ -94,6 +94,8 @@ MonoBehaviour:
   health: 20
   maxHealth: 0
   HealthBar: {fileID: 2370193013139457698}
+  damagePopup: {fileID: 2366377994484357345, guid: 5e2ce7ee00cca92428d86a6413c3f325,
+    type: 3}
 --- !u!114 &3049154490619954729
 MonoBehaviour:
   m_ObjectHideFlags: 0
