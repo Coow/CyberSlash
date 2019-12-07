@@ -43,16 +43,18 @@ public class DamagableEntity : MonoBehaviour
             Destroy(gameObject);
         }
 
-        DamageUI(amount, false);
-
+        DamageUI(amount, false, new Color(255,0,0));
     }
 
-    void DamageUI(float amount, bool crit) {
+    void DamageUI(float _amount, bool _crit, Color _color) {
         GameObject _popup = Instantiate(damagePopup, transform.position, Quaternion.identity);
         _popup.transform.localPosition += offset;
-        _popup.GetComponent<DamageText>().color = new Color(255,0,0,1);
+        _popup.GetComponent<DamageText>().color = _color;
         _popup.GetComponent<DamageText>().lifeTime = 1f;
-        _popup.GetComponent<DamageText>().damage = amount;
+        _popup.GetComponent<DamageText>().damage = _amount;
+        if (_crit){
+            _popup.GetComponent<DamageText>().bold = true;
+        }
     }
 
 }

@@ -8,7 +8,7 @@ public class DamageText : MonoBehaviour
     public float damage;
     public float lifeTime = 1f;
     public Color color;
-    public bool bold;
+    public bool bold = false;
     private Camera mainCamera;
     private TextMeshPro tmp_text;
 
@@ -21,7 +21,8 @@ public class DamageText : MonoBehaviour
         tmp_text.color = color;
 
         if(bold){
-            tmp_text.fontStyle = FontStyles.Bold;
+            tmp_text.fontStyle = FontStyles.Bold | FontStyles.Italic;
+            tmp_text.text += "!";
         } else {
             tmp_text.fontStyle = FontStyles.Normal;
         }
@@ -29,7 +30,7 @@ public class DamageText : MonoBehaviour
         Destroy(gameObject, lifeTime);
     }
 
-    void FixedUpdate() {
+    void Update() {
         AlignCamera();
         
         gameObject.transform.localScale  -= new Vector3(0.1F, .1f, .1f) * (lifeTime * 3) * Time.deltaTime;
@@ -45,5 +46,4 @@ public class DamageText : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(forward, up);
         }
     }
-
 }
