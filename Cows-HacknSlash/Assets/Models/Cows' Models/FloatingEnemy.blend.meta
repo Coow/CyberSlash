@@ -1,53 +1,140 @@
 fileFormatVersion: 2
 guid: bc70ecf2bd2fd68468efaacfd73a895f
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: arm2_l
-    100002: arm2_r
-    100004: arm3_l
-    100006: arm3_r
-    100008: arm_l
-    100010: arm_r
-    100012: Armature
-    100014: Cube
-    100016: Cube_001
-    100018: Empty
-    100020: eye
-    100022: //RootNode
-    100024: Icosphere
-    400000: arm2_l
-    400002: arm2_r
-    400004: arm3_l
-    400006: arm3_r
-    400008: arm_l
-    400010: arm_r
-    400012: Armature
-    400014: Cube
-    400016: Cube_001
-    400018: Empty
-    400020: eye
-    400022: //RootNode
-    400024: Icosphere
-    2100000: unnamed
-    2300000: Cube
-    2300002: Cube_001
-    2300004: Icosphere
-    3300000: Cube
-    3300002: Cube_001
-    3300004: Icosphere
-    4300000: Cube_001
-    4300002: Cube
-    4300004: Icosphere
-    7400000: Default Take
-    9500000: //RootNode
-    13700000: Cube
-    13700002: Cube_001
-    13700004: Icosphere
-    2186277476908879412: ImportLogs
+  serializedVersion: 19300
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: arm2_l
+  - first:
+      1: 100002
+    second: arm2_r
+  - first:
+      1: 100004
+    second: arm3_l
+  - first:
+      1: 100006
+    second: arm3_r
+  - first:
+      1: 100008
+    second: arm_l
+  - first:
+      1: 100010
+    second: arm_r
+  - first:
+      1: 100012
+    second: Armature
+  - first:
+      1: 100014
+    second: Cube
+  - first:
+      1: 100016
+    second: Cube_001
+  - first:
+      1: 100018
+    second: Empty
+  - first:
+      1: 100020
+    second: eye
+  - first:
+      1: 100022
+    second: //RootNode
+  - first:
+      1: 100024
+    second: Icosphere
+  - first:
+      4: 400000
+    second: arm2_l
+  - first:
+      4: 400002
+    second: arm2_r
+  - first:
+      4: 400004
+    second: arm3_l
+  - first:
+      4: 400006
+    second: arm3_r
+  - first:
+      4: 400008
+    second: arm_l
+  - first:
+      4: 400010
+    second: arm_r
+  - first:
+      4: 400012
+    second: Armature
+  - first:
+      4: 400014
+    second: Cube
+  - first:
+      4: 400016
+    second: Cube_001
+  - first:
+      4: 400018
+    second: Empty
+  - first:
+      4: 400020
+    second: eye
+  - first:
+      4: 400022
+    second: //RootNode
+  - first:
+      4: 400024
+    second: Icosphere
+  - first:
+      21: 2100000
+    second: unnamed
+  - first:
+      23: 2300000
+    second: Cube
+  - first:
+      23: 2300002
+    second: Cube_001
+  - first:
+      23: 2300004
+    second: Icosphere
+  - first:
+      33: 3300000
+    second: Cube
+  - first:
+      33: 3300002
+    second: Cube_001
+  - first:
+      33: 3300004
+    second: Icosphere
+  - first:
+      43: 4300000
+    second: Cube_001
+  - first:
+      43: 4300002
+    second: Cube
+  - first:
+      43: 4300004
+    second: Icosphere
+  - first:
+      74: 7400000
+    second: Default Take
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Cube
+  - first:
+      137: 13700002
+    second: Cube_001
+  - first:
+      137: 13700004
+    second: Icosphere
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
+  - first:
+      74: -623603649343465320
+    second: Scene
   externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -79,6 +166,8 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -86,27 +175,31 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -116,14 +209,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

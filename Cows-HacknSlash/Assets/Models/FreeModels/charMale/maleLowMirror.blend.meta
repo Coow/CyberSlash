@@ -1,135 +1,386 @@
 fileFormatVersion: 2
 guid: 3e492bf6da091cb4c8339c852647934a
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: arm1_l
-    100004: arm1_r_001
-    100006: arm2_l
-    100008: arm2_l_001
-    100010: arm2_l_002
-    100012: arm2_l_003
-    100014: arm2_l_004
-    100016: arm2_l_005
-    100018: arm2_l_006
-    100020: arm2_l_007
-    100022: arm2_l_008
-    100024: arm2_l_009
-    100026: arm2_l_010
-    100028: arm2_l_011
-    100030: arm2_l_012
-    100032: arm2_l_013
-    100034: arm2_l_014
-    100036: arm2_l_015
-    100038: arm2_l_016
-    100040: arm2_l_017
-    100042: arm2_l_018
-    100044: arm2_l_019
-    100046: arm2_r_020
-    100048: arm2_r_021
-    100050: arm2_r_022
-    100052: arm2_r_023
-    100054: arm2_r_024
-    100056: arm2_r_025
-    100058: arm2_r_026
-    100060: arm2_r_027
-    100062: arm2_r_028
-    100064: arm2_r_029
-    100066: arm2_r_030
-    100068: arm2_r_031
-    100070: arm2_r_032
-    100072: arm2_r_033
-    100074: arm2_r_034
-    100076: arm2_r_035
-    100078: arm2_r_036
-    100080: arm2_r_037
-    100082: arm2_r_038
-    100084: arm2_r_039
-    100086: Armature
-    100088: body
-    100090: body2
-    100092: body5
-    100094: body_0
-    100096: head
-    100098: hip_l
-    100100: hip_r_001
-    100102: leg_l_003
-    100104: leg_l_004
-    100106: leg_l_005
-    100108: leg_r
-    100110: leg_r_001
-    100112: leg_r_002
-    100114: neck
-    400000: //RootNode
-    400002: arm1_l
-    400004: arm1_r_001
-    400006: arm2_l
-    400008: arm2_l_001
-    400010: arm2_l_002
-    400012: arm2_l_003
-    400014: arm2_l_004
-    400016: arm2_l_005
-    400018: arm2_l_006
-    400020: arm2_l_007
-    400022: arm2_l_008
-    400024: arm2_l_009
-    400026: arm2_l_010
-    400028: arm2_l_011
-    400030: arm2_l_012
-    400032: arm2_l_013
-    400034: arm2_l_014
-    400036: arm2_l_015
-    400038: arm2_l_016
-    400040: arm2_l_017
-    400042: arm2_l_018
-    400044: arm2_l_019
-    400046: arm2_r_020
-    400048: arm2_r_021
-    400050: arm2_r_022
-    400052: arm2_r_023
-    400054: arm2_r_024
-    400056: arm2_r_025
-    400058: arm2_r_026
-    400060: arm2_r_027
-    400062: arm2_r_028
-    400064: arm2_r_029
-    400066: arm2_r_030
-    400068: arm2_r_031
-    400070: arm2_r_032
-    400072: arm2_r_033
-    400074: arm2_r_034
-    400076: arm2_r_035
-    400078: arm2_r_036
-    400080: arm2_r_037
-    400082: arm2_r_038
-    400084: arm2_r_039
-    400086: Armature
-    400088: body
-    400090: body2
-    400092: body5
-    400094: body_0
-    400096: head
-    400098: hip_l
-    400100: hip_r_001
-    400102: leg_l_003
-    400104: leg_l_004
-    400106: leg_l_005
-    400108: leg_r
-    400110: leg_r_001
-    400112: leg_r_002
-    400114: neck
-    2100000: initialShadingGroup
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: body
-    7400000: Default Take
-    9500000: //RootNode
-    13700000: body
-    2186277476908879412: ImportLogs
+  serializedVersion: 19300
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: arm1_l
+  - first:
+      1: 100004
+    second: arm1_r_001
+  - first:
+      1: 100006
+    second: arm2_l
+  - first:
+      1: 100008
+    second: arm2_l_001
+  - first:
+      1: 100010
+    second: arm2_l_002
+  - first:
+      1: 100012
+    second: arm2_l_003
+  - first:
+      1: 100014
+    second: arm2_l_004
+  - first:
+      1: 100016
+    second: arm2_l_005
+  - first:
+      1: 100018
+    second: arm2_l_006
+  - first:
+      1: 100020
+    second: arm2_l_007
+  - first:
+      1: 100022
+    second: arm2_l_008
+  - first:
+      1: 100024
+    second: arm2_l_009
+  - first:
+      1: 100026
+    second: arm2_l_010
+  - first:
+      1: 100028
+    second: arm2_l_011
+  - first:
+      1: 100030
+    second: arm2_l_012
+  - first:
+      1: 100032
+    second: arm2_l_013
+  - first:
+      1: 100034
+    second: arm2_l_014
+  - first:
+      1: 100036
+    second: arm2_l_015
+  - first:
+      1: 100038
+    second: arm2_l_016
+  - first:
+      1: 100040
+    second: arm2_l_017
+  - first:
+      1: 100042
+    second: arm2_l_018
+  - first:
+      1: 100044
+    second: arm2_l_019
+  - first:
+      1: 100046
+    second: arm2_r_020
+  - first:
+      1: 100048
+    second: arm2_r_021
+  - first:
+      1: 100050
+    second: arm2_r_022
+  - first:
+      1: 100052
+    second: arm2_r_023
+  - first:
+      1: 100054
+    second: arm2_r_024
+  - first:
+      1: 100056
+    second: arm2_r_025
+  - first:
+      1: 100058
+    second: arm2_r_026
+  - first:
+      1: 100060
+    second: arm2_r_027
+  - first:
+      1: 100062
+    second: arm2_r_028
+  - first:
+      1: 100064
+    second: arm2_r_029
+  - first:
+      1: 100066
+    second: arm2_r_030
+  - first:
+      1: 100068
+    second: arm2_r_031
+  - first:
+      1: 100070
+    second: arm2_r_032
+  - first:
+      1: 100072
+    second: arm2_r_033
+  - first:
+      1: 100074
+    second: arm2_r_034
+  - first:
+      1: 100076
+    second: arm2_r_035
+  - first:
+      1: 100078
+    second: arm2_r_036
+  - first:
+      1: 100080
+    second: arm2_r_037
+  - first:
+      1: 100082
+    second: arm2_r_038
+  - first:
+      1: 100084
+    second: arm2_r_039
+  - first:
+      1: 100086
+    second: Armature
+  - first:
+      1: 100088
+    second: body
+  - first:
+      1: 100090
+    second: body2
+  - first:
+      1: 100092
+    second: body5
+  - first:
+      1: 100094
+    second: body_0
+  - first:
+      1: 100096
+    second: head
+  - first:
+      1: 100098
+    second: hip_l
+  - first:
+      1: 100100
+    second: hip_r_001
+  - first:
+      1: 100102
+    second: leg_l_003
+  - first:
+      1: 100104
+    second: leg_l_004
+  - first:
+      1: 100106
+    second: leg_l_005
+  - first:
+      1: 100108
+    second: leg_r
+  - first:
+      1: 100110
+    second: leg_r_001
+  - first:
+      1: 100112
+    second: leg_r_002
+  - first:
+      1: 100114
+    second: neck
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: arm1_l
+  - first:
+      4: 400004
+    second: arm1_r_001
+  - first:
+      4: 400006
+    second: arm2_l
+  - first:
+      4: 400008
+    second: arm2_l_001
+  - first:
+      4: 400010
+    second: arm2_l_002
+  - first:
+      4: 400012
+    second: arm2_l_003
+  - first:
+      4: 400014
+    second: arm2_l_004
+  - first:
+      4: 400016
+    second: arm2_l_005
+  - first:
+      4: 400018
+    second: arm2_l_006
+  - first:
+      4: 400020
+    second: arm2_l_007
+  - first:
+      4: 400022
+    second: arm2_l_008
+  - first:
+      4: 400024
+    second: arm2_l_009
+  - first:
+      4: 400026
+    second: arm2_l_010
+  - first:
+      4: 400028
+    second: arm2_l_011
+  - first:
+      4: 400030
+    second: arm2_l_012
+  - first:
+      4: 400032
+    second: arm2_l_013
+  - first:
+      4: 400034
+    second: arm2_l_014
+  - first:
+      4: 400036
+    second: arm2_l_015
+  - first:
+      4: 400038
+    second: arm2_l_016
+  - first:
+      4: 400040
+    second: arm2_l_017
+  - first:
+      4: 400042
+    second: arm2_l_018
+  - first:
+      4: 400044
+    second: arm2_l_019
+  - first:
+      4: 400046
+    second: arm2_r_020
+  - first:
+      4: 400048
+    second: arm2_r_021
+  - first:
+      4: 400050
+    second: arm2_r_022
+  - first:
+      4: 400052
+    second: arm2_r_023
+  - first:
+      4: 400054
+    second: arm2_r_024
+  - first:
+      4: 400056
+    second: arm2_r_025
+  - first:
+      4: 400058
+    second: arm2_r_026
+  - first:
+      4: 400060
+    second: arm2_r_027
+  - first:
+      4: 400062
+    second: arm2_r_028
+  - first:
+      4: 400064
+    second: arm2_r_029
+  - first:
+      4: 400066
+    second: arm2_r_030
+  - first:
+      4: 400068
+    second: arm2_r_031
+  - first:
+      4: 400070
+    second: arm2_r_032
+  - first:
+      4: 400072
+    second: arm2_r_033
+  - first:
+      4: 400074
+    second: arm2_r_034
+  - first:
+      4: 400076
+    second: arm2_r_035
+  - first:
+      4: 400078
+    second: arm2_r_036
+  - first:
+      4: 400080
+    second: arm2_r_037
+  - first:
+      4: 400082
+    second: arm2_r_038
+  - first:
+      4: 400084
+    second: arm2_r_039
+  - first:
+      4: 400086
+    second: Armature
+  - first:
+      4: 400088
+    second: body
+  - first:
+      4: 400090
+    second: body2
+  - first:
+      4: 400092
+    second: body5
+  - first:
+      4: 400094
+    second: body_0
+  - first:
+      4: 400096
+    second: head
+  - first:
+      4: 400098
+    second: hip_l
+  - first:
+      4: 400100
+    second: hip_r_001
+  - first:
+      4: 400102
+    second: leg_l_003
+  - first:
+      4: 400104
+    second: leg_l_004
+  - first:
+      4: 400106
+    second: leg_l_005
+  - first:
+      4: 400108
+    second: leg_r
+  - first:
+      4: 400110
+    second: leg_r_001
+  - first:
+      4: 400112
+    second: leg_r_002
+  - first:
+      4: 400114
+    second: neck
+  - first:
+      21: 2100000
+    second: initialShadingGroup
+  - first:
+      23: 2300000
+    second: //RootNode
+  - first:
+      33: 3300000
+    second: //RootNode
+  - first:
+      43: 4300000
+    second: body
+  - first:
+      74: 7400000
+    second: Default Take
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: body
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
+  - first:
+      74: -623603649343465320
+    second: Scene
   externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -161,6 +412,8 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -168,27 +421,31 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -198,14 +455,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
