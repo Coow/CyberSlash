@@ -826,12 +826,6 @@ Prefab:
       propertyPath: selectedText
       value: 
       objectReference: {fileID: 1701725478}
-<<<<<<< HEAD
-    - target: {fileID: 114409564997352692, guid: 54ae127340cc41d4ca369dea44ec0125,
-        type: 2}
-      propertyPath: cooldownPeriod
-      value: 1
-=======
     - target: {fileID: 195570484653539168, guid: 54ae127340cc41d4ca369dea44ec0125,
         type: 2}
       propertyPath: m_BaseOffset
@@ -841,7 +835,6 @@ Prefab:
         type: 2}
       propertyPath: layerMask.m_Bits
       value: 59955
->>>>>>> upstream/master
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114732502256682990, guid: 54ae127340cc41d4ca369dea44ec0125, type: 2}

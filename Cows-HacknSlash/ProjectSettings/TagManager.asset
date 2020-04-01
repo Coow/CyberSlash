@@ -18,6 +18,7 @@ TagManager:
   - DungeonOrigin
   - Hostile
   - NPC
+  - VRPlayer
   layers:
   - Default
   - TransparentFX

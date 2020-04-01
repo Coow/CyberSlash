@@ -134,8 +134,11 @@ public class DungeonGeneration : MonoBehaviour {
         yield return new WaitForEndOfFrame();
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        player.transform.position = RandomNavmeshLocation(30f);
+        GameObject vrPlayer = GameObject.FindGameObjectWithTag("VRPlayer");
+        player.transform.position = RandomNavmeshLocation(0f);
+        vrPlayer.transform.position = RandomNavmeshLocation(0f);
         player.GetComponent<NavMeshAgent>().enabled = true;
+        vrPlayer.GetComponent<NavMeshAgent>().enabled = true;
 
 
     }
